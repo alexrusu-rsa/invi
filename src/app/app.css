@@ -26,7 +26,7 @@
     width: 100%;
     overflow: hidden;
     margin-bottom: -1rem;
-    border-radius: 40px 40px 0 0;
+    border-radius: 40px;
     padding-top: 80px;
     /* Spațiu adăugat sus */
     background-color: var(--color-bg-light);
@@ -126,7 +126,7 @@
     overflow: hidden;
     margin: -2rem 0;
     /* Add proper margin instead of negative overlap */
-    border-radius: 0 0 40px 40px;
+    border-radius: 40px;
     z-index: 1;
 }
 
@@ -295,7 +295,7 @@
 
 .venue-image {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 40px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     display: block;
 }
@@ -479,7 +479,7 @@
 
 .gallery-img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 40px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     display: block;
 }
