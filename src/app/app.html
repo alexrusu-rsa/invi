@@ -33,22 +33,32 @@
   </div>
 
   <!-- Countdown Timer Section -->
-  <div class="countdown">
-    <div class="time-box">
-      <span class="number">{{ days() }}</span>
-      <span class="label">Zile</span>
+  <div class="countdown-wrapper">
+    <div class="countdown-title">
+      <div class="title-line uppercase">Până când spunem <span class="script-word">„Da”</span></div>
+      <div class="title-line uppercase">mai sunt</div>
     </div>
-    <div class="time-box">
-      <span class="number">{{ hours() }}</span>
-      <span class="label">Ore</span>
-    </div>
-    <div class="time-box">
-      <span class="number">{{ minutes() }}</span>
-      <span class="label">Min.</span>
-    </div>
-    <div class="time-box">
-      <span class="number">{{ seconds() }}</span>
-      <span class="label">Sec.</span>
+
+    <div class="countdown-timer">
+      <div class="time-block">
+        <div class="number">{{ days() }}</div>
+        <div class="label">Zile</div>
+      </div>
+      <div class="colon">:</div>
+      <div class="time-block">
+        <div class="number">{{ hours() }}</div>
+        <div class="label">Ore</div>
+      </div>
+      <div class="colon">:</div>
+      <div class="time-block">
+        <div class="number">{{ minutes() }}</div>
+        <div class="label">Minute</div>
+      </div>
+      <div class="colon seconds-color">:</div>
+      <div class="time-block seconds-color">
+        <div class="number">{{ seconds() }}</div>
+        <div class="label">Secunde</div>
+      </div>
     </div>
   </div>
 
