@@ -124,7 +124,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin: 1rem 0;
+    margin: -2rem 0;
     /* Add proper margin instead of negative overlap */
     border-radius: 0 0 40px 40px;
     z-index: 1;
