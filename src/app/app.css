@@ -412,6 +412,16 @@
     width: 100%;
 }
 
+.step-art {
+    width: 60px;
+    height: auto;
+    margin-bottom: 0.5rem;
+    display: block;
+    margin-left: auto;
+    /* Aligns to right */
+    opacity: 0.8;
+}
+
 .step-time {
     font-family: var(--font-serif);
     font-size: 1.6rem;
