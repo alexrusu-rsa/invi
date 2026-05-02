@@ -1,106 +1,111 @@
-<main class="invitation-container">
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="pre-title animate-fade-up">Avem bucuria de a vă invita la nunta noastră</p>
-      <h1 class="main-title animate-fade-up delay-1">Andreea & Mihai</h1>
-      <p class="subtitle animate-fade-up delay-2">Vom scrie următorul capitol împreună.</p>
-      <div class="date-badge animate-fade-up delay-3">
-        <span class="day">20</span>
-        <span class="month-year">August 2026</span>
+<main class="canva-theme">
+  <div class="top-announcement">
+    <p>Sunteți invitați</p>
+    <p>cu bucurie</p>
+  </div>
+
+  <div class="hero-image-wrapper">
+    <div class="hero-image-inner">
+      <div class="script-overlay">Pentru a celebra<br>uniunea plină de iubire a</div>
+    </div>
+  </div>
+
+  <div class="names-section">
+    <h1 class="serif-name">ANDREEA</h1>
+    <span class="script-and">și</span>
+    <h1 class="serif-name">MIHAI</h1>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="date-section">
+    <div class="date-hero">
+      <span class="script-month">August</span>
+      <span class="big-date">20</span>
+    </div>
+    <div class="date-details">
+      Ora optsprezece seara <br>
+      Biserica Sfântul Elefterie <br>
+      București, 2026
+    </div>
+  </div>
+
+  <!-- Countdown Timer Section -->
+  <div class="countdown">
+    <div class="time-box">
+      <span class="number">{{ days() }}</span>
+      <span class="label">Zile</span>
+    </div>
+    <div class="time-box">
+      <span class="number">{{ hours() }}</span>
+      <span class="label">Ore</span>
+    </div>
+    <div class="time-box">
+      <span class="number">{{ minutes() }}</span>
+      <span class="label">Min.</span>
+    </div>
+    <div class="time-box">
+      <span class="number">{{ seconds() }}</span>
+      <span class="label">Sec.</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-title">Ceremonia Religioasă</div>
+      <div class="timeline-card">
+        <p>18:00</p>
+        <p><strong>Biserica Sfântul Elefterie</strong></p>
+        <p>Strada Sfântul Elefterie 1, București</p>
       </div>
     </div>
-  </section>
 
-  <!-- Details Section -->
-  <section class="details-section section-container">
-    <h2 class="section-title">Detalii Eveniment</h2>
-
-    <div class="details-grid">
-      <div class="detail-card">
-        <div class="icon-wrapper">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-              stroke="currentColor" stroke-width="2" />
-            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          </svg>
-        </div>
-        <h3>Cununia Religioasă</h3>
-        <p class="time">Ora 16:00</p>
-        <p class="location">Biserica Sfântul Elefterie, București</p>
-      </div>
-
-      <div class="detail-card">
-        <div class="icon-wrapper">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18H19C20.1046 18 21 17.1046 21 16Z"
-              stroke="currentColor" stroke-width="2" />
-            <path d="M3 10H21" stroke="currentColor" stroke-width="2" />
-            <path d="M7 14L8.5 15.5L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </div>
-        <h3>Recepția</h3>
-        <p class="time">Ora 18:30</p>
-        <p class="location">Palatul Snagov, Ilfov</p>
-        <p class="hint">Vă așteptăm cu multă voie bună!</p>
+    <div class="timeline-item">
+      <div class="timeline-title">Marea Petrecere</div>
+      <div class="timeline-card">
+        <p>20:00 - Dimineața</p>
+        <p><strong>Palatul Snagov</strong></p>
+        <p>Așteptăm să dansăm toată noaptea alături de voi!</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- RSVP Section -->
-  <section class="rsvp-section section-container">
-    <div class="rsvp-container">
-      <h2 class="section-title">Confirmați Prezența</h2>
-      <p class="rsvp-subtitle">Vă rugăm să ne confirmați prezența până la data de 1 August 2026.</p>
+  <div class="rsvp-area">
+    <div *ngIf="isSubmitted()" class="success-message">
+      <h2>Vă mulțumim!</h2>
+      <p>Răspunsul a fost înregistrat. Abia așteptăm să ne vedem!</p>
+    </div>
 
-      <div *ngIf="isSubmitted()" class="success-message animate-fade-up">
-        <h3>Vă mulțumim!</h3>
-        <p>Răspunsul dumneavoastră a fost înregistrat cu succes. Abia așteptăm să ne vedem!</p>
+    <form *ngIf="!isSubmitted()" [formGroup]="rsvpForm" (ngSubmit)="submitRsvp()">
+      <h2>Confirmare</h2>
+
+      <div class="form-group">
+        <label for="name">Nume și Prenume</label>
+        <input type="text" id="name" formControlName="name" placeholder="Familia Popescu...">
       </div>
 
-      <form *ngIf="!isSubmitted()" [formGroup]="rsvpForm" (ngSubmit)="submitRsvp()" class="rsvp-form animate-fade-up">
-        <div class="form-group">
-          <label for="name">Nume și Prenume</label>
-          <input type="text" id="name" formControlName="name" placeholder="Ex: Popescu Ion și Maria"
-            [class.invalid]="rsvpForm.get('name')?.invalid && rsvpForm.get('name')?.touched">
-        </div>
+      <div class="form-group">
+        <label for="attendance">Prezență</label>
+        <select id="attendance" formControlName="attendance">
+          <option value="" disabled selected>Alegeți...</option>
+          <option value="yes">Da, particip</option>
+          <option value="no">Nu pot ajunge</option>
+        </select>
+      </div>
 
-        <div class="form-group">
-          <label for="attendance">Veți participa?</label>
-          <select id="attendance" formControlName="attendance"
-            [class.invalid]="rsvpForm.get('attendance')?.invalid && rsvpForm.get('attendance')?.touched">
-            <option value="" disabled selected>Alegeți o opțiune...</option>
-            <option value="yes">Da, voi participa</option>
-            <option value="no">Din păcate, nu pot ajunge</option>
-          </select>
-        </div>
+      <div class="form-group" *ngIf="rsvpForm.get('attendance')?.value === 'yes'">
+        <label for="guests">Număr Persoane</label>
+        <select id="guests" formControlName="guests">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4+</option>
+        </select>
+      </div>
 
-        <div class="form-group" *ngIf="rsvpForm.get('attendance')?.value === 'yes'">
-          <label for="guests">Număr de persoane</label>
-          <select id="guests" formControlName="guests">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Un mesaj pentru noi (opțional)</label>
-          <textarea id="message" formControlName="message" rows="4" placeholder="Abia așteptăm!..."></textarea>
-        </div>
-
-        <button type="submit" class="btn-submit">Trimite Răspunsul</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>Andreea & Mihai • 20 August 2026</p>
-  </footer>
+      <button type="submit" class="btn-submit">Răspunde Acum</button>
+    </form>
+  </div>
 </main>

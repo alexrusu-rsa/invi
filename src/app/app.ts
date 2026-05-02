@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import confetti from 'canvas-confetti';
@@ -9,9 +9,15 @@ import confetti from 'canvas-confetti';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit, OnDestroy {
   rsvpForm: FormGroup;
   isSubmitted = signal(false);
+
+  days = signal('00');
+  hours = signal('00');
+  minutes = signal('00');
+  seconds = signal('00');
+  private timer: any;
 
   constructor(private fb: FormBuilder) {
     this.rsvpForm = this.fb.group({
@@ -20,6 +26,36 @@ export class App {
       guests: ['1', Validators.required],
       message: ['']
     });
+  }
+
+  ngOnInit() {
+    const targetDate = new Date('2026-08-20T18:00:00').getTime();
+
+    this.timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        clearInterval(this.timer);
+        return;
+      }
+
+      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+      this.days.set(String(d).padStart(2, '0'));
+      this.hours.set(String(h).padStart(2, '0'));
+      this.minutes.set(String(m).padStart(2, '0'));
+      this.seconds.set(String(s).padStart(2, '0'));
+    }, 1000);
+  }
+
+  ngOnDestroy() {
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
   }
 
   submitRsvp() {
