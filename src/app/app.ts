@@ -29,7 +29,7 @@ export class App implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    const targetDate = new Date('2026-08-20T18:00:00').getTime();
+    const targetDate = new Date('2026-09-20T18:00:00').getTime();
 
     this.timer = setInterval(() => {
       const now = new Date().getTime();
