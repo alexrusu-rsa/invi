@@ -140,9 +140,7 @@
     background: linear-gradient(to bottom,
             rgba(237, 237, 237, 1) 0%,
             rgba(237, 237, 237, 1) 2%,
-            rgba(237, 237, 237, 0) 50%,
-            rgba(237, 237, 237, 1) 98%,
-            rgba(237, 237, 237, 1) 100%);
+            rgba(237, 237, 237, 0) 50%);
 }
 
 /* Divider */
