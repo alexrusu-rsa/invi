@@ -477,6 +477,37 @@
     fill: none;
 }
 
+.waiting-section {
+    text-align: center;
+    margin: 6rem 0;
+    padding: 0 1.5rem;
+}
+
+.waiting-title {
+    font-family: var(--font-script);
+    font-size: 4.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.waiting-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.waiting-names {
+    font-family: var(--font-script);
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    margin: 0;
+}
+
 .gallery-img {
     width: 100%;
     border-radius: 40px;
