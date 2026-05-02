@@ -509,8 +509,8 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 2.5rem;
-    width: 380px;
-    /* Match max-width of std-text */
+    width: 100%;
+    max-width: 380px;
 }
 
 .std-main {
