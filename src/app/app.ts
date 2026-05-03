@@ -24,6 +24,7 @@ export class App implements OnInit, OnDestroy {
   partnerName = signal('');
   childCount = signal(0);
   isAccompanied = signal<'yes' | 'no' | null>(null);
+  step1Error = signal('');
 
   guests = signal<Guest[]>([]);
   activeAllergyGuestIndex = signal<number | null>(null);
@@ -60,7 +61,11 @@ export class App implements OnInit, OnDestroy {
 
   // Step 1 Actions
   handleMainAttendance(choice: 'yes' | 'no', nameInput: string) {
-    if (!nameInput.trim()) return;
+    if (!nameInput.trim()) {
+      this.step1Error.set('Introdu numele și prenumele');
+      return;
+    }
+    this.step1Error.set('');
     this.mainName.set(nameInput);
     this.attendance.set(choice);
     if (choice === 'no') {

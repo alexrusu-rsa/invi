@@ -223,7 +223,9 @@
       </div>
       <div class="form-group">
         <label>Nume și Prenume</label>
-        <input #nameInput type="text" placeholder="Scrie numele tău aici..." class="elegant-input">
+        <input #nameInput type="text" placeholder="Scrie numele tău aici..." class="elegant-input"
+          (input)="step1Error.set('')">
+        <div *ngIf="step1Error()" class="error-msg fade-in">{{step1Error()}}</div>
       </div>
       <div class="rsvp-actions">
         <button class="btn-confirm-yes" (click)="handleMainAttendance('yes', nameInput.value)">
