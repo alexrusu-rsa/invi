@@ -744,56 +744,108 @@
     align-items: center;
 }
 
-.btn-confirm-yes {
+.rsvp-step {
     width: 100%;
-    max-width: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
+}
+
+.step-headline {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.step-sub {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+}
+
+.elegant-input {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--color-bg-light);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: var(--font-serif);
+    transition: all 0.3s ease;
+}
+
+.btn-option {
+    width: 100%;
+    padding: 1.2rem;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.btn-option.active {
+    background-color: #222;
+    color: white;
+    border-color: #222;
+}
+
+.btn-primary {
+    width: 100%;
     padding: 1.2rem;
     background-color: #222;
     color: white;
-    font-size: 1rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
     border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
     border-radius: 50px;
     font-family: var(--font-serif);
-}
-
-.btn-confirm-yes:hover {
-    background-color: #000;
-    transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.btn-confirm-no {
-    width: 100%;
-    max-width: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    padding: 1rem;
-    background: none;
-    border: 1px solid #ddd;
-    color: #666;
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
+    font-size: 1rem;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
     cursor: pointer;
+    margin-top: 2rem;
     transition: all 0.3s ease;
-    border-radius: 50px;
-    font-family: var(--font-serif);
 }
 
-.btn-confirm-no:hover {
-    background-color: #f9f9f9;
-    border-color: #999;
+.guest-diet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.guest-diet-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+}
+
+.guest-name {
+    font-weight: 600;
     color: #333;
+}
+
+.guest-type {
+    font-size: 0.8rem;
+    color: #888;
+    margin-left: 0.5rem;
+}
+
+.btn-allergy-trigger {
+    background: none;
+    border: none;
+    color: #555;
+    text-decoration: underline;
+    font-size: 0.85rem;
+    cursor: pointer;
 }
 
 .btn-confirm-yes svg {
@@ -801,46 +853,154 @@
     /* Inimioară roșie */
 }
 
-@keyframes pulseEffect {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 5px 15px rgba(31, 31, 31, 0.2);
-    }
-
-    50% {
-        transform: scale(1.02);
-        box-shadow: 0 8px 20px rgba(31, 31, 31, 0.4);
-    }
-
-    100% {
-        transform: scale(1);
-        box-shadow: 0 5px 15px rgba(31, 31, 31, 0.2);
-    }
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
 }
 
-.btn-submit:hover {
-    background-color: #333;
-    animation: pulseEffect 1.2s infinite ease-in-out;
+.modal-content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 32px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+}
+
+.modal-content h3 {
+    font-family: var(--font-serif);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.elegant-textarea {
+    width: 100%;
+    height: 140px;
+    padding: 1.2rem;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    background: #fcfcfc;
+    margin: 1.2rem 0;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    resize: none;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.btn-secondary {
+    flex: 1;
+    padding: 1.1rem;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: var(--font-serif);
+}
+
+/* Step 1 & Global Buttons */
+.btn-confirm-yes,
+.btn-confirm-no {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    border-radius: 50px;
+    font-family: var(--font-serif);
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn-confirm-yes {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+}
+
+.btn-confirm-no {
+    background: none;
+    border: 1px solid #ddd;
+    color: #666;
+    margin-top: 0.8rem;
+}
+
+.btn-confirm-yes:hover {
+    background: #000;
+    transform: scale(1.01);
+}
+
+.btn-confirm-no:hover {
+    background: #f9f9f9;
+}
+
+/* Success Step */
+.confirmation-success,
+.confirmation-decline {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.confirmation-success h2,
+.confirmation-decline h2 {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.success-icon {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.success-note {
+    margin-top: 2.5rem;
+    font-family: var(--font-script);
+    font-size: 2.4rem;
+    color: #333;
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .rsvp-footer {
     font-family: var(--font-serif);
     font-size: 1.1rem;
-    line-height: 1.5;
-    color: #333;
-    text-align: right;
-    margin-top: 3rem;
-    padding-right: 0;
-    max-width: 250px;
-    margin-left: auto;
-}
-
-.success-message {
-    padding: 2rem 0;
+    line-height: 1.6;
     color: #444;
-}
-
-.success-message h2 {
-    color: #D36C5A;
-    margin-bottom: 1rem;
+    text-align: right;
+    margin-top: 4rem;
+    max-width: 280px;
+    margin-left: auto;
 }

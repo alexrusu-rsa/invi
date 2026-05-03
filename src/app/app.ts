@@ -1,19 +1,31 @@
 import { Component, signal, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import confetti from 'canvas-confetti';
 
+interface Guest {
+  name: string;
+  type: 'principal' | 'partener' | 'copil';
+  allergies: string;
+}
+
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormsModule, CommonModule],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App implements OnInit, OnDestroy {
-  rsvpForm: FormGroup;
-  isSubmitted = signal(false);
-  hasPartner = signal(false);
-  hasChild = signal(false);
+  currentStep = signal(1);
+  attendance = signal<'yes' | 'no' | null>(null);
+
+  mainName = signal('');
+  partnerName = signal('');
+  childCount = signal(0);
+  isAccompanied = signal<'yes' | 'no' | null>(null);
+
+  guests = signal<Guest[]>([]);
+  activeAllergyGuestIndex = signal<number | null>(null);
 
   days = signal('00');
   hours = signal('00');
@@ -21,59 +33,19 @@ export class App implements OnInit, OnDestroy {
   seconds = signal('00');
   private timer: any;
 
-  constructor(private fb: FormBuilder) {
-    this.rsvpForm = this.fb.group({
-      name: ['', Validators.required],
-      partnerName: [''],
-      childCount: [0],
-      attendance: ['', Validators.required],
-      message: ['']
-    });
-  }
-
-  togglePartner() {
-    this.hasPartner.set(!this.hasPartner());
-    this.updateValidators();
-  }
-
-  toggleChild() {
-    this.hasChild.set(!this.hasChild());
-    if (!this.hasChild()) {
-      this.rsvpForm.patchValue({ childCount: 0 });
-    }
-    this.updateValidators();
-  }
-
-  updateValidators() {
-    const partnerCtrl = this.rsvpForm.get('partnerName');
-
-    if (this.hasPartner()) {
-      partnerCtrl?.setValidators([Validators.required]);
-    } else {
-      partnerCtrl?.clearValidators();
-      partnerCtrl?.setValue('');
-    }
-
-    partnerCtrl?.updateValueAndValidity();
-  }
-
   ngOnInit() {
     const targetDate = new Date('2026-09-20T18:00:00').getTime();
-
     this.timer = setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate - now;
-
       if (distance < 0) {
         clearInterval(this.timer);
         return;
       }
-
       const d = Math.floor(distance / (1000 * 60 * 60 * 24));
       const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const s = Math.floor((distance % (1000 * 60)) / 1000);
-
       this.days.set(String(d).padStart(2, '0'));
       this.hours.set(String(h).padStart(2, '0'));
       this.minutes.set(String(m).padStart(2, '0'));
@@ -82,53 +54,98 @@ export class App implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.timer) {
-      clearInterval(this.timer);
-    }
+    if (this.timer) clearInterval(this.timer);
   }
 
-  confirmAttendance(value: string) {
-    this.rsvpForm.patchValue({ attendance: value });
-    this.submitRsvp();
-  }
-
-  submitRsvp() {
-    if (this.rsvpForm.valid) {
-      console.log('RSVP:', this.rsvpForm.value);
-      this.isSubmitted.set(true);
-      if (this.rsvpForm.get('attendance')?.value === 'yes') {
-        this.triggerConfetti();
-      }
+  // Step 1 Actions
+  handleMainAttendance(choice: 'yes' | 'no', nameInput: string) {
+    if (!nameInput.trim()) return;
+    this.mainName.set(nameInput);
+    this.attendance.set(choice);
+    if (choice === 'no') {
+      this.currentStep.set(4);
     } else {
-      this.rsvpForm.markAllAsTouched();
+      this.currentStep.set(2);
     }
+  }
+
+  // Step 2 Actions
+  setAccompanied(choice: 'yes' | 'no') {
+    this.isAccompanied.set(choice);
+    if (choice === 'no') {
+      this.goToStep3();
+    }
+  }
+
+  goToStep3() {
+    // Compile guest list before moving to allergies step
+    const list: Guest[] = [];
+
+    // Add main person
+    list.push({ name: this.mainName(), type: 'principal', allergies: '' });
+
+    if (this.isAccompanied() === 'yes') {
+      // Add partner
+      if (this.partnerName().trim()) {
+        list.push({ name: this.partnerName(), type: 'partener', allergies: '' });
+      }
+      // Add children generically if count > 0
+      for (let i = 0; i < this.childCount(); i++) {
+        list.push({ name: `Copil ${i + 1}`, type: 'copil', allergies: '' });
+      }
+    }
+
+    this.guests.set(list);
+    this.currentStep.set(3);
+  }
+
+  // Step 3 Actions
+  openAllergyPopup(index: number) {
+    this.activeAllergyGuestIndex.set(index);
+  }
+
+  closeAllergyPopup() {
+    this.activeAllergyGuestIndex.set(null);
+  }
+
+  updateAllergy(index: number, text: string) {
+    const updated = [...this.guests()];
+    updated[index].allergies = text;
+    this.guests.set(updated);
+  }
+
+  finalConfirm() {
+    console.log('Final RSVP Data:', {
+      attendance: this.attendance(),
+      guests: this.guests()
+    });
+    if (this.attendance() === 'yes') {
+      this.triggerConfetti();
+    }
+    this.currentStep.set(4);
+  }
+
+  // Utility
+  updatePartnerName(val: string) {
+    this.partnerName.set(val);
+  }
+
+  updateChildCount(val: number) {
+    this.childCount.set(val);
   }
 
   triggerConfetti() {
     const duration = 5 * 1000;
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
-
-    const randomInRange = (min: number, max: number) => {
-      return Math.random() * (max - min) + min;
-    };
+    const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
 
     const interval = setInterval(() => {
       const timeLeft = animationEnd - Date.now();
-
-      if (timeLeft <= 0) {
-        return clearInterval(interval);
-      }
-
+      if (timeLeft <= 0) return clearInterval(interval);
       const particleCount = 50 * (timeLeft / duration);
-      confetti({
-        ...defaults, particleCount,
-        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
-      });
-      confetti({
-        ...defaults, particleCount,
-        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
-      });
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
     }, 250);
   }
 }

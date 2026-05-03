@@ -1,63 +1,37 @@
 <main class="canva-theme">
-  <div class="top-announcement">
-    <p>Sunteți invitați</p>
-    <p>cu bucurie</p>
-  </div>
-
-  <div class="hero-image-wrapper">
-    <img src="/tenerifephoto.es204.JPG" alt="Bianca și Alex" class="hero-image-img">
-    <div class="fade-overlay-bottom"></div>
-    <div class="script-overlay">pentru a celebra uniunea plină de iubire alături de</div>
-  </div>
-
-  <div class="names-section">
-    <h1 class="serif-name">BIANCA</h1>
-    <div class="name-row">
-      <span class="script-and">și</span>
-      <h1 class="serif-name">ALEX</h1>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-image-container">
+      <img src="/tenerifephoto.es204.JPG" alt="Bianca & Alex" class="hero-image">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Bianca & Alex</h1>
+      <p class="hero-date">20 . 09 . 2026</p>
     </div>
   </div>
 
-  <div class="divider"></div>
-
-  <div class="date-section">
-    <div class="date-hero">
-      <span class="big-date">20</span>
-      <span class="script-month">Septembrie</span>
-    </div>
-  </div>
-
-  <div class="second-fade-wrapper">
-    <img src="/tenerifephoto.es211.JPG" alt="Bianca și Alex" class="second-image-img">
-    <div class="fade-overlay-both"></div>
-  </div>
-
-  <!-- Countdown Timer Section -->
-  <div class="countdown-wrapper">
-    <div class="countdown-title">
-      <div class="title-line uppercase">Până când spunem <span class="script-word">„Da”</span></div>
-      <div class="title-line uppercase">mai sunt</div>
-    </div>
-
-    <div class="countdown-timer">
-      <div class="time-block">
-        <div class="number">{{ days() }}</div>
-        <div class="label">Zile</div>
+  <!-- Timer Section -->
+  <div class="timer-section">
+    <div class="timer-container">
+      <div class="timer-item">
+        <span class="timer-val">{{days()}}</span>
+        <span class="timer-label">Zile</span>
       </div>
-      <div class="colon">:</div>
-      <div class="time-block">
-        <div class="number">{{ hours() }}</div>
-        <div class="label">Ore</div>
+      <div class="timer-divider">:</div>
+      <div class="timer-item">
+        <span class="timer-val">{{hours()}}</span>
+        <span class="timer-label">Ore</span>
       </div>
-      <div class="colon">:</div>
-      <div class="time-block">
-        <div class="number">{{ minutes() }}</div>
-        <div class="label">Minute</div>
+      <div class="timer-divider">:</div>
+      <div class="timer-item">
+        <span class="timer-val">{{minutes()}}</span>
+        <span class="timer-label">Min</span>
       </div>
-      <div class="colon seconds-color">:</div>
-      <div class="time-block seconds-color">
-        <div class="number">{{ seconds() }}</div>
-        <div class="label">Secunde</div>
+      <div class="timer-divider">:</div>
+      <div class="timer-item">
+        <span class="timer-val">{{seconds()}}</span>
+        <span class="timer-label">Sec</span>
       </div>
     </div>
   </div>
@@ -108,9 +82,7 @@
 
   <div class="program-section">
     <div class="program-title">Program</div>
-
     <div class="stepper-container">
-
       <div class="step-item">
         <div class="step-content">
           <img src="/ceremonia_religioasa.svg" alt="" class="step-art">
@@ -127,7 +99,6 @@
           </div>
         </div>
       </div>
-
       <div class="step-item">
         <div class="step-content">
           <img src="/moment_de_sarbatoare.svg" alt="" class="step-art">
@@ -144,10 +115,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Decor Celebration / Musical Note Alternative -->
-
-
       <div class="step-item">
         <div class="step-content">
           <img src="/dans_si_voie_buna.svg" alt="" class="step-art">
@@ -163,7 +130,6 @@
           </div>
         </div>
       </div>
-
       <div class="step-item">
         <div class="step-content">
           <img src="/momentul_tortului.svg" alt="" class="step-art">
@@ -180,7 +146,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -222,49 +187,26 @@
   </div>
 
   <div class="rsvp-area">
-    <div *ngIf="isSubmitted()" class="success-message">
-      <h2>Vă mulțumim!</h2>
-      <p>Răspunsul a fost înregistrat. Abia așteptăm să ne vedem!</p>
-    </div>
-
-    <form *ngIf="!isSubmitted()" [formGroup]="rsvpForm" (ngSubmit)="submitRsvp()">
+    <!-- STEP 1: Main Info -->
+    <div *ngIf="currentStep() === 1" class="rsvp-step">
       <div class="rsvp-header">
         <div class="rsvp-please">vă rugăm</div>
         <div class="rsvp-main-lang">confirmați</div>
         <div class="rsvp-by">până la 1 Septembrie</div>
       </div>
-
       <div class="form-group">
-        <label for="name">Nume și Prenume</label>
-        <input type="text" id="name" formControlName="name" placeholder="Nume si prenume">
-        <button type="button" class="btn-add-partner" (click)="togglePartner()">
-          {{ hasPartner() ? '- Renunță la partener' : '+ Vin însoțit de cineva' }}
-        </button>
-        <button type="button" class="btn-add-partner" (click)="toggleChild()">
-          {{ hasChild() ? '- Închide secțiune copil' : '+ Vin cu copilul' }}
-        </button>
+        <label>Nume și Prenume</label>
+        <input #nameInput type="text" placeholder="Scrie numele tău aici..." class="elegant-input">
       </div>
-
-      <div class="form-group" *ngIf="hasPartner()">
-        <label for="partnerName">Nume și Prenume Partener</label>
-        <input type="text" id="partnerName" formControlName="partnerName" placeholder="Nume partener/parteneră">
-      </div>
-
-      <div class="form-group" *ngIf="hasChild()">
-        <label for="childCount">Număr Copii</label>
-        <input type="number" id="childCount" formControlName="childCount" min="0" (input)="updateValidators()">
-      </div>
-
       <div class="rsvp-actions">
-        <button type="button" class="btn-confirm-yes" (click)="confirmAttendance('yes')">
+        <button class="btn-confirm-yes" (click)="handleMainAttendance('yes', nameInput.value)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
           </svg>
           Da, particip
         </button>
-
-        <button type="button" class="btn-confirm-no" (click)="confirmAttendance('no')">
+        <button class="btn-confirm-no" (click)="handleMainAttendance('no', nameInput.value)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -272,12 +214,80 @@
           Nu pot ajunge
         </button>
       </div>
+    </div>
 
-      <div class="rsvp-footer">
-        și vă rugăm să ne anunțați <br>
-        dacă puteți fi alături de noi <br>
-        în această zi de celebrare a iubirii
+    <!-- STEP 2: Companions -->
+    <div *ngIf="currentStep() === 2" class="rsvp-step">
+      <h3 class="step-headline">Vei fi însoțit?</h3>
+      <div class="rsvp-actions">
+        <button [class.active]="isAccompanied() === 'yes'" class="btn-option" (click)="setAccompanied('yes')">Da, vin
+          însoțit</button>
+        <button [class.active]="isAccompanied() === 'no'" class="btn-option" (click)="setAccompanied('no')">Nu, vin
+          singur</button>
       </div>
-    </form>
+
+      <div *ngIf="isAccompanied() === 'yes'" class="companion-setup fade-in">
+        <div class="form-group">
+          <label>Nume Partener/Parteneră</label>
+          <input type="text" [value]="partnerName()" (input)="updatePartnerName($any($event.target).value)"
+            placeholder="Numele însoțitorului..." class="elegant-input">
+        </div>
+        <div class="form-group">
+          <label>Număr Copii</label>
+          <input type="number" [value]="childCount()" (input)="updateChildCount($any($event.target).value)" min="0"
+            class="elegant-input">
+        </div>
+        <button class="btn-primary" (click)="goToStep3()">Mai departe</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Allergies -->
+    <div *ngIf="currentStep() === 3" class="rsvp-step">
+      <h3 class="step-headline">Alergii sau preferințe alimentare?</h3>
+      <p class="step-sub">Te rugăm să ne anunți dacă există cerințe speciale pentru meniu.</p>
+
+      <div class="guest-diet-list">
+        <div *ngFor="let guest of guests(); let i = index" class="guest-diet-item">
+          <div class="guest-info-row">
+            <span class="guest-name">{{guest.name}}</span>
+            <span class="guest-type">({{guest.type}})</span>
+          </div>
+          <button class="btn-allergy-trigger" (click)="openAllergyPopup(i)">
+            {{ guest.allergies ? 'Vezi mențiune' : '+ Adaugă mențiune' }}
+          </button>
+        </div>
+      </div>
+
+      <button class="btn-primary" (click)="finalConfirm()">Finalizează</button>
+    </div>
+
+    <!-- STEP 4: Success/Summary -->
+    <div *ngIf="currentStep() === 4" class="rsvp-step success-step fade-in">
+      <div *ngIf="attendance() === 'yes'" class="confirmation-success">
+        <div class="success-icon">✨</div>
+        <h2>Vă mulțumim!</h2>
+        <p>Locurile pentru <strong>{{guests().length}}</strong> persoane au fost confirmate.</p>
+        <p class="success-note">Abia așteptăm să ne vedem pe 20 Septembrie!</p>
+      </div>
+      <div *ngIf="attendance() === 'no'" class="confirmation-decline">
+        <h2>Ne pare rău...</h2>
+        <p>Ne pare rău că nu puteți fi alături de noi.</p>
+        <p>Vă mulțumim pentru răspuns!</p>
+      </div>
+    </div>
+
+    <!-- Allergy Modal -->
+    <div *ngIf="activeAllergyGuestIndex() !== null" class="modal-overlay" (click)="closeAllergyPopup()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <h3>Mentțuni pentru {{guests()[activeAllergyGuestIndex()!].name}}</h3>
+        <textarea #allergyText [value]="guests()[activeAllergyGuestIndex()!].allergies"
+          placeholder="Ex: Fără lactoză, vegetarian, alergie la nuci..." class="elegant-textarea"></textarea>
+        <div class="modal-actions">
+          <button class="btn-secondary" (click)="closeAllergyPopup()">Anulează</button>
+          <button class="btn-primary"
+            (click)="updateAllergy(activeAllergyGuestIndex()!, allergyText.value); closeAllergyPopup()">Salvează</button>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
