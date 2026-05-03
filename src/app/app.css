@@ -496,7 +496,7 @@
 
 .waiting-section {
     text-align: center;
-    margin: 6rem 0;
+    margin: 1rem 0;
     padding: 0 1.5rem;
 }
 
@@ -616,20 +616,6 @@
     margin: 0;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin: 3rem 1.5rem;
-}
-
-.gallery-image {
-    width: 100%;
-    border-radius: 40px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    display: block;
-}
-
 .step-icon,
 .step-art {
     width: 80px;
@@ -641,18 +627,18 @@
 .heart-divider {
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
 }
 
 .heart-icon {
-    width: 45px;
+    width: 300px;
     height: auto;
     opacity: 0.9;
+    margin-left: 50px;
 }
 
 /* RSVP */
 .rsvp-area {
-    margin-top: 6rem;
+    margin-top: 1rem;
     padding: 0 1.5rem;
 }
 
