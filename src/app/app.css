@@ -651,15 +651,17 @@
 
 .rsvp-main-lang {
     font-family: var(--font-serif);
-    font-size: 4.5rem;
-    /* Smaller than RSVP but still impactful */
-    line-height: 1;
+    font-size: 3.2rem;
+    /* Reduced to fit on mobile */
+    line-height: 1.1;
     color: #1a1a1a;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
+    /* Reduced spacing */
     font-weight: 400;
     text-align: center;
     text-transform: lowercase;
-    /* Matches the 'confirmați' style */
+    width: 100%;
+    word-wrap: break-word;
 }
 
 .rsvp-main {
@@ -717,10 +719,30 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+.btn-add-partner {
+    background: none;
+    border: none;
+    padding: 0.5rem 0;
+    color: #555;
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s;
+    display: block;
+}
+
+.btn-add-partner:hover {
+    color: var(--color-primary);
+}
+
 .btn-submit {
     width: 100%;
     max-width: 280px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
     margin: 2rem auto 0;
     padding: 1.2rem;
     background-color: #222;
@@ -732,7 +754,6 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 50px;
-    /* Pill shape */
     font-family: var(--font-serif);
 }
 
@@ -762,6 +783,18 @@
 .btn-submit:hover {
     background-color: #333;
     animation: pulseEffect 1.2s infinite ease-in-out;
+}
+
+.rsvp-footer {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #333;
+    text-align: right;
+    margin-top: 3rem;
+    padding-right: 0;
+    max-width: 250px;
+    margin-left: auto;
 }
 
 .success-message {

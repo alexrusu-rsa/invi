@@ -12,6 +12,8 @@ import confetti from 'canvas-confetti';
 export class App implements OnInit, OnDestroy {
   rsvpForm: FormGroup;
   isSubmitted = signal(false);
+  hasPartner = signal(false);
+  hasChild = signal(false);
 
   days = signal('00');
   hours = signal('00');
@@ -22,10 +24,51 @@ export class App implements OnInit, OnDestroy {
   constructor(private fb: FormBuilder) {
     this.rsvpForm = this.fb.group({
       name: ['', Validators.required],
+      partnerName: [''],
+      childCount: [1],
       attendance: ['', Validators.required],
       guests: ['1', Validators.required],
       message: ['']
     });
+  }
+
+  togglePartner() {
+    this.hasPartner.set(!this.hasPartner());
+    this.updateGuestsAndValidators();
+  }
+
+  toggleChild() {
+    this.hasChild.set(!this.hasChild());
+    if (this.hasChild()) {
+      this.rsvpForm.patchValue({ childCount: 0 });
+    } else {
+      this.rsvpForm.patchValue({ childCount: 0 });
+    }
+    this.updateGuestsAndValidators();
+  }
+
+  updateGuestsAndValidators() {
+    const partnerCtrl = this.rsvpForm.get('partnerName');
+    const childCtrl = this.rsvpForm.get('childCount');
+
+    let totalAdults = 1;
+    let kids = 0;
+
+    if (this.hasPartner()) {
+      partnerCtrl?.setValidators([Validators.required]);
+      totalAdults++;
+    } else {
+      partnerCtrl?.clearValidators();
+      partnerCtrl?.setValue('');
+    }
+
+    if (this.hasChild()) {
+      kids = Number(childCtrl?.value) || 0;
+    }
+
+    this.rsvpForm.patchValue({ guests: String(totalAdults + kids) });
+    partnerCtrl?.updateValueAndValidity();
+    childCtrl?.updateValueAndValidity();
   }
 
   ngOnInit() {
