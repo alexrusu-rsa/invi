@@ -736,14 +736,21 @@
     color: var(--color-primary);
 }
 
-.btn-submit {
+.rsvp-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.btn-confirm-yes {
     width: 100%;
     max-width: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
-    margin: 2rem auto 0;
     padding: 1.2rem;
     background-color: #222;
     color: white;
@@ -757,10 +764,41 @@
     font-family: var(--font-serif);
 }
 
-.btn-submit:hover {
+.btn-confirm-yes:hover {
     background-color: #000;
     transform: scale(1.02);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-confirm-no {
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: none;
+    border: 1px solid #ddd;
+    color: #666;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    font-family: var(--font-serif);
+}
+
+.btn-confirm-no:hover {
+    background-color: #f9f9f9;
+    border-color: #999;
+    color: #333;
+}
+
+.btn-confirm-yes svg {
+    color: #E06B5F;
+    /* Inimioară roșie */
 }
 
 @keyframes pulseEffect {

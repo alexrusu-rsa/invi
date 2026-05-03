@@ -25,50 +25,36 @@ export class App implements OnInit, OnDestroy {
     this.rsvpForm = this.fb.group({
       name: ['', Validators.required],
       partnerName: [''],
-      childCount: [1],
+      childCount: [0],
       attendance: ['', Validators.required],
-      guests: ['1', Validators.required],
       message: ['']
     });
   }
 
   togglePartner() {
     this.hasPartner.set(!this.hasPartner());
-    this.updateGuestsAndValidators();
+    this.updateValidators();
   }
 
   toggleChild() {
     this.hasChild.set(!this.hasChild());
-    if (this.hasChild()) {
-      this.rsvpForm.patchValue({ childCount: 0 });
-    } else {
+    if (!this.hasChild()) {
       this.rsvpForm.patchValue({ childCount: 0 });
     }
-    this.updateGuestsAndValidators();
+    this.updateValidators();
   }
 
-  updateGuestsAndValidators() {
+  updateValidators() {
     const partnerCtrl = this.rsvpForm.get('partnerName');
-    const childCtrl = this.rsvpForm.get('childCount');
-
-    let totalAdults = 1;
-    let kids = 0;
 
     if (this.hasPartner()) {
       partnerCtrl?.setValidators([Validators.required]);
-      totalAdults++;
     } else {
       partnerCtrl?.clearValidators();
       partnerCtrl?.setValue('');
     }
 
-    if (this.hasChild()) {
-      kids = Number(childCtrl?.value) || 0;
-    }
-
-    this.rsvpForm.patchValue({ guests: String(totalAdults + kids) });
     partnerCtrl?.updateValueAndValidity();
-    childCtrl?.updateValueAndValidity();
   }
 
   ngOnInit() {
@@ -101,12 +87,18 @@ export class App implements OnInit, OnDestroy {
     }
   }
 
+  confirmAttendance(value: string) {
+    this.rsvpForm.patchValue({ attendance: value });
+    this.submitRsvp();
+  }
+
   submitRsvp() {
     if (this.rsvpForm.valid) {
-      // Typically we'd call an API here
       console.log('RSVP:', this.rsvpForm.value);
       this.isSubmitted.set(true);
-      this.triggerConfetti();
+      if (this.rsvpForm.get('attendance')?.value === 'yes') {
+        this.triggerConfetti();
+      }
     } else {
       this.rsvpForm.markAllAsTouched();
     }
