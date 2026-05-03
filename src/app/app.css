@@ -639,12 +639,8 @@
 
 /* RSVP */
 .rsvp-area {
-    margin-top: 4rem;
-    background-color: var(--color-bg-white);
-    padding: 4rem 1.5rem;
-    border-radius: 40px;
-    /* Matching image rounded corners */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    margin-top: 6rem;
+    padding: 0 1.5rem;
 }
 
 .rsvp-header {
