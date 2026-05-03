@@ -587,10 +587,15 @@
 
 .waiting-title {
     font-family: var(--font-script);
-    font-size: 4.5rem;
+    font-size: 2rem;
+    font-weight: 550;
     color: var(--color-primary);
-    margin-bottom: 1rem;
-    line-height: 1;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .waiting-subtitle {
