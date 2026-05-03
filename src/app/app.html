@@ -266,12 +266,11 @@
       <div *ngIf="attendance() === 'yes'" class="confirmation-success">
         <div class="success-icon">✨</div>
         <h2>Vă mulțumim!</h2>
-        <p>Locurile pentru <strong>{{guests().length}}</strong> persoane au fost confirmate.</p>
         <p class="success-note">Abia așteptăm să ne vedem pe 20 Septembrie!</p>
       </div>
       <div *ngIf="attendance() === 'no'" class="confirmation-decline">
         <h2>Ne pare rău...</h2>
-        <p>Ne pare rău că nu puteți fi alături de noi.</p>
+        <p>că nu puteți fi alături de noi.</p>
         <p>Vă mulțumim pentru răspuns!</p>
       </div>
     </div>
@@ -279,13 +278,36 @@
     <!-- Allergy Modal -->
     <div *ngIf="activeAllergyGuestIndex() !== null" class="modal-overlay" (click)="closeAllergyPopup()">
       <div class="modal-content" (click)="$event.stopPropagation()">
-        <h3>Mentțuni pentru {{guests()[activeAllergyGuestIndex()!].name}}</h3>
-        <textarea #allergyText [value]="guests()[activeAllergyGuestIndex()!].allergies"
-          placeholder="Ex: Fără lactoză, vegetarian, alergie la nuci..." class="elegant-textarea"></textarea>
+        <h3>Opțiuni pentru {{guests()[activeAllergyGuestIndex()!].name}}</h3>
+
+        <div class="menu-selector">
+          <label class="section-label">Alege tipul de meniu:</label>
+          <div class="menu-switch">
+            <button type="button" [class.active]="guests()[activeAllergyGuestIndex()!].menuType === 'normal'"
+              (click)="updateGuestDetails(activeAllergyGuestIndex()!, 'normal', allergyText.value)">
+              Normal
+            </button>
+            <button type="button" [class.active]="guests()[activeAllergyGuestIndex()!].menuType === 'vegetarian'"
+              (click)="updateGuestDetails(activeAllergyGuestIndex()!, 'vegetarian', allergyText.value)">
+              Vegetarian
+            </button>
+            <button type="button" [class.active]="guests()[activeAllergyGuestIndex()!].menuType === 'vegan'"
+              (click)="updateGuestDetails(activeAllergyGuestIndex()!, 'vegan', allergyText.value)">
+              Vegan
+            </button>
+          </div>
+        </div>
+
+        <div class="allergy-setup">
+          <label class="section-label">Alergii sau mențiuni:</label>
+          <textarea #allergyText [value]="guests()[activeAllergyGuestIndex()!].allergies"
+            placeholder="Ex: Fără lactoză, vegetarian, alergie la nuci..." class="elegant-textarea"></textarea>
+        </div>
+
         <div class="modal-actions">
-          <button class="btn-secondary" (click)="closeAllergyPopup()">Anulează</button>
-          <button class="btn-primary"
-            (click)="updateAllergy(activeAllergyGuestIndex()!, allergyText.value); closeAllergyPopup()">Salvează</button>
+          <button class="btn-cancel" (click)="closeAllergyPopup()">Anulează</button>
+          <button class="btn-save"
+            (click)="updateGuestDetails(activeAllergyGuestIndex()!, guests()[activeAllergyGuestIndex()!].menuType, allergyText.value); closeAllergyPopup()">Salvează</button>
         </div>
       </div>
     </div>

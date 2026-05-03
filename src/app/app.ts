@@ -5,6 +5,7 @@ import confetti from 'canvas-confetti';
 interface Guest {
   name: string;
   type: 'principal' | 'partener' | 'copil';
+  menuType: 'normal' | 'vegetarian' | 'vegan';
   allergies: string;
 }
 
@@ -78,20 +79,15 @@ export class App implements OnInit, OnDestroy {
   }
 
   goToStep3() {
-    // Compile guest list before moving to allergies step
     const list: Guest[] = [];
-
-    // Add main person
-    list.push({ name: this.mainName(), type: 'principal', allergies: '' });
+    list.push({ name: this.mainName(), type: 'principal', menuType: 'normal', allergies: '' });
 
     if (this.isAccompanied() === 'yes') {
-      // Add partner
       if (this.partnerName().trim()) {
-        list.push({ name: this.partnerName(), type: 'partener', allergies: '' });
+        list.push({ name: this.partnerName(), type: 'partener', menuType: 'normal', allergies: '' });
       }
-      // Add children generically if count > 0
       for (let i = 0; i < this.childCount(); i++) {
-        list.push({ name: `Copil ${i + 1}`, type: 'copil', allergies: '' });
+        list.push({ name: `Copil ${i + 1}`, type: 'copil', menuType: 'normal', allergies: '' });
       }
     }
 
@@ -108,9 +104,10 @@ export class App implements OnInit, OnDestroy {
     this.activeAllergyGuestIndex.set(null);
   }
 
-  updateAllergy(index: number, text: string) {
+  updateGuestDetails(index: number, menuType: any, allergies: string) {
     const updated = [...this.guests()];
-    updated[index].allergies = text;
+    updated[index].menuType = menuType;
+    updated[index].allergies = allergies;
     this.guests.set(updated);
   }
 
