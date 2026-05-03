@@ -291,7 +291,9 @@
     <!-- STEP 4: Success/Summary -->
     <div *ngIf="currentStep() === 4" class="rsvp-step success-step fade-in">
       <div *ngIf="attendance() === 'yes'" class="confirmation-success">
-        <div class="success-icon">✨</div>
+        <div class="success-icon">
+          <img src="/moment_de_sarbatoare.svg" alt="Sărbătoare" class="success-image">
+        </div>
         <h2>Vă mulțumim!</h2>
         <p class="success-note">Abia așteptăm să ne vedem pe 20 Septembrie!</p>
       </div>

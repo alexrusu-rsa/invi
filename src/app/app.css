@@ -1042,8 +1042,14 @@
 }
 
 .success-icon {
-    font-size: 4.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.success-image {
+    width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .success-note {
