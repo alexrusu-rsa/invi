@@ -28,6 +28,7 @@ export class App implements OnInit, OnDestroy {
 
   guests = signal<Guest[]>([]);
   activeAllergyGuestIndex = signal<number | null>(null);
+  isMusicPlaying = signal(false);
 
   days = signal('00');
   hours = signal('00');
@@ -53,6 +54,31 @@ export class App implements OnInit, OnDestroy {
       this.minutes.set(String(m).padStart(2, '0'));
       this.seconds.set(String(s).padStart(2, '0'));
     }, 1000);
+
+    this.setupAutoplay();
+  }
+
+  setupAutoplay() {
+    const playMusic = () => {
+      const audio = document.querySelector('audio');
+      if (audio && !this.isMusicPlaying()) {
+        audio.play().then(() => {
+          this.isMusicPlaying.set(true);
+          ['click', 'touchstart', 'scroll'].forEach(e => document.removeEventListener(e, playMusic));
+        }).catch(err => console.log('Autoplay blocked:', err));
+      }
+    };
+    ['click', 'touchstart', 'scroll'].forEach(e => document.addEventListener(e, playMusic));
+  }
+
+  toggleMusic(audio: HTMLAudioElement) {
+    if (this.isMusicPlaying()) {
+      audio.pause();
+      this.isMusicPlaying.set(false);
+    } else {
+      audio.play();
+      this.isMusicPlaying.set(true);
+    }
   }
 
   ngOnDestroy() {
