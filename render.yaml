@@ -1,9 +1,9 @@
 services:
-  - type: static
+  - type: web
     name: invitatia-mea-nuptiala
     env: static
     buildCommand: npm install && npm run build
-    staticPublishPath: dist/invitatie/browser
+    publishPath: dist/invitatie/browser
     routes:
       - type: rewrite
         source: /*
