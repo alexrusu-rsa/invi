@@ -448,12 +448,17 @@
     line-height: 1.3;
 }
 
+.step-info {
+    position: relative;
+    width: 100%;
+}
+
 .step-bullet {
     position: absolute;
-    right: 0;
-    /* 0px right edge, width 24px => center is at 12px */
+    right: -40px;
+    /* Aligns with the vertical line by offsetting the parent padding */
     top: 1px;
-    /* Aligns smoothly with the middle of the '13:00' text */
+    /* Center-ish alignment with the text line */
     width: 24px;
     height: 24px;
     background-color: var(--color-bg-light);
