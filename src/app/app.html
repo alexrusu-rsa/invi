@@ -1,37 +1,63 @@
 <main class="canva-theme">
-  <!-- Hero Section -->
-  <div class="hero">
-    <div class="hero-image-container">
-      <img src="/tenerifephoto.es204.JPG" alt="Bianca & Alex" class="hero-image">
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content">
-      <h1 class="hero-title">Bianca & Alex</h1>
-      <p class="hero-date">20 . 09 . 2026</p>
+  <!-- Top Announcement -->
+  <div class="top-announcement">
+    <p>SALVEAZĂ DATA</p>
+  </div>
+
+  <!-- Hero Image Wrapper -->
+  <div class="hero-image-wrapper">
+    <img src="/tenerifephoto.es204.JPG" alt="Bianca & Alex" class="hero-image-img">
+    <div class="fade-overlay-bottom"></div>
+    <div class="script-overlay">pentru a celebra uniunea plină de iubire alături de</div>
+  </div>
+
+  <div class="names-section">
+    <h1 class="serif-name">BIANCA</h1>
+    <div class="name-row">
+      <span class="script-and">și</span>
+      <h1 class="serif-name">ALEX</h1>
     </div>
   </div>
 
-  <!-- Timer Section -->
-  <div class="timer-section">
-    <div class="timer-container">
-      <div class="timer-item">
-        <span class="timer-val">{{days()}}</span>
-        <span class="timer-label">Zile</span>
+  <div class="divider"></div>
+
+  <div class="date-section">
+    <div class="date-hero">
+      <span class="big-date">20</span>
+      <span class="script-month">Septembrie</span>
+    </div>
+  </div>
+
+  <div class="second-fade-wrapper">
+    <img src="/tenerifephoto.es211.JPG" alt="Bianca și Alex" class="second-image-img">
+    <div class="fade-overlay-both"></div>
+  </div>
+
+  <!-- Countdown Timer Section -->
+  <div class="countdown-wrapper">
+    <div class="countdown-title">
+      <div class="title-line uppercase">Până când spunem <span class="script-word">„Da”</span></div>
+      <div class="title-line uppercase">mai sunt</div>
+    </div>
+    <div class="countdown-timer">
+      <div class="time-block">
+        <span class="number">{{days()}}</span>
+        <span class="label">Zile</span>
       </div>
-      <div class="timer-divider">:</div>
-      <div class="timer-item">
-        <span class="timer-val">{{hours()}}</span>
-        <span class="timer-label">Ore</span>
+      <div class="colon">:</div>
+      <div class="time-block">
+        <span class="number">{{hours()}}</span>
+        <span class="label">Ore</span>
       </div>
-      <div class="timer-divider">:</div>
-      <div class="timer-item">
-        <span class="timer-val">{{minutes()}}</span>
-        <span class="timer-label">Min</span>
+      <div class="colon">:</div>
+      <div class="time-block">
+        <span class="number">{{minutes()}}</span>
+        <span class="label">Min</span>
       </div>
-      <div class="timer-divider">:</div>
-      <div class="timer-item">
-        <span class="timer-val">{{seconds()}}</span>
-        <span class="timer-label">Sec</span>
+      <div class="colon">:</div>
+      <div class="time-block seconds-color">
+        <span class="number">{{seconds()}}</span>
+        <span class="label">Sec</span>
       </div>
     </div>
   </div>
