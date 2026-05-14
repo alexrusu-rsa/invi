@@ -54,21 +54,6 @@ export class App implements OnInit, OnDestroy {
       this.minutes.set(String(m).padStart(2, '0'));
       this.seconds.set(String(s).padStart(2, '0'));
     }, 1000);
-
-    this.setupAutoplay();
-  }
-
-  setupAutoplay() {
-    const playMusic = () => {
-      const audio = document.querySelector('audio');
-      if (audio && !this.isMusicPlaying()) {
-        audio.play().then(() => {
-          this.isMusicPlaying.set(true);
-          ['click', 'touchstart', 'scroll'].forEach(e => document.removeEventListener(e, playMusic));
-        }).catch(err => console.log('Autoplay blocked:', err));
-      }
-    };
-    ['click', 'touchstart', 'scroll'].forEach(e => document.addEventListener(e, playMusic));
   }
 
   toggleMusic(audio: HTMLAudioElement) {
