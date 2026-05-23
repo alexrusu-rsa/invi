@@ -15,7 +15,7 @@ interface Guest {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App implements OnInit, OnDestroy {
   currentStep = signal(1);
@@ -89,11 +89,13 @@ export class App implements OnInit, OnDestroy {
         await submitToGoogleForm({
           attendance: 'no',
           mainName: nameInput,
-          guests: []
+          guests: [],
         });
         this.currentStep.set(4);
       } catch (err: any) {
-        this.submissionError.set(err.message || 'A apărut o eroare la trimitere. Vă rugăm reîncercați.');
+        this.submissionError.set(
+          err.message || 'A apărut o eroare la trimitere. Vă rugăm reîncercați.',
+        );
       } finally {
         this.isSubmitting.set(false);
       }
@@ -107,6 +109,12 @@ export class App implements OnInit, OnDestroy {
     this.isAccompanied.set(choice);
     if (choice === 'no') {
       this.goToStep3();
+    } else {
+      setTimeout(() => {
+        document
+          .querySelector('.companion-setup')
+          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
     }
   }
 
@@ -116,7 +124,12 @@ export class App implements OnInit, OnDestroy {
 
     if (this.isAccompanied() === 'yes') {
       if (this.partnerName().trim()) {
-        list.push({ name: this.partnerName(), type: 'partener', menuType: 'normal', allergies: '' });
+        list.push({
+          name: this.partnerName(),
+          type: 'partener',
+          menuType: 'normal',
+          allergies: '',
+        });
       }
       for (let i = 0; i < this.childCount(); i++) {
         list.push({ name: `Copil ${i + 1}`, type: 'copil', menuType: 'normal', allergies: '' });
@@ -146,7 +159,7 @@ export class App implements OnInit, OnDestroy {
   async finalConfirm() {
     console.log('Final RSVP Data:', {
       attendance: this.attendance(),
-      guests: this.guests()
+      guests: this.guests(),
     });
     this.isSubmitting.set(true);
     this.submissionError.set('');
@@ -156,14 +169,16 @@ export class App implements OnInit, OnDestroy {
         mainName: this.mainName(),
         partnerName: this.partnerName(),
         childCount: this.childCount(),
-        guests: this.guests()
+        guests: this.guests(),
       });
       if (this.attendance() === 'yes') {
         this.triggerConfetti();
       }
       this.currentStep.set(4);
     } catch (err: any) {
-      this.submissionError.set(err.message || 'A apărut o eroare la trimitere. Vă rugăm reîncercați.');
+      this.submissionError.set(
+        err.message || 'A apărut o eroare la trimitere. Vă rugăm reîncercați.',
+      );
     } finally {
       this.isSubmitting.set(false);
     }
@@ -188,8 +203,16 @@ export class App implements OnInit, OnDestroy {
       const timeLeft = animationEnd - Date.now();
       if (timeLeft <= 0) return clearInterval(interval);
       const particleCount = 50 * (timeLeft / duration);
-      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      });
+      confetti({
+        ...defaults,
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      });
     }, 250);
   }
 }
