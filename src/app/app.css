@@ -206,6 +206,16 @@
   align-items: center;
 }
 
+.hero-image-wrapper,
+.countdown-wrapper,
+.timeline,
+.program-section,
+.save-the-date-section,
+.rsvp-area {
+  scroll-snap-align: start;
+  scroll-margin-top: 3vh;
+}
+
 .countdown-title {
   text-align: right;
   margin-bottom: 2rem;
