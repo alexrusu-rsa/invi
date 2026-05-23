@@ -30,6 +30,7 @@ export const GOOGLE_FORM_CONFIG: GoogleFormConfig = {
 
   // Config for 'single-row-per-guest' mode
   guestFields: {
+    groupName: 'entry.537655968',
     guestName: 'entry.643250072',
     menuType: 'entry.117558332',
     allergies: 'entry.1454393000',
