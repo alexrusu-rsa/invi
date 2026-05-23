@@ -1,6 +1,7 @@
 import { Component, signal, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import confetti from 'canvas-confetti';
+import { submitToGoogleForm } from './google-form';
 
 interface Guest {
   name: string;
@@ -25,6 +26,8 @@ export class App implements OnInit, OnDestroy {
   childCount = signal(0);
   isAccompanied = signal<'yes' | 'no' | null>(null);
   step1Error = signal('');
+  isSubmitting = signal(false);
+  submissionError = signal('');
 
   guests = signal<Guest[]>([]);
   activeAllergyGuestIndex = signal<number | null>(null);
@@ -71,7 +74,7 @@ export class App implements OnInit, OnDestroy {
   }
 
   // Step 1 Actions
-  handleMainAttendance(choice: 'yes' | 'no', nameInput: string) {
+  async handleMainAttendance(choice: 'yes' | 'no', nameInput: string) {
     if (!nameInput.trim()) {
       this.step1Error.set('Introdu numele și prenumele');
       return;
@@ -80,7 +83,20 @@ export class App implements OnInit, OnDestroy {
     this.mainName.set(nameInput);
     this.attendance.set(choice);
     if (choice === 'no') {
-      this.currentStep.set(4);
+      this.isSubmitting.set(true);
+      this.submissionError.set('');
+      try {
+        await submitToGoogleForm({
+          attendance: 'no',
+          mainName: nameInput,
+          guests: []
+        });
+        this.currentStep.set(4);
+      } catch (err: any) {
+        this.submissionError.set(err.message || 'A apărut o eroare la trimitere. Vă rugăm reîncercați.');
+      } finally {
+        this.isSubmitting.set(false);
+      }
     } else {
       this.currentStep.set(2);
     }
@@ -127,15 +143,30 @@ export class App implements OnInit, OnDestroy {
     this.guests.set(updated);
   }
 
-  finalConfirm() {
+  async finalConfirm() {
     console.log('Final RSVP Data:', {
       attendance: this.attendance(),
       guests: this.guests()
     });
-    if (this.attendance() === 'yes') {
-      this.triggerConfetti();
+    this.isSubmitting.set(true);
+    this.submissionError.set('');
+    try {
+      await submitToGoogleForm({
+        attendance: this.attendance() || 'yes',
+        mainName: this.mainName(),
+        partnerName: this.partnerName(),
+        childCount: this.childCount(),
+        guests: this.guests()
+      });
+      if (this.attendance() === 'yes') {
+        this.triggerConfetti();
+      }
+      this.currentStep.set(4);
+    } catch (err: any) {
+      this.submissionError.set(err.message || 'A apărut o eroare la trimitere. Vă rugăm reîncercați.');
+    } finally {
+      this.isSubmitting.set(false);
     }
-    this.currentStep.set(4);
   }
 
   // Utility
