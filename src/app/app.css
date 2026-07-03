@@ -1110,3 +1110,36 @@
   max-width: 280px;
   margin-left: auto;
 }
+
+.multumiri {
+  margin-top: 2rem;
+  font-family: var(--font-script);
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: -0.8rem;
+  z-index: 2;
+  text-transform: none;
+}
+
+.std-date-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.std-big-date {
+  font-size: 3.5rem;
+  line-height: 0.8;
+  font-family: var(--font-script);
+  font-weight: 300;
+  color: var(--color-primary);
+}
+
+.std-script-month {
+  font-family: var(--font-script);
+  font-size: 2.5rem;
+  /* overlap artistically */
+  margin-top: 0.5rem;
+  margin-left: 10px;
+  z-index: 10;
+}

@@ -176,33 +176,6 @@
     </div>
   </div>
 
-  <div class="save-the-date-section">
-    <div class="std-title">
-      <div class="std-main">SAVE</div>
-      <div class="std-the">the</div>
-      <div class="std-main">DATE</div>
-    </div>
-    <div class="std-text">
-      Adaugă ziua noastră specială în calendarul tău
-      pentru a sărbători alături de noi
-    </div>
-    <a href="/nunta.ics" class="btn-calendar">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round">
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none"></rect>
-        <line x1="16" y1="2" x2="16" y2="6"></line>
-        <line x1="8" y1="2" x2="8" y2="6"></line>
-        <line x1="3" y1="10" x2="21" y2="10"></line>
-        <rect x="7" y="12" width="2" height="2" fill="currentColor"></rect>
-        <rect x="11" y="12" width="2" height="2" fill="currentColor"></rect>
-        <rect x="15" y="12" width="2" height="2" fill="currentColor"></rect>
-        <rect x="7" y="16" width="2" height="2" fill="currentColor"></rect>
-        <rect x="11" y="16" width="2" height="2" fill="currentColor"></rect>
-      </svg>
-      Adaugă în Calendar
-    </a>
-  </div>
-
   <div class="waiting-section">
     <h2 class="waiting-title">
       Povestea noastră e mai frumoasă când o împărtășim cu voi <br>
@@ -305,11 +278,37 @@
     <!-- STEP 4: Success/Summary -->
     <div *ngIf="currentStep() === 4" class="rsvp-step success-step fade-in">
       <div *ngIf="attendance() === 'yes'" class="confirmation-success">
-        <div class="success-icon">
-          <img src="/moment_de_sarbatoare.svg" alt="Sărbătoare" class="success-image">
+        <div class="save-the-date-section">
+          <div class="std-title">
+            <div class="std-main">SAVE</div>
+            <div class="std-the">the</div>
+            <div class="std-main">DATE</div>
+          </div>
+          <div class="std-date-hero">
+            <span class="std-big-date">20</span>
+            <span class="std-script-month">Septembrie</span>
+          </div>
+          <div class="std-text">
+            Adaugă ziua noastră specială în calendarul tău
+            pentru a sărbători alături de noi
+          </div>
+          <a href="/nunta.ics" class="btn-calendar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <rect x="7" y="12" width="2" height="2" fill="currentColor"></rect>
+              <rect x="11" y="12" width="2" height="2" fill="currentColor"></rect>
+              <rect x="15" y="12" width="2" height="2" fill="currentColor"></rect>
+              <rect x="7" y="16" width="2" height="2" fill="currentColor"></rect>
+              <rect x="11" y="16" width="2" height="2" fill="currentColor"></rect>
+            </svg>
+            Adaugă în Calendar
+          </a>
+          <div class="multumiri">Vă mulțumim!</div>
         </div>
-        <h2>Vă mulțumim!</h2>
-        <p class="success-note">Abia așteptăm să ne vedem pe 20 Septembrie!</p>
       </div>
       <div *ngIf="attendance() === 'no'" class="confirmation-decline">
         <h2>Ne pare rău...</h2>
