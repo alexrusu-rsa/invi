@@ -231,22 +231,26 @@
         <div *ngIf="step1Error()" class="error-msg fade-in">{{step1Error()}}</div>
       </div>
       <div class="rsvp-actions">
-        <button [disabled]="isSubmitting()" class="btn-confirm-yes" (click)="handleMainAttendance('yes', nameInput.value)">
+        <button [disabled]="isSubmitting()" class="btn-confirm-yes"
+          (click)="handleMainAttendance('yes', nameInput.value)">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
           </svg>
           Da, particip
         </button>
-        <button [disabled]="isSubmitting()" class="btn-confirm-no" (click)="handleMainAttendance('no', nameInput.value)">
-          <svg *ngIf="!isSubmitting()" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button [disabled]="isSubmitting()" class="btn-confirm-no"
+          (click)="handleMainAttendance('no', nameInput.value)">
+          <svg *ngIf="!isSubmitting()" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
           {{ isSubmitting() ? 'Se trimite...' : 'Nu pot ajunge' }}
         </button>
       </div>
-      <div *ngIf="submissionError()" class="error-msg fade-in" style="margin-top: 1rem; text-align: center;">{{submissionError()}}</div>
+      <div *ngIf="submissionError()" class="error-msg fade-in" style="margin-top: 1rem; text-align: center;">
+        {{submissionError()}}</div>
     </div>
 
     <!-- STEP 2: Companions -->
@@ -294,7 +298,8 @@
       <button [disabled]="isSubmitting()" class="btn-primary" (click)="finalConfirm()">
         {{ isSubmitting() ? 'Se salvează...' : 'Finalizează' }}
       </button>
-      <div *ngIf="submissionError()" class="error-msg fade-in" style="margin-top: 1rem; text-align: center;">{{submissionError()}}</div>
+      <div *ngIf="submissionError()" class="error-msg fade-in" style="margin-top: 1rem; text-align: center;">
+        {{submissionError()}}</div>
     </div>
 
     <!-- STEP 4: Success/Summary -->
@@ -347,18 +352,6 @@
           <button class="btn-save"
             (click)="updateGuestDetails(activeAllergyGuestIndex()!, guests()[activeAllergyGuestIndex()!].menuType, allergyText.value); closeAllergyPopup()">Salvează</button>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- Music Control -->
-  <audio #bgMusic loop src="/background-music.mp3"></audio>
-  <div class="music-fab" (click)="toggleMusic(bgMusic)" [class.playing]="isMusicPlaying()">
-    <div class="music-icon">
-      <svg *ngIf="!isMusicPlaying()" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
-      </svg>
-      <div *ngIf="isMusicPlaying()" class="music-waves">
-        <span></span><span></span><span></span>
       </div>
     </div>
   </div>

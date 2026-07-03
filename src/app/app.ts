@@ -31,7 +31,6 @@ export class App implements OnInit, OnDestroy {
 
   guests = signal<Guest[]>([]);
   activeAllergyGuestIndex = signal<number | null>(null);
-  isMusicPlaying = signal(false);
 
   days = signal('00');
   hours = signal('00');
@@ -57,16 +56,6 @@ export class App implements OnInit, OnDestroy {
       this.minutes.set(String(m).padStart(2, '0'));
       this.seconds.set(String(s).padStart(2, '0'));
     }, 1000);
-  }
-
-  toggleMusic(audio: HTMLAudioElement) {
-    if (this.isMusicPlaying()) {
-      audio.pause();
-      this.isMusicPlaying.set(false);
-    } else {
-      audio.play();
-      this.isMusicPlaying.set(true);
-    }
   }
 
   ngOnDestroy() {
