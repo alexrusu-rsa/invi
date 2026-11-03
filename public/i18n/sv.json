@@ -163,10 +163,17 @@
     "invalid": "Fyll i ditt namn och en giltig e-postadress.",
     "error": "Ditt meddelande kunde inte skickas. Mejla oss gärna direkt.",
     "privacy": "Vi använder bara dina uppgifter för att svara dig.",
+    "privacyPolicy": "Integritetspolicy",
     "orReach": "eller hitta oss på",
     "mailSubject": "Förfrågan från demoinbjudan"
   },
   "footer": {
     "builtBy": "Designad och byggd av {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "Vi använder cookies från Google Analytics för att se hur inbjudan används, bara om du godkänner det.",
+    "accept": "Godkänn",
+    "reject": "Avvisa",
+    "policy": "Cookiepolicy"
   }
 }

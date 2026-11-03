@@ -11,6 +11,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideTransloco } from '@jsverse/transloco';
 
 import { routes } from './app.routes';
+import { initAnalytics } from './analytics/analytics';
 import { AVAILABLE_LANGS, FALLBACK_LANG } from './i18n/languages';
 import { LanguageService } from './i18n/language.service';
 import { TranslocoHttpLoader } from './i18n/transloco-loader';
@@ -31,6 +32,7 @@ export const appConfig: ApplicationConfig = {
       },
       loader: TranslocoHttpLoader,
     }),
+    provideAppInitializer(initAnalytics),
     provideAppInitializer(() => inject(LanguageService).init()),
     {
       provide: IMAGE_CONFIG,

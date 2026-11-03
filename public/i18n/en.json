@@ -163,10 +163,17 @@
     "invalid": "Please enter your name and a valid email.",
     "error": "Your message couldn't be sent. Please email us directly.",
     "privacy": "We'll only use your details to reply to you.",
+    "privacyPolicy": "Privacy policy",
     "orReach": "or find us on",
     "mailSubject": "Request from the demo invitation"
   },
   "footer": {
     "builtBy": "Designed & built by {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "We use Google Analytics cookies to see how the invitation is used, only if you agree.",
+    "accept": "Accept",
+    "reject": "Decline",
+    "policy": "Cookie policy"
   }
 }

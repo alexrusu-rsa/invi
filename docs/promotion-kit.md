@@ -107,5 +107,17 @@ Tip: LinkedIn shows links in the post body with less reach for some accounts. A 
 ## 8. Measuring
 
 - Leads: the Google Sheet behind the lead form, with `source` (e.g. `linkedin / post / wedding-invite`) and `language`.
-- Visits: the site has no analytics yet. A privacy-friendly, cookie-free option (Plausible, Umami, Cloudflare Web
-  Analytics) needs no consent banner and will show which UTM links bring traffic.
+- Behaviour: Google Analytics 4, the same property as rsasoft.ro (`G-ZY2RCK6GLL`), behind a cookie banner.
+  Filter reports by **Hostname = www.invitatie.rsasoft.ro**. Only visitors who accept are tracked with cookies.
+
+| GA4 event | When | Parameters |
+| --- | --- | --- |
+| `cta_click` | a "Get yours" button is tapped | `location`: `banner`, `floating` or `after_rsvp` |
+| `rsvp_start` / `rsvp_complete` | the demo RSVP is started / finished | `attendance`, `guests` |
+| `generate_lead` | the lead form is sent | `interest`, `method` |
+| `invitation_end_reached` | the visitor scrolls to the very bottom | |
+| user property `invite_language` | the language the invitation opened in | |
+
+One-time GA4 setup: in **Admin → Events**, mark `generate_lead` as a key event; in **Admin → Custom definitions**,
+register `location`, `attendance` and `interest` as event-scoped dimensions and `invite_language` as a
+user-scoped one, so they show up in reports. Funnel idea (Explore → Funnel): `page_view` → `cta_click` → `generate_lead`.

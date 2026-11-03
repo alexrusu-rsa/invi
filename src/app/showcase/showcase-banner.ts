@@ -9,7 +9,7 @@ import { LEAD_SECTION_ID, SHOWCASE_CONFIG, scrollToLead } from './showcase.confi
     <aside class="showcase-banner">
       <span class="badge">{{ 'demo.badge' | transloco }}</span>
       <span class="text">{{ 'demo.builtBy' | transloco: { author: config.author } }}</span>
-      <a class="cta" [href]="'#' + leadId" (click)="scrollToLead($event)">
+      <a class="cta" [href]="'#' + leadId" (click)="scrollToLead($event, 'banner')">
         {{ 'demo.cta' | transloco }} <span class="arrow" aria-hidden="true">→</span>
       </a>
     </aside>

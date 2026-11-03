@@ -163,10 +163,17 @@
     "invalid": "Bitte gib deinen Namen und eine gültige E-Mail-Adresse ein.",
     "error": "Deine Nachricht konnte nicht gesendet werden. Schreib uns gern direkt per E-Mail.",
     "privacy": "Wir nutzen deine Angaben nur, um dir zu antworten.",
+    "privacyPolicy": "Datenschutzerklärung",
     "orReach": "oder finde uns auf",
     "mailSubject": "Anfrage über die Demo-Einladung"
   },
   "footer": {
     "builtBy": "Design & Entwicklung: {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "Wir verwenden Google-Analytics-Cookies, um zu sehen, wie die Einladung genutzt wird, nur wenn du zustimmst.",
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen",
+    "policy": "Cookie-Richtlinie"
   }
 }

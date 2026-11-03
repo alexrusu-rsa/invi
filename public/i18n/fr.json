@@ -163,10 +163,17 @@
     "invalid": "Veuillez indiquer votre nom et une adresse e-mail valide.",
     "error": "Votre message n’a pas pu être envoyé. Écrivez-nous directement par e-mail.",
     "privacy": "Nous utilisons vos coordonnées uniquement pour vous répondre.",
+    "privacyPolicy": "Politique de confidentialité",
     "orReach": "ou retrouvez-nous sur",
     "mailSubject": "Demande depuis l’invitation de démonstration"
   },
   "footer": {
     "builtBy": "Conçu et développé par {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "Nous utilisons des cookies Google Analytics pour comprendre comment l’invitation est utilisée, uniquement avec votre accord.",
+    "accept": "Accepter",
+    "reject": "Refuser",
+    "policy": "Politique de cookies"
   }
 }

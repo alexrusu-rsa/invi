@@ -163,10 +163,17 @@
     "invalid": "Skriv dit navn og en gyldig e-mailadresse.",
     "error": "Din besked kunne ikke sendes. Skriv gerne direkte til os på e-mail.",
     "privacy": "Vi bruger kun dine oplysninger til at svare dig.",
+    "privacyPolicy": "Privatlivspolitik",
     "orReach": "eller find os på",
     "mailSubject": "Forespørgsel fra demo-invitationen"
   },
   "footer": {
     "builtBy": "Designet og udviklet af {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "Vi bruger cookies fra Google Analytics til at se, hvordan invitationen bruges, kun hvis du siger ja.",
+    "accept": "Accepter",
+    "reject": "Afvis",
+    "policy": "Cookiepolitik"
   }
 }

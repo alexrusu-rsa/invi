@@ -53,7 +53,10 @@
       <button type="submit" class="lead-submit" [disabled]="status() === 'sending'">
         {{ (status() === 'sending' ? 'lead.sending' : 'lead.submit') | transloco }}
       </button>
-      <p class="privacy">{{ 'lead.privacy' | transloco }}</p>
+      <p class="privacy">
+        {{ 'lead.privacy' | transloco }}
+        <a [href]="config.privacyPolicyUrl" target="_blank" rel="noopener">{{ 'lead.privacyPolicy' | transloco }}</a>
+      </p>
     }
   </form>
 

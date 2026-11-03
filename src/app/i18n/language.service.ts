@@ -2,6 +2,7 @@ import { DOCUMENT, Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslocoService } from '@jsverse/transloco';
 import { firstValueFrom } from 'rxjs';
+import { setUserProperty } from '../analytics/analytics';
 import { LANG_QUERY_PARAM, RTL_LANGS, detectLanguage } from './languages';
 
 @Injectable({ providedIn: 'root' })
@@ -25,6 +26,7 @@ export class LanguageService {
     this.transloco.setActiveLang(lang);
     this.document.documentElement.lang = lang;
     this.document.documentElement.dir = RTL_LANGS.includes(lang) ? 'rtl' : 'ltr';
+    setUserProperty('invite_language', lang);
 
     await firstValueFrom(this.transloco.load(lang));
     this.title.setTitle(this.transloco.translate<string>('meta.title'));

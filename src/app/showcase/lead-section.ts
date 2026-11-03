@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
+import { track } from '../analytics/analytics';
 import { Reveal } from '../motion/reveal';
 import { LeadInterest, submitLead } from './lead-form';
 import { LEAD_SECTION_ID, SHOWCASE_CONFIG } from './showcase.config';
@@ -56,7 +57,10 @@ export class LeadSection {
 
     this.status.set('sending');
     try {
-      this.status.set(await submitLead(lead, this.transloco.translate('lead.mailSubject')));
+      const result = await submitLead(lead, this.transloco.translate('lead.mailSubject'));
+      // GA4's recommended event for leads; mark it as a key event in GA4.
+      track('generate_lead', { interest: lead.interest, method: result });
+      this.status.set(result);
     } catch {
       this.status.set('error');
     }

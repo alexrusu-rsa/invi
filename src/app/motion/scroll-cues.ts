@@ -1,5 +1,6 @@
 import { Component, DestroyRef, ElementRef, afterNextRender, inject, signal } from '@angular/core';
 import confetti from 'canvas-confetti';
+import { track } from '../analytics/analytics';
 
 /**
  * Small rewards for scrolling: a rose progress line along the top, a bouncing hint on the first
@@ -145,6 +146,7 @@ export class ScrollCues {
         if (progress > 0.99 && !this.finished()) {
           this.finished.set(true);
           this.celebrate();
+          track('invitation_end_reached');
         }
       };
       const onScroll = () => (frame ||= requestAnimationFrame(update));

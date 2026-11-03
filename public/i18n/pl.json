@@ -163,10 +163,17 @@
     "invalid": "Podaj imię i poprawny adres e-mail.",
     "error": "Nie udało się wysłać wiadomości. Napisz do nas bezpośrednio e-mailem.",
     "privacy": "Używamy Twoich danych wyłącznie po to, by Ci odpowiedzieć.",
+    "privacyPolicy": "Polityka prywatności",
     "orReach": "lub znajdź nas na",
     "mailSubject": "Zapytanie z zaproszenia demo"
   },
   "footer": {
     "builtBy": "Projekt i wykonanie: {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "Używamy plików cookie Google Analytics, aby zobaczyć, jak korzystasz z zaproszenia, tylko jeśli się zgodzisz.",
+    "accept": "Akceptuję",
+    "reject": "Odrzucam",
+    "policy": "Polityka cookies"
   }
 }

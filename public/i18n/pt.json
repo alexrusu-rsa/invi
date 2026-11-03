@@ -163,10 +163,17 @@
     "invalid": "Indique o seu nome e um e-mail válido.",
     "error": "Não foi possível enviar a sua mensagem. Escreva-nos diretamente por e-mail.",
     "privacy": "Usamos os seus dados apenas para lhe responder.",
+    "privacyPolicy": "Política de privacidade",
     "orReach": "ou encontre-nos em",
     "mailSubject": "Pedido a partir do convite de demonstração"
   },
   "footer": {
     "builtBy": "Design e desenvolvimento: {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "Usamos cookies do Google Analytics para ver como o convite é usado, apenas se concordar.",
+    "accept": "Aceitar",
+    "reject": "Recusar",
+    "policy": "Política de cookies"
   }
 }

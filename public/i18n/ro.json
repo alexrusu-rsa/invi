@@ -163,10 +163,17 @@
     "invalid": "Completează numele și un email valid.",
     "error": "Mesajul nu a putut fi trimis. Scrie-ne direct pe email.",
     "privacy": "Folosim datele tale doar ca să îți răspundem.",
+    "privacyPolicy": "Politica de confidențialitate",
     "orReach": "sau găsește-ne pe",
     "mailSubject": "Cerere de pe invitația demo"
   },
   "footer": {
     "builtBy": "Proiectat și dezvoltat de {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "Folosim cookie-uri Google Analytics ca să vedem cum e folosită invitația, doar dacă ești de acord.",
+    "accept": "Accept",
+    "reject": "Refuz",
+    "policy": "Politica de cookie-uri"
   }
 }

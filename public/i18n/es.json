@@ -163,10 +163,17 @@
     "invalid": "Introduce tu nombre y un email válido.",
     "error": "No se ha podido enviar tu mensaje. Escríbenos directamente por email.",
     "privacy": "Solo usaremos tus datos para responderte.",
+    "privacyPolicy": "Política de privacidad",
     "orReach": "o encuéntranos en",
     "mailSubject": "Solicitud desde la invitación de demostración"
   },
   "footer": {
     "builtBy": "Diseñado y desarrollado por {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "Usamos cookies de Google Analytics para ver cómo se usa la invitación, solo si nos das tu permiso.",
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "policy": "Política de cookies"
   }
 }

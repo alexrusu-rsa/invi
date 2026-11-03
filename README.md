@@ -20,6 +20,8 @@ an invitation (or a web app) of their own.
 - **Calendar invite** (`.ics`), map links, confetti on confirmation.
 - **Lightweight**: ~0.6 MB of images (down from ~13 MB of camera originals), lazy loading, no layout shift.
 - **Showcase mode**: demo banner, call-to-action and a lead form that records which channel (UTM) each lead came from.
+- **Analytics with consent**: GA4 shared with rsasoft.ro, Consent Mode with everything denied until the visitor
+  accepts, and events for the conversion funnel (CTA clicks, demo RSVP, leads, reaching the end).
 
 ## Tech
 
@@ -43,6 +45,7 @@ npm run build      # production build in dist/invitatie/browser
 | RSVP Google Form | `src/app/google-form.config.ts` |
 | Showcase mode, contact links, lead form | `src/app/showcase/showcase.config.ts` (`enabled: false` turns it back into a real invitation) |
 | Link preview (LinkedIn, WhatsApp) | `og:*` tags in `src/index.html`, image `public/og-image.jpg` (1200×627) |
+| Analytics & cookie consent | `src/app/analytics/` (GA4 with Consent Mode; only loads on *.rsasoft.ro, never on localhost) |
 
 ### Language selection
 

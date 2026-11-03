@@ -2,6 +2,8 @@ import { Component, signal, computed, OnInit, OnDestroy, inject } from '@angular
 import { CommonModule } from '@angular/common';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import confetti from 'canvas-confetti';
+import { track } from './analytics/analytics';
+import { ConsentBanner } from './analytics/consent-banner';
 import { RSVPPayload, submitToGoogleForm } from './google-form';
 import { prefersReducedMotion } from './motion/reduced-motion';
 import { Reveal } from './motion/reveal';
@@ -29,6 +31,7 @@ interface Guest {
     TranslocoPipe,
     Reveal,
     ScrollCues,
+    ConsentBanner,
     ShowcaseBanner,
     FloatingCta,
     LeadSection,
@@ -136,6 +139,7 @@ export class App implements OnInit, OnDestroy {
     this.step1Error.set('');
     this.mainName.set(nameInput);
     this.attendance.set(choice);
+    track('rsvp_start', { attendance: choice });
     if (choice === 'no') {
       this.isSubmitting.set(true);
       this.submissionError.set('');
@@ -145,6 +149,7 @@ export class App implements OnInit, OnDestroy {
           mainName: nameInput,
           guests: [],
         });
+        track('rsvp_complete', { attendance: 'no' });
         this.currentStep.set(4);
       } catch {
         this.submissionError.set('rsvp.error');
@@ -231,6 +236,7 @@ export class App implements OnInit, OnDestroy {
       if (this.attendance() === 'yes') {
         this.triggerConfetti();
       }
+      track('rsvp_complete', { attendance: this.attendance() || 'yes', guests: this.guests().length });
       this.currentStep.set(4);
     } catch {
       this.submissionError.set('rsvp.error');

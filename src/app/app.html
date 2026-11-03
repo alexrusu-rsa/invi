@@ -1,5 +1,6 @@
 <app-showcase-banner *ngIf="showcase.enabled"></app-showcase-banner>
 <app-scroll-cues></app-scroll-cues>
+<app-consent-banner></app-consent-banner>
 
 <main class="canva-theme">
   <!-- Top Announcement -->
@@ -337,7 +338,7 @@
 
       <div *ngIf="showcase.enabled" class="demo-after-rsvp">
         <p>{{ 'demo.afterRsvp' | transloco }}</p>
-        <a class="btn-directions" [href]="'#' + leadId" (click)="scrollToLead($event)">
+        <a class="btn-directions" [href]="'#' + leadId" (click)="scrollToLead($event, 'after_rsvp')">
           {{ 'demo.afterRsvpCta' | transloco }}
         </a>
       </div>

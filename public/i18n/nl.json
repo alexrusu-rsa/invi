@@ -163,10 +163,17 @@
     "invalid": "Vul je naam en een geldig e-mailadres in.",
     "error": "Je bericht kon niet worden verzonden. Mail ons gerust rechtstreeks.",
     "privacy": "We gebruiken je gegevens enkel om je te antwoorden.",
+    "privacyPolicy": "Privacybeleid",
     "orReach": "of vind ons op",
     "mailSubject": "Aanvraag via de demo-uitnodiging"
   },
   "footer": {
     "builtBy": "Ontworpen en gebouwd door {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "We gebruiken cookies van Google Analytics om te zien hoe de uitnodiging gebruikt wordt, alleen als je akkoord gaat.",
+    "accept": "Accepteren",
+    "reject": "Weigeren",
+    "policy": "Cookiebeleid"
   }
 }

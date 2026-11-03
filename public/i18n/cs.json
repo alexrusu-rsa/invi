@@ -163,10 +163,17 @@
     "invalid": "Vyplň jméno a platný e-mail.",
     "error": "Zprávu se nepodařilo odeslat. Napiš nám prosím přímo e-mailem.",
     "privacy": "Tvé údaje použijeme jen k tomu, abychom ti odpověděli.",
+    "privacyPolicy": "Zásady ochrany soukromí",
     "orReach": "nebo nás najdeš na",
     "mailSubject": "Poptávka z demo pozvánky"
   },
   "footer": {
     "builtBy": "Návrh a vývoj: {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "Používáme cookies Google Analytics, abychom viděli, jak se pozvánka používá, pouze s tvým souhlasem.",
+    "accept": "Přijmout",
+    "reject": "Odmítnout",
+    "policy": "Zásady cookies"
   }
 }

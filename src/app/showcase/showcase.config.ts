@@ -1,3 +1,5 @@
+import { track } from '../analytics/analytics';
+
 export interface ShowcaseConfig {
   /**
    * Portfolio mode. When true, RSVPs are simulated (nothing reaches the wedding Google Form)
@@ -11,6 +13,7 @@ export interface ShowcaseConfig {
   /** Leave empty to hide the LinkedIn link. */
   linkedinUrl: string;
   email: string;
+  privacyPolicyUrl: string;
 
   /**
    * Google Form that collects leads (same mechanism as the RSVP form).
@@ -39,6 +42,7 @@ export const SHOWCASE_CONFIG: ShowcaseConfig = {
   websiteUrl: 'https://www.rsasoft.ro',
   linkedinUrl: 'https://www.linkedin.com/in/alexrusu-rsa/',
   email: 'alex.rusu@rsasoft.ro',
+  privacyPolicyUrl: 'https://www.rsasoft.ro/privacy-policy',
 
   // "Lead Magnet Contact Form" (https://forms.gle/aU964et2usL9C2XRA)
   leadForm: {
@@ -59,7 +63,11 @@ export const SHOWCASE_CONFIG: ShowcaseConfig = {
 /** Anchor id of the lead section; every call-to-action scrolls here. */
 export const LEAD_SECTION_ID = 'get-yours';
 
-export function scrollToLead(event?: Event) {
+/** Where a call-to-action sits, reported to analytics to see which one converts. */
+export type CtaLocation = 'banner' | 'floating' | 'after_rsvp';
+
+export function scrollToLead(event: Event | undefined, location: CtaLocation) {
   event?.preventDefault();
+  track('cta_click', { location });
   document.getElementById(LEAD_SECTION_ID)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }

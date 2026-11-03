@@ -163,10 +163,17 @@
     "invalid": "Inserisci il tuo nome e un indirizzo email valido.",
     "error": "Non è stato possibile inviare il messaggio. Scrivici direttamente via email.",
     "privacy": "Usiamo i tuoi dati solo per risponderti.",
+    "privacyPolicy": "Informativa sulla privacy",
     "orReach": "oppure trovaci su",
     "mailSubject": "Richiesta dall’invito demo"
   },
   "footer": {
     "builtBy": "Progettato e sviluppato da {{author}} · {{company}}"
+  },
+  "consent": {
+    "text": "Usiamo i cookie di Google Analytics per capire come viene usato l’invito, solo se sei d’accordo.",
+    "accept": "Accetta",
+    "reject": "Rifiuta",
+    "policy": "Cookie policy"
   }
 }

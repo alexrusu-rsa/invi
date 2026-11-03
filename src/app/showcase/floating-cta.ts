@@ -17,7 +17,7 @@ import { LEAD_SECTION_ID, scrollToLead } from './showcase.config';
       [attr.aria-hidden]="!visible()"
       [attr.tabindex]="visible() ? null : -1"
       [href]="'#' + leadId"
-      (click)="scrollToLead($event)"
+      (click)="scrollToLead($event, 'floating')"
     >
       <span aria-hidden="true">✦</span> {{ 'demo.floatingCta' | transloco }}
     </a>

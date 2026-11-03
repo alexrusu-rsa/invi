@@ -171,6 +171,11 @@
   text-align: center;
 }
 
+.privacy a {
+  color: inherit;
+  text-underline-offset: 2px;
+}
+
 .reach {
   margin-top: 2rem;
   font-size: 1rem;
