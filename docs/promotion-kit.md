@@ -1,6 +1,6 @@
 # Promotion kit: the wedding invitation as a lead magnet
 
-**Positioning in one line:** *"I built my own wedding invitation as a small web app. Try it, then get one for your event, or let's build your product with the same care."*
+**Positioning in one line:** *"We built our own wedding invitation as a small web app. Try it, then get one for your event, or let's build your product with the same care."*
 
 The demo does the selling: people try the RSVP (it's harmless in showcase mode), see it in their own
 language (16 supported, picked from their phone's settings), and land on the "Behind the invitation"
@@ -11,13 +11,12 @@ came from (the `source` column), so you can see which post or page works.
 
 ## 1. Before you share it (checklist)
 
-- [ ] **Lead form:** create a Google Form with 7 *short-answer* questions (Name, Email, Interest, Event date,
-      Message, Language, Source), then paste its `formResponse` URL and `entry.XXXX` ids into
-      `src/app/showcase/showcase.config.ts`. Until then, the form opens a pre-filled email to you.
-- [ ] **LinkedIn link:** add your profile or company URL as `linkedinUrl` in the same file.
-- [ ] **Check the contact details** there too (`websiteUrl`, `email`).
-- [ ] **Ask Bianca** she's happy with her photos and name being used publicly for promotion.
-- [ ] **Deploy** (push to the branch Render builds from).
+- [x] **Lead form:** leads go to the "Lead Magnet Contact Form" Google Form (https://forms.gle/aU964et2usL9C2XRA),
+      configured in `src/app/showcase/showcase.config.ts`. Link it to a Sheet from its Responses tab.
+- [x] **LinkedIn link:** https://www.linkedin.com/in/alexrusu-rsa/
+- [x] **Credits:** "Designed & built by Alex & Bianca Rusu · RSA SOFT".
+- [ ] **Send yourself a test lead** from the live site and check it lands in the Sheet.
+- [x] **Deploy** (push to `master`, the branch Render builds from).
 - [ ] **Refresh LinkedIn's cache:** paste the link into https://www.linkedin.com/post-inspector/ so the new preview card shows up.
 
 ## 2. Links to use (one per channel)
@@ -37,7 +36,7 @@ Tip: LinkedIn shows links in the post body with less reach for some accounts. A 
 
 ## 3. LinkedIn launch post (EN)
 
-> I got married in September. Naturally, I also shipped the invitation. 💍
+> Bianca and I got married in September. Naturally, we also built the invitation ourselves. 💍
 >
 > Instead of a printed card, our guests got a link. In under a minute they could:
 > → confirm attendance, step by step, including partners and kids
@@ -47,18 +46,18 @@ Tip: LinkedIn shows links in the post body with less reach for some accounts. A 
 >
 > Every answer landed straight in a Google Sheet. No back-office, no chasing people on WhatsApp.
 >
-> The wedding is over, so I turned it into a live demo. Try the RSVP (nothing gets sent). It opens in
+> The wedding is over, so we turned it into a live demo. Try the RSVP (nothing gets sent). It opens in
 > your phone's language, so ask a friend abroad to open it too:
 > 👉 [link]
 >
-> Planning an event? I'll build yours. Building a product? That's what we do every day at RSA SOFT,
+> Planning an event? We'll build yours. Building a product? That's what we do every day at RSA SOFT,
 > with the same attention to detail.
 >
 > #Angular #WebDevelopment #SideProject #Wedding
 
 ## 4. LinkedIn launch post (RO)
 
-> M-am căsătorit în septembrie. Și, bineînțeles, invitația am construit-o eu. 💍
+> Bianca și cu mine ne-am căsătorit în septembrie. Și, bineînțeles, invitația am construit-o noi. 💍
 >
 > În loc de o invitație tipărită, invitații noștri au primit un link. În mai puțin de un minut puteau:
 > → să confirme prezența, pas cu pas, cu însoțitori și copii
@@ -72,7 +71,7 @@ Tip: LinkedIn shows links in the post body with less reach for some accounts. A 
 > Se deschide în limba telefonului tău, așa că trimite-o și unui prieten din străinătate:
 > 👉 [link]
 >
-> Organizezi un eveniment? Îți construiesc invitația. Ai nevoie de o aplicație? Asta facem zilnic la
+> Organizezi un eveniment? Îți construim invitația. Ai nevoie de o aplicație? Asta facem zilnic la
 > RSA SOFT, cu aceeași atenție la detalii.
 
 ## 5. Follow-up posts (one a week keeps the link alive)

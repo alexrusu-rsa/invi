@@ -2,7 +2,7 @@
 
 **Live demo:** https://www.invitatie.rsasoft.ro
 
-A mobile-first wedding invitation I designed and built for my own wedding. Guests opened it from a
+A mobile-first wedding invitation we designed and built for our own wedding. Guests opened it from a
 WhatsApp link, confirmed attendance step by step, picked a menu for every person in their party,
 flagged allergies and saved the date to their calendar, with every answer landing in a Google Sheet.
 
@@ -54,5 +54,5 @@ There is no language picker on the page: guests simply see their phone's languag
 
 ---
 
-Designed & built by **Alex Rusu · [RSA SOFT](https://www.rsasoft.ro)**. Want something like this? Use the form at the bottom of the
+Designed & built by **Alex & Bianca Rusu · [RSA SOFT](https://www.rsasoft.ro)**. Want something like this? Use the form at the bottom of the
 [live demo](https://www.invitatie.rsasoft.ro/#get-yours).

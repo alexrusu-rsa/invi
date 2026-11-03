@@ -34,22 +34,24 @@ export interface ShowcaseConfig {
 
 export const SHOWCASE_CONFIG: ShowcaseConfig = {
   enabled: true,
-  author: 'Alex Rusu',
+  author: 'Alex & Bianca Rusu',
   company: 'RSA SOFT',
   websiteUrl: 'https://www.rsasoft.ro',
-  linkedinUrl: '',
+  linkedinUrl: 'https://www.linkedin.com/in/alexrusu-rsa/',
   email: 'alex.rusu@rsasoft.ro',
 
+  // "Lead Magnet Contact Form" (https://forms.gle/aU964et2usL9C2XRA)
   leadForm: {
-    formUrl: '',
+    formUrl:
+      'https://docs.google.com/forms/d/e/1FAIpQLSds3SgSL2mKEXwcMsfsycwxlMDNviyl7rr4HPBA4a2IRkoTxg/formResponse',
     fields: {
-      name: 'entry.1000001',      // Change to your actual Entry ID
-      email: 'entry.1000002',     // Change to your actual Entry ID
-      interest: 'entry.1000003',  // Change to your actual Entry ID
-      eventDate: 'entry.1000004', // Change to your actual Entry ID
-      message: 'entry.1000005',   // Change to your actual Entry ID
-      language: 'entry.1000006',  // Change to your actual Entry ID
-      source: 'entry.1000007',    // Change to your actual Entry ID
+      name: 'entry.1558670575',
+      email: 'entry.1660695287',
+      interest: 'entry.548184225',
+      eventDate: 'entry.596202392',
+      message: 'entry.772861443',
+      language: 'entry.1852819063',
+      source: 'entry.1579152959',
     },
   },
 };
