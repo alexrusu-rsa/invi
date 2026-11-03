@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Wedding Invitation | Bianca & Alex",
+    "description": "We are delighted to invite you to our wedding!"
+  },
+  "hero": {
+    "invitedLine1": "You are invited",
+    "invitedLine2": "with joy",
+    "overlay": "to celebrate the loving union of",
+    "and": "and",
+    "month": "September"
+  },
+  "countdown": {
+    "before": {
+      "line1": "Until we say",
+      "word": "“I do”",
+      "line2": "only"
+    },
+    "after": {
+      "line1": "Since we said",
+      "word": "“I do”",
+      "line2": "it's been"
+    },
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Min",
+    "seconds": "Sec"
+  },
+  "time": {
+    "ceremony": "1:00 PM",
+    "party": "3:00 PM",
+    "cake": "10:00 PM"
+  },
+  "card": {
+    "at": "At {{time}}",
+    "viewMap": "View on map"
+  },
+  "ceremony": {
+    "title": "Religious Ceremony",
+    "subtitle": "A moment for the soul",
+    "venue": "Holy Trinity Monastery, Feleacu",
+    "desc": "A pause for prayer and peace of mind"
+  },
+  "party": {
+    "title": "The Big Party",
+    "subtitle": "Time to celebrate",
+    "venue": "The Barn, Gheorgheni village, Cluj",
+    "desc": "We move on to a warm setting where joy comes alive through music, flavours and dancing"
+  },
+  "program": {
+    "title": "Schedule",
+    "ceremony": {
+      "desc": "We unite our lives before God."
+    },
+    "celebration": {
+      "label": "Celebration Time",
+      "desc": "We kick off a fairytale day."
+    },
+    "dance": {
+      "label": "Dancing & Good Times",
+      "desc": "We hit the dance floor to make unforgettable memories!"
+    },
+    "cake": {
+      "label": "Cake Cutting",
+      "desc": "We sweeten the evening with a special dessert."
+    }
+  },
+  "closing": {
+    "line1": "Our story is more beautiful when we share it with you",
+    "line2": "We look forward to writing our most beautiful chapter yet, together",
+    "signoff": "With love and joy,",
+    "heartAlt": "Heart"
+  },
+  "rsvp": {
+    "please": "please",
+    "confirm": "confirm",
+    "by": "by September 1st",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Type your name here...",
+    "nameRequired": "Please enter your full name",
+    "yes": "Yes, I'll be there",
+    "no": "I can't make it",
+    "sending": "Sending...",
+    "error": "Something went wrong while sending. Please try again.",
+    "companionQuestion": "Will someone be joining you?",
+    "withCompanion": "Yes, I'm bringing company",
+    "alone": "No, just me",
+    "partnerLabel": "Partner's name",
+    "partnerPlaceholder": "Your companion's name...",
+    "childCount": "Number of children",
+    "next": "Continue",
+    "dietQuestion": "Allergies or dietary preferences?",
+    "dietSub": "Please let us know about any special menu requirements.",
+    "viewNote": "View note",
+    "addNote": "+ Add note",
+    "saving": "Saving...",
+    "finish": "Finish"
+  },
+  "guest": {
+    "principal": "main guest",
+    "partener": "partner",
+    "copil": "child",
+    "childName": "Child {{n}}"
+  },
+  "success": {
+    "calendarText": "Add our special day to your calendar and celebrate with us",
+    "addToCalendar": "Add to Calendar",
+    "thanks": "Thank you!"
+  },
+  "decline": {
+    "title": "We're sorry...",
+    "line1": "that you can't be with us.",
+    "line2": "Thank you for letting us know!"
+  },
+  "modal": {
+    "optionsFor": "Options for {{name}}",
+    "menuType": "Choose a menu:",
+    "allergies": "Allergies or notes:",
+    "allergiesPlaceholder": "e.g. Lactose-free, nut allergy...",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "menu": {
+    "normal": "Standard",
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan"
+  },
+  "demo": {
+    "badge": "Live demo",
+    "builtBy": "Digital invitation built by {{author}}",
+    "cta": "Get yours",
+    "floatingCta": "Want one like this?",
+    "rsvpNote": "Demo mode: your answer isn't sent anywhere, so feel free to try it.",
+    "afterRsvp": "This is exactly what your guests would experience.",
+    "afterRsvpCta": "I want one like this"
+  },
+  "lead": {
+    "kicker": "Behind the invitation",
+    "title": "I built this for my own wedding. I can build one for you.",
+    "intro": "The invitation above was real: guests confirmed attendance, picked their menus and saved the date to their calendars, all from their phones.",
+    "feature1": "Step-by-step RSVP with partners and kids",
+    "feature2": "Menu choice and allergies for every guest",
+    "feature3": "Answers land straight in Google Sheets",
+    "feature4": "Shown automatically in each guest’s language (16 languages)",
+    "feature5": "Live countdown, maps and calendar invite",
+    "services": "Not planning a wedding? At {{company}} we build web apps and software products with the same attention to detail.",
+    "formTitle": "Let's talk",
+    "name": "Name",
+    "email": "Email",
+    "interestLabel": "I'm interested in",
+    "interest": {
+      "invite": "A digital invitation for my event",
+      "webapp": "A website or web app",
+      "other": "Something else"
+    },
+    "eventDate": "Event date (optional)",
+    "message": "Message (optional)",
+    "messagePlaceholder": "Tell me briefly what you have in mind...",
+    "submit": "Send",
+    "sending": "Sending...",
+    "success": "Thank you! I'll get back to you soon.",
+    "mailOpened": "Your email app should open with the message ready. Hit send and I will get back to you soon.",
+    "invalid": "Please enter your name and a valid email.",
+    "error": "Your message couldn't be sent. Please email me directly.",
+    "privacy": "I'll only use your details to reply to you.",
+    "orReach": "or find me on",
+    "mailSubject": "Request from the demo invitation"
+  },
+  "footer": {
+    "builtBy": "Designed & built by {{author}} · {{company}}"
+  }
+}

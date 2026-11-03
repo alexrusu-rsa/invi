@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Huwelijksuitnodiging | Bianca & Alex",
+    "description": "We nodigen jullie met veel plezier uit op ons trouwfeest!"
+  },
+  "hero": {
+    "invitedLine1": "Met veel plezier",
+    "invitedLine2": "nodigen we jullie uit",
+    "overlay": "op het trouwfeest van",
+    "and": "en",
+    "month": "September"
+  },
+  "countdown": {
+    "before": {
+      "line1": "Tot ons",
+      "word": "„ja”",
+      "line2": "nog"
+    },
+    "after": {
+      "line1": "Sinds ons",
+      "word": "„ja”",
+      "line2": "al"
+    },
+    "days": "Dagen",
+    "hours": "Uur",
+    "minutes": "Min",
+    "seconds": "Sec"
+  },
+  "time": {
+    "ceremony": "13:00",
+    "party": "15:00",
+    "cake": "22:00"
+  },
+  "card": {
+    "at": "Om {{time}} uur",
+    "viewMap": "Bekijk op de kaart"
+  },
+  "ceremony": {
+    "title": "Kerkelijke ceremonie",
+    "subtitle": "Een moment voor de ziel",
+    "venue": "Klooster van de Heilige Drie-eenheid, Feleacu",
+    "desc": "Even stilstaan voor gebed en innerlijke rust"
+  },
+  "party": {
+    "title": "Het grote feest",
+    "subtitle": "Tijd om te vieren",
+    "venue": "The Barn, dorp Gheorgheni, Cluj",
+    "desc": "We trekken naar een warme plek waar de vreugde tot leven komt met muziek, lekker eten en dans"
+  },
+  "program": {
+    "title": "Programma",
+    "ceremony": {
+      "desc": "We verbinden ons leven voor God."
+    },
+    "celebration": {
+      "label": "Tijd om te vieren",
+      "desc": "De start van een sprookjesachtige dag."
+    },
+    "dance": {
+      "label": "Dansen en plezier",
+      "desc": "Op naar de dansvloer voor onvergetelijke herinneringen!"
+    },
+    "cake": {
+      "label": "De taart",
+      "desc": "We maken de avond extra zoet met een bijzonder dessert."
+    }
+  },
+  "closing": {
+    "line1": "Ons verhaal is mooier als we het met jullie delen",
+    "line2": "We kijken ernaar uit om samen met jullie ons mooiste hoofdstuk tot nu toe te schrijven",
+    "signoff": "Met liefde en vreugde,",
+    "heartAlt": "Hart"
+  },
+  "rsvp": {
+    "please": "graag",
+    "confirm": "bevestigen",
+    "by": "vóór 1 september",
+    "nameLabel": "Voor- en achternaam",
+    "namePlaceholder": "Typ hier je naam...",
+    "nameRequired": "Vul je voor- en achternaam in",
+    "yes": "Ja, ik kom",
+    "no": "Ik kan helaas niet",
+    "sending": "Bezig met verzenden...",
+    "error": "Er ging iets mis bij het verzenden. Probeer het opnieuw.",
+    "companionQuestion": "Kom je met iemand?",
+    "withCompanion": "Ja, ik kom met iemand",
+    "alone": "Nee, ik kom alleen",
+    "partnerLabel": "Naam van je partner",
+    "partnerPlaceholder": "Naam van wie met je meekomt...",
+    "childCount": "Aantal kinderen",
+    "next": "Verder",
+    "dietQuestion": "Allergieën of voedselvoorkeuren?",
+    "dietSub": "Laat ons weten of er speciale wensen zijn voor het menu.",
+    "viewNote": "Notitie bekijken",
+    "addNote": "+ Notitie toevoegen",
+    "saving": "Bezig met opslaan...",
+    "finish": "Afronden"
+  },
+  "guest": {
+    "principal": "hoofdgast",
+    "partener": "partner",
+    "copil": "kind",
+    "childName": "Kind {{n}}"
+  },
+  "success": {
+    "calendarText": "Zet onze speciale dag in je agenda en vier hem met ons mee",
+    "addToCalendar": "Toevoegen aan agenda",
+    "thanks": "Bedankt!"
+  },
+  "decline": {
+    "title": "Wat jammer...",
+    "line1": "dat je er niet bij kunt zijn.",
+    "line2": "Bedankt voor je antwoord!"
+  },
+  "modal": {
+    "optionsFor": "Opties voor {{name}}",
+    "menuType": "Kies een menu:",
+    "allergies": "Allergieën of opmerkingen:",
+    "allergiesPlaceholder": "Bv. lactosevrij, notenallergie...",
+    "cancel": "Annuleren",
+    "save": "Opslaan"
+  },
+  "menu": {
+    "normal": "Standaard",
+    "vegetarian": "Vegetarisch",
+    "vegan": "Veganistisch"
+  },
+  "demo": {
+    "badge": "Live demo",
+    "builtBy": "Digitale uitnodiging gemaakt door {{author}}",
+    "cta": "Vraag de jouwe aan",
+    "floatingCta": "Ook zo’n uitnodiging?",
+    "rsvpNote": "Demomodus: je antwoord wordt nergens naartoe gestuurd. Probeer het gerust!",
+    "afterRsvp": "Precies dit zouden jouw gasten beleven.",
+    "afterRsvpCta": "Ik wil er ook zo één"
+  },
+  "lead": {
+    "kicker": "Achter de uitnodiging",
+    "title": "Ik maakte ze voor mijn eigen trouw. Ik kan er ook een voor jou maken.",
+    "intro": "De uitnodiging hierboven was echt: gasten bevestigden hun komst, kozen hun menu en zetten de datum in hun agenda, allemaal vanaf hun gsm.",
+    "feature1": "Stap voor stap bevestigen, met partner en kinderen",
+    "feature2": "Menukeuze en allergieën voor elke gast",
+    "feature3": "Antwoorden komen rechtstreeks in Google Sheets",
+    "feature4": "Automatisch in de taal van elke gast (16 talen)",
+    "feature5": "Aftelklok, kaarten en agenda-uitnodiging",
+    "services": "Geen trouw gepland? Bij {{company}} bouwen we webapps en softwareproducten met dezelfde aandacht voor detail.",
+    "formTitle": "Laten we praten",
+    "name": "Naam",
+    "email": "E-mail",
+    "interestLabel": "Ik ben geïnteresseerd in",
+    "interest": {
+      "invite": "Een digitale uitnodiging voor mijn evenement",
+      "webapp": "Een website of webapp",
+      "other": "Iets anders"
+    },
+    "eventDate": "Datum van het evenement (optioneel)",
+    "message": "Bericht (optioneel)",
+    "messagePlaceholder": "Vertel me kort wat je in gedachten hebt...",
+    "submit": "Versturen",
+    "sending": "Bezig met verzenden...",
+    "success": "Bedankt! Ik neem snel contact met je op.",
+    "mailOpened": "Je e-mailprogramma zou moeten openen met het bericht klaar. Druk op verzenden en ik neem snel contact op.",
+    "invalid": "Vul je naam en een geldig e-mailadres in.",
+    "error": "Je bericht kon niet worden verzonden. Mail me gerust rechtstreeks.",
+    "privacy": "Ik gebruik je gegevens enkel om je te antwoorden.",
+    "orReach": "of vind me op",
+    "mailSubject": "Aanvraag via de demo-uitnodiging"
+  },
+  "footer": {
+    "builtBy": "Ontworpen en gebouwd door {{author}} · {{company}}"
+  }
+}

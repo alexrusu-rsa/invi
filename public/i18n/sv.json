@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Bröllopsinbjudan | Bianca & Alex",
+    "description": "Vi är glada att få bjuda in er till vårt bröllop!"
+  },
+  "hero": {
+    "invitedLine1": "Med stor glädje",
+    "invitedLine2": "bjuder vi in er",
+    "overlay": "för att fira kärleken mellan",
+    "and": "och",
+    "month": "September"
+  },
+  "countdown": {
+    "before": {
+      "line1": "Tills vi säger",
+      "word": "”ja”",
+      "line2": "är det"
+    },
+    "after": {
+      "line1": "Sedan vi sa",
+      "word": "”ja”",
+      "line2": "har det gått"
+    },
+    "days": "Dagar",
+    "hours": "Tim",
+    "minutes": "Min",
+    "seconds": "Sek"
+  },
+  "time": {
+    "ceremony": "13.00",
+    "party": "15.00",
+    "cake": "22.00"
+  },
+  "card": {
+    "at": "Kl. {{time}}",
+    "viewMap": "Visa på kartan"
+  },
+  "ceremony": {
+    "title": "Kyrklig vigsel",
+    "subtitle": "En stund för själen",
+    "venue": "Heliga Trefaldighetsklostret, Feleacu",
+    "desc": "En paus för bön och inre ro"
+  },
+  "party": {
+    "title": "Den stora festen",
+    "subtitle": "Dags att fira",
+    "venue": "The Barn, byn Gheorgheni, Cluj",
+    "desc": "Vi fortsätter till en varm miljö där glädjen får liv genom musik, smaker och dans"
+  },
+  "program": {
+    "title": "Program",
+    "ceremony": {
+      "desc": "Vi förenar våra liv inför Gud."
+    },
+    "celebration": {
+      "label": "Dags att fira",
+      "desc": "Startskottet för en sagolik dag."
+    },
+    "dance": {
+      "label": "Dans och glädje",
+      "desc": "Ut på dansgolvet och skapa oförglömliga minnen!"
+    },
+    "cake": {
+      "label": "Bröllopstårtan",
+      "desc": "Vi sötar kvällen med en speciell dessert."
+    }
+  },
+  "closing": {
+    "line1": "Vår berättelse blir vackrare när vi får dela den med er",
+    "line2": "Vi ser fram emot att tillsammans med er skriva vårt vackraste kapitel hittills",
+    "signoff": "Med kärlek och glädje,",
+    "heartAlt": "Hjärta"
+  },
+  "rsvp": {
+    "please": "vänligen",
+    "confirm": "svara",
+    "by": "senast 1 september",
+    "nameLabel": "För- och efternamn",
+    "namePlaceholder": "Skriv ditt namn här...",
+    "nameRequired": "Fyll i för- och efternamn",
+    "yes": "Ja, jag kommer",
+    "no": "Jag kan tyvärr inte",
+    "sending": "Skickar...",
+    "error": "Något gick fel när svaret skickades. Försök igen.",
+    "companionQuestion": "Tar du med någon?",
+    "withCompanion": "Ja, jag tar med någon",
+    "alone": "Nej, jag kommer ensam",
+    "partnerLabel": "Din partners namn",
+    "partnerPlaceholder": "Namn på ditt sällskap...",
+    "childCount": "Antal barn",
+    "next": "Fortsätt",
+    "dietQuestion": "Allergier eller kostönskemål?",
+    "dietSub": "Berätta gärna om det finns särskilda önskemål för menyn.",
+    "viewNote": "Visa anteckning",
+    "addNote": "+ Lägg till anteckning",
+    "saving": "Sparar...",
+    "finish": "Slutför"
+  },
+  "guest": {
+    "principal": "huvudgäst",
+    "partener": "partner",
+    "copil": "barn",
+    "childName": "Barn {{n}}"
+  },
+  "success": {
+    "calendarText": "Lägg in vår stora dag i din kalender och fira med oss",
+    "addToCalendar": "Lägg till i kalendern",
+    "thanks": "Tack!"
+  },
+  "decline": {
+    "title": "Vad synd...",
+    "line1": "att du inte kan vara med oss.",
+    "line2": "Tack för ditt svar!"
+  },
+  "modal": {
+    "optionsFor": "Val för {{name}}",
+    "menuType": "Välj meny:",
+    "allergies": "Allergier eller kommentarer:",
+    "allergiesPlaceholder": "T.ex. laktosfritt, nötallergi...",
+    "cancel": "Avbryt",
+    "save": "Spara"
+  },
+  "menu": {
+    "normal": "Standard",
+    "vegetarian": "Vegetarisk",
+    "vegan": "Vegansk"
+  },
+  "demo": {
+    "badge": "Livedemo",
+    "builtBy": "Digital inbjudan skapad av {{author}}",
+    "cta": "Skaffa din egen",
+    "floatingCta": "Vill du ha en sådan här?",
+    "rsvpNote": "Demoläge: ditt svar skickas ingenstans. Testa fritt!",
+    "afterRsvp": "Precis så här skulle dina gäster uppleva det.",
+    "afterRsvpCta": "Jag vill ha en sådan"
+  },
+  "lead": {
+    "kicker": "Bakom inbjudan",
+    "title": "Jag byggde den till mitt eget bröllop. Jag kan bygga en till dig.",
+    "intro": "Inbjudan ovan var på riktigt: gästerna tackade ja, valde meny och sparade datumet i kalendern, direkt från mobilen.",
+    "feature1": "OSA steg för steg, med partner och barn",
+    "feature2": "Menyval och allergier för varje gäst",
+    "feature3": "Svaren hamnar direkt i Google Sheets",
+    "feature4": "Visas automatiskt på varje gästs språk (16 språk)",
+    "feature5": "Nedräkning, kartor och kalenderinbjudan",
+    "services": "Inget bröllop på gång? På {{company}} bygger vi webbappar och mjukvaruprodukter med samma känsla för detaljer.",
+    "formTitle": "Hör av dig",
+    "name": "Namn",
+    "email": "E-post",
+    "interestLabel": "Jag är intresserad av",
+    "interest": {
+      "invite": "En digital inbjudan till mitt evenemang",
+      "webapp": "En webbplats eller webbapp",
+      "other": "Något annat"
+    },
+    "eventDate": "Datum för evenemanget (valfritt)",
+    "message": "Meddelande (valfritt)",
+    "messagePlaceholder": "Berätta kort vad du har i tankarna...",
+    "submit": "Skicka",
+    "sending": "Skickar...",
+    "success": "Tack! Jag hör av mig snart.",
+    "mailOpened": "Ditt e-postprogram bör öppnas med meddelandet klart. Tryck på skicka så hör jag av mig snart.",
+    "invalid": "Fyll i ditt namn och en giltig e-postadress.",
+    "error": "Ditt meddelande kunde inte skickas. Mejla mig gärna direkt.",
+    "privacy": "Jag använder bara dina uppgifter för att svara dig.",
+    "orReach": "eller hitta mig på",
+    "mailSubject": "Förfrågan från demoinbjudan"
+  },
+  "footer": {
+    "builtBy": "Designad och byggd av {{author}} · {{company}}"
+  }
+}

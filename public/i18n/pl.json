@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Zaproszenie ślubne | Bianca & Alex",
+    "description": "Z radością zapraszamy Was na nasz ślub!"
+  },
+  "hero": {
+    "invitedLine1": "Z radością",
+    "invitedLine2": "zapraszamy",
+    "overlay": "na celebrację miłości, którą ślubują sobie",
+    "and": "i",
+    "month": "Września"
+  },
+  "countdown": {
+    "before": {
+      "line1": "Do naszego",
+      "word": "„tak”",
+      "line2": "zostało"
+    },
+    "after": {
+      "line1": "Od naszego",
+      "word": "„tak”",
+      "line2": "minęło"
+    },
+    "days": "Dni",
+    "hours": "Godz",
+    "minutes": "Min",
+    "seconds": "Sek"
+  },
+  "time": {
+    "ceremony": "13:00",
+    "party": "15:00",
+    "cake": "22:00"
+  },
+  "card": {
+    "at": "Godz. {{time}}",
+    "viewMap": "Zobacz na mapie"
+  },
+  "ceremony": {
+    "title": "Ceremonia kościelna",
+    "subtitle": "Chwila dla duszy",
+    "venue": "Monaster Świętej Trójcy, Feleacu",
+    "desc": "Chwila modlitwy i wewnętrznego spokoju"
+  },
+  "party": {
+    "title": "Wielkie przyjęcie",
+    "subtitle": "Czas świętować",
+    "venue": "The Barn, wieś Gheorgheni, Cluj",
+    "desc": "Przenosimy się w ciepłą atmosferę, w której radość ożywa w muzyce, smakach i tańcu"
+  },
+  "program": {
+    "title": "Program",
+    "ceremony": {
+      "desc": "Łączymy nasze losy przed Bogiem."
+    },
+    "celebration": {
+      "label": "Czas świętować",
+      "desc": "Zaczynamy bajkowy dzień."
+    },
+    "dance": {
+      "label": "Taniec i dobra zabawa",
+      "desc": "Wszyscy na parkiet, by tworzyć niezapomniane wspomnienia!"
+    },
+    "cake": {
+      "label": "Tort weselny",
+      "desc": "Osładzamy wieczór wyjątkowym deserem."
+    }
+  },
+  "closing": {
+    "line1": "Nasza historia jest piękniejsza, gdy dzielimy ją z Wami",
+    "line2": "Czekamy na Was, by razem napisać nasz najpiękniejszy rozdział",
+    "signoff": "Z miłością i radością,",
+    "heartAlt": "Serce"
+  },
+  "rsvp": {
+    "please": "prosimy o",
+    "confirm": "potwierdzenie",
+    "by": "do 1 września",
+    "nameLabel": "Imię i nazwisko",
+    "namePlaceholder": "Wpisz tutaj swoje imię...",
+    "nameRequired": "Podaj imię i nazwisko",
+    "yes": "Tak, będę",
+    "no": "Nie mogę przyjść",
+    "sending": "Wysyłanie...",
+    "error": "Wystąpił błąd podczas wysyłania. Spróbuj ponownie.",
+    "companionQuestion": "Czy przyjdziesz z osobą towarzyszącą?",
+    "withCompanion": "Tak, przyjdę z kimś",
+    "alone": "Nie, przyjdę sam(a)",
+    "partnerLabel": "Imię osoby towarzyszącej",
+    "partnerPlaceholder": "Imię i nazwisko osoby towarzyszącej...",
+    "childCount": "Liczba dzieci",
+    "next": "Dalej",
+    "dietQuestion": "Alergie lub preferencje żywieniowe?",
+    "dietSub": "Daj nam znać, jeśli masz specjalne wymagania dotyczące menu.",
+    "viewNote": "Zobacz uwagę",
+    "addNote": "+ Dodaj uwagę",
+    "saving": "Zapisywanie...",
+    "finish": "Zakończ"
+  },
+  "guest": {
+    "principal": "gość główny",
+    "partener": "osoba towarzysząca",
+    "copil": "dziecko",
+    "childName": "Dziecko {{n}}"
+  },
+  "success": {
+    "calendarText": "Dodaj nasz wyjątkowy dzień do kalendarza i świętuj razem z nami",
+    "addToCalendar": "Dodaj do kalendarza",
+    "thanks": "Dziękujemy!"
+  },
+  "decline": {
+    "title": "Szkoda...",
+    "line1": "że nie możesz być z nami.",
+    "line2": "Dziękujemy za odpowiedź!"
+  },
+  "modal": {
+    "optionsFor": "Opcje dla: {{name}}",
+    "menuType": "Wybierz menu:",
+    "allergies": "Alergie lub uwagi:",
+    "allergiesPlaceholder": "Np. bez laktozy, alergia na orzechy...",
+    "cancel": "Anuluj",
+    "save": "Zapisz"
+  },
+  "menu": {
+    "normal": "Standardowe",
+    "vegetarian": "Wegetariańskie",
+    "vegan": "Wegańskie"
+  },
+  "demo": {
+    "badge": "Demo na żywo",
+    "builtBy": "Cyfrowe zaproszenie stworzone przez: {{author}}",
+    "cta": "Zamów swoje",
+    "floatingCta": "Chcesz takie zaproszenie?",
+    "rsvpNote": "Tryb demo: Twoja odpowiedź nigdzie nie jest wysyłana. Śmiało, wypróbuj!",
+    "afterRsvp": "Dokładnie tak przeżyliby to Twoi goście.",
+    "afterRsvpCta": "Chcę takie zaproszenie"
+  },
+  "lead": {
+    "kicker": "Kulisy zaproszenia",
+    "title": "Stworzyłem je na własny ślub. Mogę stworzyć też Twoje.",
+    "intro": "Zaproszenie powyżej było prawdziwe: goście potwierdzali obecność, wybierali menu i zapisywali datę w kalendarzu, wszystko z telefonu.",
+    "feature1": "Potwierdzenie krok po kroku, z osobą towarzyszącą i dziećmi",
+    "feature2": "Wybór menu i alergie dla każdego gościa",
+    "feature3": "Odpowiedzi trafiają prosto do Google Sheets",
+    "feature4": "Wyświetla się automatycznie w języku gościa (16 języków)",
+    "feature5": "Odliczanie, mapy i zaproszenie do kalendarza",
+    "services": "Nie planujesz ślubu? W {{company}} tworzymy aplikacje webowe i oprogramowanie z taką samą dbałością o szczegóły.",
+    "formTitle": "Porozmawiajmy",
+    "name": "Imię",
+    "email": "E-mail",
+    "interestLabel": "Interesuje mnie",
+    "interest": {
+      "invite": "Cyfrowe zaproszenie na moje wydarzenie",
+      "webapp": "Strona lub aplikacja internetowa",
+      "other": "Coś innego"
+    },
+    "eventDate": "Data wydarzenia (opcjonalnie)",
+    "message": "Wiadomość (opcjonalnie)",
+    "messagePlaceholder": "Napisz krótko, co masz na myśli...",
+    "submit": "Wyślij",
+    "sending": "Wysyłanie...",
+    "success": "Dziękuję! Wkrótce się odezwę.",
+    "mailOpened": "Twoja aplikacja pocztowa powinna się otworzyć z gotową wiadomością. Kliknij wyślij, a wkrótce się odezwę.",
+    "invalid": "Podaj imię i poprawny adres e-mail.",
+    "error": "Nie udało się wysłać wiadomości. Napisz do mnie bezpośrednio e-mailem.",
+    "privacy": "Używam Twoich danych wyłącznie po to, by Ci odpowiedzieć.",
+    "orReach": "lub znajdź mnie na",
+    "mailSubject": "Zapytanie z zaproszenia demo"
+  },
+  "footer": {
+    "builtBy": "Projekt i wykonanie: {{author}} · {{company}}"
+  }
+}

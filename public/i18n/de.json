@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Hochzeitseinladung | Bianca & Alex",
+    "description": "Wir freuen uns sehr, euch zu unserer Hochzeit einzuladen!"
+  },
+  "hero": {
+    "invitedLine1": "Ihr seid herzlich",
+    "invitedLine2": "eingeladen",
+    "overlay": "zur Hochzeitsfeier von",
+    "and": "und",
+    "month": "September"
+  },
+  "countdown": {
+    "before": {
+      "line1": "Bis zum",
+      "word": "„Ja“",
+      "line2": "sind es noch"
+    },
+    "after": {
+      "line1": "Seit unserem",
+      "word": "„Ja“",
+      "line2": "sind vergangen"
+    },
+    "days": "Tage",
+    "hours": "Std",
+    "minutes": "Min",
+    "seconds": "Sek"
+  },
+  "time": {
+    "ceremony": "13:00",
+    "party": "15:00",
+    "cake": "22:00"
+  },
+  "card": {
+    "at": "Um {{time}} Uhr",
+    "viewMap": "Auf der Karte"
+  },
+  "ceremony": {
+    "title": "Kirchliche Trauung",
+    "subtitle": "Ein Moment für die Seele",
+    "venue": "Kloster „Heilige Dreifaltigkeit“, Feleacu",
+    "desc": "Ein Innehalten für Gebet und innere Ruhe"
+  },
+  "party": {
+    "title": "Die große Feier",
+    "subtitle": "Zeit zu feiern",
+    "venue": "The Barn, Dorf Gheorgheni, Cluj",
+    "desc": "Wir ziehen weiter in eine warme Atmosphäre, in der Freude durch Musik, Genuss und Tanz lebendig wird"
+  },
+  "program": {
+    "title": "Ablauf",
+    "ceremony": {
+      "desc": "Wir verbinden unsere Wege vor Gott."
+    },
+    "celebration": {
+      "label": "Zeit zu feiern",
+      "desc": "Der Startschuss für einen märchenhaften Tag."
+    },
+    "dance": {
+      "label": "Tanz & gute Laune",
+      "desc": "Ab auf die Tanzfläche, für unvergessliche Erinnerungen!"
+    },
+    "cake": {
+      "label": "Hochzeitstorte",
+      "desc": "Wir versüßen den Abend mit einem besonderen Dessert."
+    }
+  },
+  "closing": {
+    "line1": "Unsere Geschichte ist schöner, wenn wir sie mit euch teilen",
+    "line2": "Wir freuen uns darauf, gemeinsam mit euch unser bisher schönstes Kapitel zu schreiben",
+    "signoff": "In Liebe und Freude,",
+    "heartAlt": "Herz"
+  },
+  "rsvp": {
+    "please": "bitte",
+    "confirm": "zusagen",
+    "by": "bis zum 1. September",
+    "nameLabel": "Vor- und Nachname",
+    "namePlaceholder": "Gib hier deinen Namen ein...",
+    "nameRequired": "Bitte gib deinen vollständigen Namen ein",
+    "yes": "Ja, ich komme",
+    "no": "Ich kann leider nicht",
+    "sending": "Wird gesendet...",
+    "error": "Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+    "companionQuestion": "Kommst du in Begleitung?",
+    "withCompanion": "Ja, mit Begleitung",
+    "alone": "Nein, ich komme allein",
+    "partnerLabel": "Name der Begleitung",
+    "partnerPlaceholder": "Name deiner Begleitung...",
+    "childCount": "Anzahl Kinder",
+    "next": "Weiter",
+    "dietQuestion": "Allergien oder Ernährungswünsche?",
+    "dietSub": "Bitte sag uns Bescheid, falls es besondere Wünsche zum Menü gibt.",
+    "viewNote": "Notiz ansehen",
+    "addNote": "+ Notiz hinzufügen",
+    "saving": "Wird gespeichert...",
+    "finish": "Abschließen"
+  },
+  "guest": {
+    "principal": "Hauptgast",
+    "partener": "Begleitung",
+    "copil": "Kind",
+    "childName": "Kind {{n}}"
+  },
+  "success": {
+    "calendarText": "Trag unseren besonderen Tag in deinen Kalender ein und feiere mit uns",
+    "addToCalendar": "Zum Kalender hinzufügen",
+    "thanks": "Vielen Dank!"
+  },
+  "decline": {
+    "title": "Wie schade...",
+    "line1": "dass du nicht dabei sein kannst.",
+    "line2": "Danke für deine Rückmeldung!"
+  },
+  "modal": {
+    "optionsFor": "Optionen für {{name}}",
+    "menuType": "Menü auswählen:",
+    "allergies": "Allergien oder Hinweise:",
+    "allergiesPlaceholder": "z. B. laktosefrei, Nussallergie...",
+    "cancel": "Abbrechen",
+    "save": "Speichern"
+  },
+  "menu": {
+    "normal": "Standard",
+    "vegetarian": "Vegetarisch",
+    "vegan": "Vegan"
+  },
+  "demo": {
+    "badge": "Live-Demo",
+    "builtBy": "Digitale Einladung, entwickelt von {{author}}",
+    "cta": "Eigene anfragen",
+    "floatingCta": "Auch so eine Einladung?",
+    "rsvpNote": "Demo-Modus: Deine Antwort wird nirgendwohin gesendet. Probier es einfach aus!",
+    "afterRsvp": "Genau so würden es deine Gäste erleben.",
+    "afterRsvpCta": "So eine möchte ich auch"
+  },
+  "lead": {
+    "kicker": "Hinter der Einladung",
+    "title": "Ich habe sie für meine eigene Hochzeit gebaut. Ich baue auch deine.",
+    "intro": "Die Einladung oben war echt: Die Gäste haben zugesagt, ihr Menü gewählt und den Termin in ihren Kalender übernommen, alles direkt vom Handy.",
+    "feature1": "Schritt-für-Schritt-Zusage mit Begleitung und Kindern",
+    "feature2": "Menüwahl und Allergien für jeden Gast",
+    "feature3": "Antworten landen direkt in Google Sheets",
+    "feature4": "Automatisch in der Sprache deiner Gäste (16 Sprachen)",
+    "feature5": "Countdown, Karten und Kalendereintrag",
+    "services": "Keine Hochzeit in Sicht? Bei {{company}} entwickeln wir Web-Apps und Softwareprodukte mit derselben Liebe zum Detail.",
+    "formTitle": "Lass uns reden",
+    "name": "Name",
+    "email": "E-Mail",
+    "interestLabel": "Ich interessiere mich für",
+    "interest": {
+      "invite": "Eine digitale Einladung für mein Event",
+      "webapp": "Eine Website oder Web-App",
+      "other": "Etwas anderes"
+    },
+    "eventDate": "Datum des Events (optional)",
+    "message": "Nachricht (optional)",
+    "messagePlaceholder": "Erzähl mir kurz, was du vorhast...",
+    "submit": "Senden",
+    "sending": "Wird gesendet...",
+    "success": "Danke! Ich melde mich bald bei dir.",
+    "mailOpened": "Dein E-Mail-Programm öffnet sich mit der fertigen Nachricht. Einfach absenden, ich melde mich bald.",
+    "invalid": "Bitte gib deinen Namen und eine gültige E-Mail-Adresse ein.",
+    "error": "Deine Nachricht konnte nicht gesendet werden. Schreib mir gern direkt per E-Mail.",
+    "privacy": "Ich nutze deine Angaben nur, um dir zu antworten.",
+    "orReach": "oder finde mich auf",
+    "mailSubject": "Anfrage über die Demo-Einladung"
+  },
+  "footer": {
+    "builtBy": "Design & Entwicklung: {{author}} · {{company}}"
+  }
+}

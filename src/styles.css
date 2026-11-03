@@ -1,10 +1,19 @@
+@import './motion.css';
+
 :root {
   --color-primary: #1f1f1f;
   --color-bg-light: #ededed;
   --color-bg-white: #ffffff;
   --color-border: #d1d1d1;
-  --font-serif: 'Cormorant Garamond', serif;
-  --font-script: 'Pinyon Script', cursive;
+  /* Fallbacks cover scripts the main fonts lack (Cyrillic script, Arabic). Google Fonts serves
+     them per unicode-range, so they only download when such characters are on the page. */
+  --font-serif: 'Cormorant Garamond', 'Amiri', serif;
+  --font-script: 'Pinyon Script', 'Great Vibes', 'Aref Ruqaa', cursive;
+}
+
+/* Arabic letters join up; letter spacing would break them apart. */
+:lang(ar) {
+  letter-spacing: normal !important;
 }
 
 * {

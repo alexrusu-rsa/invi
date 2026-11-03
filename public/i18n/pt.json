@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Convite de casamento | Bianca & Alex",
+    "description": "É com muita alegria que convidamos vocês para o nosso casamento!"
+  },
+  "hero": {
+    "invitedLine1": "Estão convidados",
+    "invitedLine2": "com alegria",
+    "overlay": "para celebrar a união cheia de amor de",
+    "and": "e",
+    "month": "Setembro"
+  },
+  "countdown": {
+    "before": {
+      "line1": "Para o nosso",
+      "word": "“sim”",
+      "line2": "faltam"
+    },
+    "after": {
+      "line1": "Desde o nosso",
+      "word": "“sim”",
+      "line2": "já passaram"
+    },
+    "days": "Dias",
+    "hours": "Horas",
+    "minutes": "Min",
+    "seconds": "Seg"
+  },
+  "time": {
+    "ceremony": "13h00",
+    "party": "15h00",
+    "cake": "22h00"
+  },
+  "card": {
+    "at": "Às {{time}}",
+    "viewMap": "Ver no mapa"
+  },
+  "ceremony": {
+    "title": "Cerimônia religiosa",
+    "subtitle": "Um momento para a alma",
+    "venue": "Mosteiro da Santíssima Trindade, Feleacu",
+    "desc": "Uma pausa para a oração e a paz interior"
+  },
+  "party": {
+    "title": "A grande festa",
+    "subtitle": "Hora de celebrar",
+    "venue": "The Barn, vila de Gheorgheni, Cluj",
+    "desc": "Seguimos para um ambiente acolhedor, onde a alegria ganha vida com música, sabores e dança"
+  },
+  "program": {
+    "title": "Programa",
+    "ceremony": {
+      "desc": "Unimos os nossos destinos diante de Deus."
+    },
+    "celebration": {
+      "label": "Hora de celebrar",
+      "desc": "Damos início a um dia de conto de fadas."
+    },
+    "dance": {
+      "label": "Dança e alegria",
+      "desc": "Todos para a pista de dança para criar memórias inesquecíveis!"
+    },
+    "cake": {
+      "label": "O bolo",
+      "desc": "Adoçamos a noite com uma sobremesa especial."
+    }
+  },
+  "closing": {
+    "line1": "A nossa história fica mais bonita quando a compartilhamos com vocês",
+    "line2": "Esperamos por vocês para escrevermos juntos o capítulo mais bonito até agora",
+    "signoff": "Com amor e alegria,",
+    "heartAlt": "Coração"
+  },
+  "rsvp": {
+    "please": "por favor",
+    "confirm": "confirmem",
+    "by": "até 1 de setembro",
+    "nameLabel": "Nome completo",
+    "namePlaceholder": "Escreva o seu nome aqui...",
+    "nameRequired": "Indique o seu nome completo",
+    "yes": "Sim, estarei presente",
+    "no": "Não poderei ir",
+    "sending": "Enviando...",
+    "error": "Ocorreu um erro no envio. Tente novamente.",
+    "companionQuestion": "Virá acompanhado?",
+    "withCompanion": "Sim, vou acompanhado",
+    "alone": "Não, vou sozinho",
+    "partnerLabel": "Nome do acompanhante",
+    "partnerPlaceholder": "Nome de quem vem com você...",
+    "childCount": "Número de crianças",
+    "next": "Continuar",
+    "dietQuestion": "Alergias ou preferências alimentares?",
+    "dietSub": "Avise-nos se houver alguma necessidade especial para o menu.",
+    "viewNote": "Ver observação",
+    "addNote": "+ Adicionar observação",
+    "saving": "Salvando...",
+    "finish": "Concluir"
+  },
+  "guest": {
+    "principal": "convidado principal",
+    "partener": "acompanhante",
+    "copil": "criança",
+    "childName": "Criança {{n}}"
+  },
+  "success": {
+    "calendarText": "Adicione o nosso dia especial ao seu calendário para celebrar conosco",
+    "addToCalendar": "Adicionar ao calendário",
+    "thanks": "Obrigado!"
+  },
+  "decline": {
+    "title": "Que pena...",
+    "line1": "que não possa estar conosco.",
+    "line2": "Obrigado pela resposta!"
+  },
+  "modal": {
+    "optionsFor": "Opções para {{name}}",
+    "menuType": "Escolha o menu:",
+    "allergies": "Alergias ou observações:",
+    "allergiesPlaceholder": "Ex.: sem lactose, alergia a nozes...",
+    "cancel": "Cancelar",
+    "save": "Salvar"
+  },
+  "menu": {
+    "normal": "Padrão",
+    "vegetarian": "Vegetariano",
+    "vegan": "Vegano"
+  },
+  "demo": {
+    "badge": "Demo ao vivo",
+    "builtBy": "Convite digital criado por {{author}}",
+    "cta": "Peça o seu",
+    "floatingCta": "Quer um convite assim?",
+    "rsvpNote": "Modo demo: a sua resposta não é enviada para lugar nenhum. Experimente à vontade!",
+    "afterRsvp": "É exatamente isto que os seus convidados viveriam.",
+    "afterRsvpCta": "Quero um convite assim"
+  },
+  "lead": {
+    "kicker": "Por trás do convite",
+    "title": "Criei-o para o meu próprio casamento. Posso criar o seu.",
+    "intro": "O convite acima foi real: os convidados confirmaram presença, escolheram o menu e salvaram a data no calendário, tudo pelo celular.",
+    "feature1": "Confirmação passo a passo, com acompanhantes e crianças",
+    "feature2": "Escolha de menu e alergias para cada convidado",
+    "feature3": "As respostas vão direto para o Google Sheets",
+    "feature4": "Aparece automaticamente no idioma de cada convidado (16 idiomas)",
+    "feature5": "Contagem regressiva, mapas e convite para o calendário",
+    "services": "Não está planejando um casamento? Na {{company}} criamos aplicações web e produtos de software com o mesmo cuidado nos detalhes.",
+    "formTitle": "Vamos conversar",
+    "name": "Nome",
+    "email": "E-mail",
+    "interestLabel": "Tenho interesse em",
+    "interest": {
+      "invite": "Um convite digital para o meu evento",
+      "webapp": "Um site ou uma aplicação web",
+      "other": "Outra coisa"
+    },
+    "eventDate": "Data do evento (opcional)",
+    "message": "Mensagem (opcional)",
+    "messagePlaceholder": "Conte-me brevemente o que tem em mente...",
+    "submit": "Enviar",
+    "sending": "Enviando...",
+    "success": "Obrigado! Respondo em breve.",
+    "mailOpened": "O seu aplicativo de e-mail deve abrir com a mensagem pronta. É só enviar e eu respondo em breve.",
+    "invalid": "Indique o seu nome e um e-mail válido.",
+    "error": "Não foi possível enviar a sua mensagem. Escreva-me diretamente por e-mail.",
+    "privacy": "Uso os seus dados apenas para lhe responder.",
+    "orReach": "ou encontre-me em",
+    "mailSubject": "Pedido a partir do convite de demonstração"
+  },
+  "footer": {
+    "builtBy": "Design e desenvolvimento: {{author}} · {{company}}"
+  }
+}

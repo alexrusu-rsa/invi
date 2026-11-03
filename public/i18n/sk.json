@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Svadobné oznámenie | Bianca & Alex",
+    "description": "S radosťou vás pozývame na našu svadbu!"
+  },
+  "hero": {
+    "invitedLine1": "S radosťou",
+    "invitedLine2": "vás pozývame",
+    "overlay": "na oslavu lásky, ktorú si sľúbia",
+    "and": "a",
+    "month": "Septembra"
+  },
+  "countdown": {
+    "before": {
+      "line1": "Do nášho",
+      "word": "„áno“",
+      "line2": "zostáva"
+    },
+    "after": {
+      "line1": "Od nášho",
+      "word": "„áno“",
+      "line2": "ubehlo"
+    },
+    "days": "Dní",
+    "hours": "Hod",
+    "minutes": "Min",
+    "seconds": "Sek"
+  },
+  "time": {
+    "ceremony": "13:00",
+    "party": "15:00",
+    "cake": "22:00"
+  },
+  "card": {
+    "at": "O {{time}}",
+    "viewMap": "Zobraziť na mape"
+  },
+  "ceremony": {
+    "title": "Cirkevný obrad",
+    "subtitle": "Chvíľa pre dušu",
+    "venue": "Kláštor Najsvätejšej Trojice, Feleacu",
+    "desc": "Zastavenie pre modlitbu a vnútorný pokoj"
+  },
+  "party": {
+    "title": "Veľká oslava",
+    "subtitle": "Čas oslavovať",
+    "venue": "The Barn, obec Gheorgheni, Cluj",
+    "desc": "Presúvame sa do vrúcnej atmosféry, kde radosť ožíva v hudbe, chutiach a tanci"
+  },
+  "program": {
+    "title": "Program",
+    "ceremony": {
+      "desc": "Spájame svoje osudy pred Bohom."
+    },
+    "celebration": {
+      "label": "Čas oslavovať",
+      "desc": "Začíname rozprávkový deň."
+    },
+    "dance": {
+      "label": "Tanec a dobrá nálada",
+      "desc": "Hor sa na parket tvoriť nezabudnuteľné spomienky!"
+    },
+    "cake": {
+      "label": "Svadobná torta",
+      "desc": "Osladíme večer výnimočným dezertom."
+    }
+  },
+  "closing": {
+    "line1": "Náš príbeh je krajší, keď ho zdieľame s vami",
+    "line2": "Tešíme sa, že s vami napíšeme našu zatiaľ najkrajšiu kapitolu",
+    "signoff": "S láskou a radosťou,",
+    "heartAlt": "Srdce"
+  },
+  "rsvp": {
+    "please": "prosíme o",
+    "confirm": "potvrdenie",
+    "by": "do 1. septembra",
+    "nameLabel": "Meno a priezvisko",
+    "namePlaceholder": "Sem napíš svoje meno...",
+    "nameRequired": "Vyplň meno a priezvisko",
+    "yes": "Áno, prídem",
+    "no": "Žiaľ, nemôžem",
+    "sending": "Odosiela sa...",
+    "error": "Pri odosielaní nastala chyba. Skús to prosím znova.",
+    "companionQuestion": "Prídeš so sprievodom?",
+    "withCompanion": "Áno, prídem so sprievodom",
+    "alone": "Nie, prídem sám/sama",
+    "partnerLabel": "Meno sprievodu",
+    "partnerPlaceholder": "Meno tvojho sprievodu...",
+    "childCount": "Počet detí",
+    "next": "Pokračovať",
+    "dietQuestion": "Alergie alebo stravovacie preferencie?",
+    "dietSub": "Daj nám vedieť, ak máš špeciálne požiadavky na menu.",
+    "viewNote": "Zobraziť poznámku",
+    "addNote": "+ Pridať poznámku",
+    "saving": "Ukladá sa...",
+    "finish": "Dokončiť"
+  },
+  "guest": {
+    "principal": "hlavný hosť",
+    "partener": "sprievod",
+    "copil": "dieťa",
+    "childName": "Dieťa {{n}}"
+  },
+  "success": {
+    "calendarText": "Pridaj si náš výnimočný deň do kalendára a osláv ho s nami",
+    "addToCalendar": "Pridať do kalendára",
+    "thanks": "Ďakujeme!"
+  },
+  "decline": {
+    "title": "To je škoda...",
+    "line1": "že nemôžeš byť s nami.",
+    "line2": "Ďakujeme za odpoveď!"
+  },
+  "modal": {
+    "optionsFor": "Možnosti pre: {{name}}",
+    "menuType": "Vyber menu:",
+    "allergies": "Alergie alebo poznámky:",
+    "allergiesPlaceholder": "Napr. bez laktózy, alergia na orechy...",
+    "cancel": "Zrušiť",
+    "save": "Uložiť"
+  },
+  "menu": {
+    "normal": "Štandardné",
+    "vegetarian": "Vegetariánske",
+    "vegan": "Vegánske"
+  },
+  "demo": {
+    "badge": "Živé demo",
+    "builtBy": "Digitálnu pozvánku vytvoril {{author}}",
+    "cta": "Chcem vlastnú",
+    "floatingCta": "Chceš takúto pozvánku?",
+    "rsvpNote": "Demo režim: tvoja odpoveď sa nikam neodosiela. Pokojne to vyskúšaj!",
+    "afterRsvp": "Presne takto by to zažili tvoji hostia.",
+    "afterRsvpCta": "Chcem takúto pozvánku"
+  },
+  "lead": {
+    "kicker": "Za pozvánkou",
+    "title": "Vytvoril som ju pre vlastnú svadbu. Môžem vytvoriť aj tú tvoju.",
+    "intro": "Pozvánka vyššie bola skutočná: hostia potvrdili účasť, vybrali si menu a uložili si dátum do kalendára, všetko z telefónu.",
+    "feature1": "Potvrdenie účasti krok za krokom, so sprievodom aj deťmi",
+    "feature2": "Výber menu a alergie pre každého hosťa",
+    "feature3": "Odpovede idú priamo do Google Sheets",
+    "feature4": "Zobrazí sa automaticky v jazyku každého hosťa (16 jazykov)",
+    "feature5": "Odpočítavanie, mapy a pozvánka do kalendára",
+    "services": "Neplánuješ svadbu? V {{company}} vyvíjame webové aplikácie a softvérové produkty s rovnakou starostlivosťou o detail.",
+    "formTitle": "Porozprávajme sa",
+    "name": "Meno",
+    "email": "E-mail",
+    "interestLabel": "Zaujíma ma",
+    "interest": {
+      "invite": "Digitálna pozvánka na moje podujatie",
+      "webapp": "Web alebo webová aplikácia",
+      "other": "Niečo iné"
+    },
+    "eventDate": "Dátum podujatia (nepovinné)",
+    "message": "Správa (nepovinné)",
+    "messagePlaceholder": "Napíš mi stručne, čo máš na mysli...",
+    "submit": "Odoslať",
+    "sending": "Odosiela sa...",
+    "success": "Ďakujem! Čoskoro sa ozvem.",
+    "mailOpened": "Mala by sa otvoriť tvoja e-mailová aplikácia s pripravenou správou. Stačí ju odoslať a čoskoro sa ozvem.",
+    "invalid": "Vyplň meno a platný e-mail.",
+    "error": "Správu sa nepodarilo odoslať. Napíš mi prosím priamo e-mailom.",
+    "privacy": "Tvoje údaje použijem len na to, aby som ti odpovedal.",
+    "orReach": "alebo ma nájdeš na",
+    "mailSubject": "Dopyt z demo pozvánky"
+  },
+  "footer": {
+    "builtBy": "Návrh a vývoj: {{author}} · {{company}}"
+  }
+}

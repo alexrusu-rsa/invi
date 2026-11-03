@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Invitación de boda | Bianca & Alex",
+    "description": "¡Nos hace mucha ilusión invitarte a nuestra boda!"
+  },
+  "hero": {
+    "invitedLine1": "Con mucha alegría",
+    "invitedLine2": "te invitamos",
+    "overlay": "a celebrar la unión llena de amor de",
+    "and": "y",
+    "month": "Septiembre"
+  },
+  "countdown": {
+    "before": {
+      "line1": "Para nuestro",
+      "word": "«sí, quiero»",
+      "line2": "faltan"
+    },
+    "after": {
+      "line1": "Desde nuestro",
+      "word": "«sí, quiero»",
+      "line2": "han pasado"
+    },
+    "days": "Días",
+    "hours": "Horas",
+    "minutes": "Min",
+    "seconds": "Seg"
+  },
+  "time": {
+    "ceremony": "13:00",
+    "party": "15:00",
+    "cake": "22:00"
+  },
+  "card": {
+    "at": "A las {{time}}",
+    "viewMap": "Ver en el mapa"
+  },
+  "ceremony": {
+    "title": "Ceremonia religiosa",
+    "subtitle": "Un momento para el alma",
+    "venue": "Monasterio de la Santísima Trinidad, Feleacu",
+    "desc": "Una pausa para la oración y la paz interior"
+  },
+  "party": {
+    "title": "La gran fiesta",
+    "subtitle": "Momento de celebrar",
+    "venue": "The Barn, pueblo de Gheorgheni, Cluj",
+    "desc": "Nos trasladamos a un ambiente cálido donde la alegría cobra vida con música, sabores y baile"
+  },
+  "program": {
+    "title": "Programa",
+    "ceremony": {
+      "desc": "Unimos nuestros destinos ante Dios."
+    },
+    "celebration": {
+      "label": "Momento de celebrar",
+      "desc": "Damos comienzo a un día de cuento."
+    },
+    "dance": {
+      "label": "Baile y buen ambiente",
+      "desc": "¡A la pista de baile para crear recuerdos inolvidables!"
+    },
+    "cake": {
+      "label": "La tarta",
+      "desc": "Endulzamos la noche con un postre especial."
+    }
+  },
+  "closing": {
+    "line1": "Nuestra historia es más bonita cuando la compartimos contigo",
+    "line2": "Te esperamos para escribir juntos el capítulo más bonito hasta ahora",
+    "signoff": "Con amor y alegría,",
+    "heartAlt": "Corazón"
+  },
+  "rsvp": {
+    "please": "se ruega",
+    "confirm": "confirmar",
+    "by": "antes del 1 de septiembre",
+    "nameLabel": "Nombre y apellidos",
+    "namePlaceholder": "Escribe tu nombre aquí...",
+    "nameRequired": "Introduce tu nombre y apellidos",
+    "yes": "Sí, asistiré",
+    "no": "No podré asistir",
+    "sending": "Enviando...",
+    "error": "Se ha producido un error al enviar. Inténtalo de nuevo.",
+    "companionQuestion": "¿Vendrás acompañado?",
+    "withCompanion": "Sí, vengo acompañado",
+    "alone": "No, vengo solo",
+    "partnerLabel": "Nombre de tu pareja",
+    "partnerPlaceholder": "Nombre de tu acompañante...",
+    "childCount": "Número de niños",
+    "next": "Continuar",
+    "dietQuestion": "¿Alergias o preferencias alimentarias?",
+    "dietSub": "Avísanos si tienes alguna necesidad especial con el menú.",
+    "viewNote": "Ver nota",
+    "addNote": "+ Añadir nota",
+    "saving": "Guardando...",
+    "finish": "Finalizar"
+  },
+  "guest": {
+    "principal": "invitado principal",
+    "partener": "pareja",
+    "copil": "niño",
+    "childName": "Niño {{n}}"
+  },
+  "success": {
+    "calendarText": "Añade nuestro día especial a tu calendario para celebrarlo con nosotros",
+    "addToCalendar": "Añadir al calendario",
+    "thanks": "¡Gracias!"
+  },
+  "decline": {
+    "title": "Qué pena...",
+    "line1": "que no puedas acompañarnos.",
+    "line2": "¡Gracias por avisarnos!"
+  },
+  "modal": {
+    "optionsFor": "Opciones para {{name}}",
+    "menuType": "Elige el menú:",
+    "allergies": "Alergias o comentarios:",
+    "allergiesPlaceholder": "Ej.: sin lactosa, alergia a los frutos secos...",
+    "cancel": "Cancelar",
+    "save": "Guardar"
+  },
+  "menu": {
+    "normal": "Estándar",
+    "vegetarian": "Vegetariano",
+    "vegan": "Vegano"
+  },
+  "demo": {
+    "badge": "Demo en vivo",
+    "builtBy": "Invitación digital creada por {{author}}",
+    "cta": "Pide la tuya",
+    "floatingCta": "¿Quieres una así?",
+    "rsvpNote": "Modo demo: tu respuesta no se envía a ningún sitio. ¡Pruébalo sin miedo!",
+    "afterRsvp": "Esto es exactamente lo que vivirían tus invitados.",
+    "afterRsvpCta": "Quiero una así"
+  },
+  "lead": {
+    "kicker": "Detrás de la invitación",
+    "title": "La creé para mi propia boda. Puedo crear la tuya.",
+    "intro": "La invitación de arriba fue real: los invitados confirmaron su asistencia, eligieron su menú y guardaron la fecha en su calendario, todo desde el móvil.",
+    "feature1": "Confirmación paso a paso, con parejas y niños",
+    "feature2": "Menú y alergias para cada invitado",
+    "feature3": "Las respuestas llegan directamente a Google Sheets",
+    "feature4": "Se muestra automáticamente en el idioma de cada invitado (16 idiomas)",
+    "feature5": "Cuenta atrás, mapas e invitación de calendario",
+    "services": "¿No tienes boda a la vista? En {{company}} creamos aplicaciones web y productos de software con la misma atención al detalle.",
+    "formTitle": "Hablemos",
+    "name": "Nombre",
+    "email": "Email",
+    "interestLabel": "Me interesa",
+    "interest": {
+      "invite": "Una invitación digital para mi evento",
+      "webapp": "Una web o una aplicación web",
+      "other": "Otra cosa"
+    },
+    "eventDate": "Fecha del evento (opcional)",
+    "message": "Mensaje (opcional)",
+    "messagePlaceholder": "Cuéntame brevemente lo que tienes en mente...",
+    "submit": "Enviar",
+    "sending": "Enviando...",
+    "success": "¡Gracias! Te responderé muy pronto.",
+    "mailOpened": "Tu aplicación de correo debería abrirse con el mensaje listo. Solo tienes que enviarlo y te responderé muy pronto.",
+    "invalid": "Introduce tu nombre y un email válido.",
+    "error": "No se ha podido enviar tu mensaje. Escríbeme directamente por email.",
+    "privacy": "Solo usaré tus datos para responderte.",
+    "orReach": "o encuéntrame en",
+    "mailSubject": "Solicitud desde la invitación de demostración"
+  },
+  "footer": {
+    "builtBy": "Diseñado y desarrollado por {{author}} · {{company}}"
+  }
+}

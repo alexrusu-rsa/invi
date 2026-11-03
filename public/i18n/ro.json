@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Invitație Nuntă | Bianca & Alex",
+    "description": "Suntem încântați să vă invităm la nunta noastră!"
+  },
+  "hero": {
+    "invitedLine1": "Sunteți invitați",
+    "invitedLine2": "cu bucurie",
+    "overlay": "pentru a celebra uniunea plină de iubire alături de",
+    "and": "și",
+    "month": "Septembrie"
+  },
+  "countdown": {
+    "before": {
+      "line1": "Până când spunem",
+      "word": "„Da”",
+      "line2": "mai sunt"
+    },
+    "after": {
+      "line1": "De când ne-am spus",
+      "word": "„Da”",
+      "line2": "au trecut"
+    },
+    "days": "Zile",
+    "hours": "Ore",
+    "minutes": "Min",
+    "seconds": "Sec"
+  },
+  "time": {
+    "ceremony": "13:00",
+    "party": "15:00",
+    "cake": "22:00"
+  },
+  "card": {
+    "at": "Ora {{time}}",
+    "viewMap": "Vezi pe hartă"
+  },
+  "ceremony": {
+    "title": "Ceremonia Religioasă",
+    "subtitle": "Momentul de suflet",
+    "venue": "Mănăstirea „Sfânta Treime”, Feleacu",
+    "desc": "Un popas pentru rugăciune și liniște sufletească"
+  },
+  "party": {
+    "title": "Marea Petrecere",
+    "subtitle": "Momentul de sărbătoare",
+    "venue": "The Barn, sat Gheorgheni, Cluj",
+    "desc": "Ne mutăm în atmosfera caldă, unde bucuria prinde contur prin muzică, arome și dans"
+  },
+  "program": {
+    "title": "Program",
+    "ceremony": {
+      "desc": "Ne unim destinele în fața lui Dumnezeu."
+    },
+    "celebration": {
+      "label": "Momentul de Sărbătoare",
+      "desc": "Dăm startul unei zile de poveste."
+    },
+    "dance": {
+      "label": "Dans și Voie Bună",
+      "desc": "Trecem pe ringul de dans pentru a crea amintiri memorabile!"
+    },
+    "cake": {
+      "label": "Momentul Tortului",
+      "desc": "Îndulcim seara cu un desert special."
+    }
+  },
+  "closing": {
+    "line1": "Povestea noastră e mai frumoasă când o împărtășim cu voi",
+    "line2": "Vă așteptăm să scriem împreună cel mai frumos capitol de până acum",
+    "signoff": "Cu dragoste și bucurie,",
+    "heartAlt": "Inimă"
+  },
+  "rsvp": {
+    "please": "vă rugăm",
+    "confirm": "confirmați",
+    "by": "până la 1 Septembrie",
+    "nameLabel": "Nume și Prenume",
+    "namePlaceholder": "Scrie numele tău aici...",
+    "nameRequired": "Introdu numele și prenumele",
+    "yes": "Da, particip",
+    "no": "Nu pot ajunge",
+    "sending": "Se trimite...",
+    "error": "A apărut o eroare la trimitere. Vă rugăm reîncercați.",
+    "companionQuestion": "Vei fi însoțit?",
+    "withCompanion": "Da, vin însoțit",
+    "alone": "Nu, vin singur",
+    "partnerLabel": "Nume Partener/Parteneră",
+    "partnerPlaceholder": "Numele însoțitorului...",
+    "childCount": "Număr Copii",
+    "next": "Mai departe",
+    "dietQuestion": "Alergii sau preferințe alimentare?",
+    "dietSub": "Te rugăm să ne anunți dacă există cerințe speciale pentru meniu.",
+    "viewNote": "Vezi mențiune",
+    "addNote": "+ Adaugă mențiune",
+    "saving": "Se salvează...",
+    "finish": "Finalizează"
+  },
+  "guest": {
+    "principal": "principal",
+    "partener": "partener",
+    "copil": "copil",
+    "childName": "Copil {{n}}"
+  },
+  "success": {
+    "calendarText": "Adaugă ziua noastră specială în calendarul tău pentru a sărbători alături de noi",
+    "addToCalendar": "Adaugă în Calendar",
+    "thanks": "Vă mulțumim!"
+  },
+  "decline": {
+    "title": "Ne pare rău...",
+    "line1": "că nu puteți fi alături de noi.",
+    "line2": "Vă mulțumim pentru răspuns!"
+  },
+  "modal": {
+    "optionsFor": "Opțiuni pentru {{name}}",
+    "menuType": "Alege tipul de meniu:",
+    "allergies": "Alergii sau mențiuni:",
+    "allergiesPlaceholder": "Ex: Fără lactoză, vegetarian, alergie la nuci...",
+    "cancel": "Anulează",
+    "save": "Salvează"
+  },
+  "menu": {
+    "normal": "Normal",
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan"
+  },
+  "demo": {
+    "badge": "Demo live",
+    "builtBy": "Invitație digitală creată de {{author}}",
+    "cta": "Vreau și eu una",
+    "floatingCta": "Vrei o invitație ca aceasta?",
+    "rsvpNote": "Mod demo: răspunsul tău nu se trimite nicăieri. Încearcă liniștit!",
+    "afterRsvp": "Exact asta ar trăi invitații tăi.",
+    "afterRsvpCta": "Vreau o invitație ca aceasta"
+  },
+  "lead": {
+    "kicker": "În spatele invitației",
+    "title": "Am construit-o pentru propria nuntă. Pot construi una și pentru tine.",
+    "intro": "Invitația de mai sus a fost reală: invitații au confirmat prezența, și-au ales meniul și au salvat evenimentul în calendar, direct de pe telefon.",
+    "feature1": "Confirmare pas cu pas, cu însoțitori și copii",
+    "feature2": "Meniu și alergii pentru fiecare invitat",
+    "feature3": "Răspunsurile ajung direct în Google Sheets",
+    "feature4": "Se afișează automat în limba invitatului (16 limbi)",
+    "feature5": "Numărătoare inversă, hărți și eveniment în calendar",
+    "services": "Nu plănuiești o nuntă? La {{company}} construim aplicații web și produse software cu aceeași atenție la detalii.",
+    "formTitle": "Hai să vorbim",
+    "name": "Nume",
+    "email": "Email",
+    "interestLabel": "Mă interesează",
+    "interest": {
+      "invite": "O invitație digitală pentru evenimentul meu",
+      "webapp": "Un site sau o aplicație web",
+      "other": "Altceva"
+    },
+    "eventDate": "Data evenimentului (opțional)",
+    "message": "Mesaj (opțional)",
+    "messagePlaceholder": "Spune-mi pe scurt ce ai în minte...",
+    "submit": "Trimite",
+    "sending": "Se trimite...",
+    "success": "Mulțumesc! Revin cu un răspuns în curând.",
+    "mailOpened": "Aplicația ta de email ar trebui să se deschidă cu mesajul pregătit. Apasă Trimite și revin cât de curând.",
+    "invalid": "Completează numele și un email valid.",
+    "error": "Mesajul nu a putut fi trimis. Scrie-mi direct pe email.",
+    "privacy": "Folosesc datele tale doar ca să îți răspund.",
+    "orReach": "sau găsește-mă pe",
+    "mailSubject": "Cerere de pe invitația demo"
+  },
+  "footer": {
+    "builtBy": "Proiectat și dezvoltat de {{author}} · {{company}}"
+  }
+}

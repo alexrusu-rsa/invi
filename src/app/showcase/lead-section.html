@@ -1,0 +1,72 @@
+<section class="lead" [id]="sectionId">
+  <p class="kicker" appReveal="write">{{ 'lead.kicker' | transloco }}</p>
+  <h2 class="title" appReveal="up" [revealDelay]="200">{{ 'lead.title' | transloco }}</h2>
+  <p class="intro" appReveal="fade" [revealDelay]="400">{{ 'lead.intro' | transloco }}</p>
+
+  <ul class="features">
+    @for (feature of features; track feature) {
+      <li appReveal="start" [revealDelay]="$index * 130">{{ feature | transloco }}</li>
+    }
+  </ul>
+
+  <p class="services" appReveal="fade">{{ 'lead.services' | transloco: { company: config.company } }}</p>
+
+  <form class="lead-card" appReveal="up" novalidate (submit)="submit($event)">
+    <h3 class="form-title">{{ 'lead.formTitle' | transloco }}</h3>
+
+    @if (status() === 'sent' || status() === 'mailto') {
+      <p class="lead-success" role="status">
+        {{ (status() === 'sent' ? 'lead.success' : 'lead.mailOpened') | transloco }}
+      </p>
+    } @else {
+      <label class="field">
+        <span>{{ 'lead.name' | transloco }}</span>
+        <input name="name" type="text" autocomplete="name" required />
+      </label>
+      <label class="field">
+        <span>{{ 'lead.email' | transloco }}</span>
+        <input name="email" type="email" autocomplete="email" required />
+      </label>
+      <label class="field">
+        <span>{{ 'lead.interestLabel' | transloco }}</span>
+        <select name="interest">
+          @for (interest of interests; track interest) {
+            <option [value]="interest">{{ ('lead.interest.' + interest) | transloco }}</option>
+          }
+        </select>
+      </label>
+      <label class="field">
+        <span>{{ 'lead.eventDate' | transloco }}</span>
+        <input name="eventDate" type="date" />
+      </label>
+      <label class="field">
+        <span>{{ 'lead.message' | transloco }}</span>
+        <textarea name="message" rows="3" [placeholder]="'lead.messagePlaceholder' | transloco"></textarea>
+      </label>
+
+      @if (status() === 'invalid' || status() === 'error') {
+        <p class="lead-error" role="alert">
+          {{ (status() === 'invalid' ? 'lead.invalid' : 'lead.error') | transloco }}
+        </p>
+      }
+
+      <button type="submit" class="lead-submit" [disabled]="status() === 'sending'">
+        {{ (status() === 'sending' ? 'lead.sending' : 'lead.submit') | transloco }}
+      </button>
+      <p class="privacy">{{ 'lead.privacy' | transloco }}</p>
+    }
+  </form>
+
+  <p class="reach" appReveal="fade">
+    {{ 'lead.orReach' | transloco }}
+    <a [href]="config.websiteUrl" target="_blank" rel="noopener">{{ websiteHost }}</a>
+    @if (config.linkedinUrl) {
+      · <a [href]="config.linkedinUrl" target="_blank" rel="noopener">LinkedIn</a>
+    }
+    · <a [href]="'mailto:' + config.email">{{ config.email }}</a>
+  </p>
+
+  <footer class="built-by" appReveal="fade" [revealDelay]="200">
+    {{ 'footer.builtBy' | transloco: { author: config.author, company: config.company } }}
+  </footer>
+</section>

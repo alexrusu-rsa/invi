@@ -1,0 +1,204 @@
+.lead {
+  margin-top: 6rem;
+  padding: 3rem 0 1rem;
+  border-top: 1px solid var(--color-border);
+  scroll-margin-top: 2rem;
+  text-align: center;
+}
+
+.kicker {
+  font-family: var(--font-script);
+  font-size: 2.4rem;
+  color: #555;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.intro,
+.services {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.features {
+  list-style: none;
+  margin: 2rem auto;
+  max-width: 380px;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.features li {
+  position: relative;
+  padding-inline-start: 1.8rem;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.features li::before {
+  content: '♥';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.05rem;
+  color: #e06b5f;
+}
+
+/* Each feature's heart pops as the line slides in. */
+.features li.is-revealed::before {
+  animation: pop 0.8s var(--ease-spring) calc(var(--reveal-delay, 0ms) + 250ms) both;
+}
+
+.lead-submit {
+  animation: breathe 2.8s ease-in-out infinite;
+}
+
+.services {
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+
+.lead-card {
+  background: var(--color-bg-white);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: start;
+}
+
+.form-title {
+  font-family: var(--font-script);
+  font-size: 2.4rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.field {
+  display: block;
+  margin-bottom: 1.1rem;
+}
+
+.field span {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 0.4rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-primary);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.lead-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  background: #222;
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lead-submit:hover {
+  background: #000;
+}
+
+.lead-submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.lead-error {
+  color: #e06b5f;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.lead-success {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding: 1rem 0;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.privacy {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: #888;
+  text-align: center;
+}
+
+.reach {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #555;
+  overflow-wrap: anywhere;
+}
+
+.reach a {
+  color: var(--color-primary);
+  text-underline-offset: 3px;
+}
+
+.built-by {
+  margin-top: 2.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

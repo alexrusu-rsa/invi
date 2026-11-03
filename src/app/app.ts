@@ -1,7 +1,18 @@
-import { Component, signal, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, computed, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import confetti from 'canvas-confetti';
-import { submitToGoogleForm } from './google-form';
+import { RSVPPayload, submitToGoogleForm } from './google-form';
+import { prefersReducedMotion } from './motion/reduced-motion';
+import { Reveal } from './motion/reveal';
+import { ScrollCues } from './motion/scroll-cues';
+import { FloatingCta } from './showcase/floating-cta';
+import { LeadSection } from './showcase/lead-section';
+import { ShowcaseBanner } from './showcase/showcase-banner';
+import { LEAD_SECTION_ID, SHOWCASE_CONFIG, scrollToLead } from './showcase/showcase.config';
+
+// Ceremony start in Romanian time, so the countdown is right for guests in any time zone.
+const WEDDING_START = new Date('2026-09-20T13:00:00+03:00').getTime();
 
 interface Guest {
   name: string;
@@ -13,11 +24,37 @@ interface Guest {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    TranslocoPipe,
+    Reveal,
+    ScrollCues,
+    ShowcaseBanner,
+    FloatingCta,
+    LeadSection,
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App implements OnInit, OnDestroy {
+  private readonly transloco = inject(TranslocoService);
+  protected readonly showcase = SHOWCASE_CONFIG;
+  protected readonly leadId = LEAD_SECTION_ID;
+  protected readonly scrollToLead = scrollToLead;
+
+  // Names are revealed letter by letter.
+  protected readonly brideLetters = [...'BIANCA'];
+  protected readonly groomLetters = [...'ALEX'];
+
+  // Hearts that float up from the heart divider: position, size, drift, spin, delay.
+  protected readonly floatingHearts = [
+    { x: '30%', size: '1rem', drift: '-24px', spin: '-20deg', delay: '0.7s' },
+    { x: '42%', size: '1.5rem', drift: '10px', spin: '12deg', delay: '1s' },
+    { x: '55%', size: '0.85rem', drift: '-8px', spin: '-8deg', delay: '1.3s' },
+    { x: '64%', size: '1.25rem', drift: '26px', spin: '18deg', delay: '0.85s' },
+    { x: '74%', size: '0.95rem', drift: '6px', spin: '-14deg', delay: '1.5s' },
+  ];
+
   currentStep = signal(1);
   attendance = signal<'yes' | 'no' | null>(null);
 
@@ -25,6 +62,7 @@ export class App implements OnInit, OnDestroy {
   partnerName = signal('');
   childCount = signal(0);
   isAccompanied = signal<'yes' | 'no' | null>(null);
+  // Errors hold translation keys; the template translates them.
   step1Error = signal('');
   isSubmitting = signal(false);
   submissionError = signal('');
@@ -36,26 +74,53 @@ export class App implements OnInit, OnDestroy {
   hours = signal('00');
   minutes = signal('00');
   seconds = signal('00');
+  // Once the big day has passed, the countdown turns into "since we said I do".
+  isPast = signal(false);
   private timer: any;
 
+  // 0 → 1 while the countdown "rolls up" from zero the first time it scrolls into view.
+  protected readonly countIntro = signal(1);
+  protected readonly countdownView = computed(() => {
+    const progress = this.countIntro();
+    const roll = (value: string) => String(Math.round(Number(value) * progress)).padStart(2, '0');
+    return {
+      days: roll(this.days()),
+      hours: roll(this.hours()),
+      minutes: roll(this.minutes()),
+      seconds: roll(this.seconds()),
+    };
+  });
+
   ngOnInit() {
-    const targetDate = new Date('2026-09-20T18:00:00').getTime();
-    this.timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-      if (distance < 0) {
-        clearInterval(this.timer);
-        return;
-      }
-      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const s = Math.floor((distance % (1000 * 60)) / 1000);
-      this.days.set(String(d).padStart(2, '0'));
-      this.hours.set(String(h).padStart(2, '0'));
-      this.minutes.set(String(m).padStart(2, '0'));
-      this.seconds.set(String(s).padStart(2, '0'));
-    }, 1000);
+    this.updateCountdown();
+    this.timer = setInterval(() => this.updateCountdown(), 1000);
+  }
+
+  startCountdownIntro() {
+    if (prefersReducedMotion()) return;
+    const duration = 1800;
+    const start = performance.now();
+    const step = (now: number) => {
+      const t = Math.min(1, (now - start) / duration);
+      this.countIntro.set(1 - Math.pow(1 - t, 4));
+      if (t < 1) requestAnimationFrame(step);
+    };
+    this.countIntro.set(0);
+    requestAnimationFrame(step);
+  }
+
+  private updateCountdown() {
+    const diff = WEDDING_START - Date.now();
+    const distance = Math.abs(diff);
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
+    this.isPast.set(diff < 0);
+    this.days.set(String(d).padStart(2, '0'));
+    this.hours.set(String(h).padStart(2, '0'));
+    this.minutes.set(String(m).padStart(2, '0'));
+    this.seconds.set(String(s).padStart(2, '0'));
   }
 
   ngOnDestroy() {
@@ -65,7 +130,7 @@ export class App implements OnInit, OnDestroy {
   // Step 1 Actions
   async handleMainAttendance(choice: 'yes' | 'no', nameInput: string) {
     if (!nameInput.trim()) {
-      this.step1Error.set('Introdu numele și prenumele');
+      this.step1Error.set('rsvp.nameRequired');
       return;
     }
     this.step1Error.set('');
@@ -75,16 +140,14 @@ export class App implements OnInit, OnDestroy {
       this.isSubmitting.set(true);
       this.submissionError.set('');
       try {
-        await submitToGoogleForm({
+        await this.submitRsvp({
           attendance: 'no',
           mainName: nameInput,
           guests: [],
         });
         this.currentStep.set(4);
-      } catch (err: any) {
-        this.submissionError.set(
-          err.message || 'A apărut o eroare la trimitere. Vă rugăm reîncercați.',
-        );
+      } catch {
+        this.submissionError.set('rsvp.error');
       } finally {
         this.isSubmitting.set(false);
       }
@@ -121,7 +184,12 @@ export class App implements OnInit, OnDestroy {
         });
       }
       for (let i = 0; i < this.childCount(); i++) {
-        list.push({ name: `Copil ${i + 1}`, type: 'copil', menuType: 'normal', allergies: '' });
+        list.push({
+          name: this.transloco.translate('guest.childName', { n: i + 1 }),
+          type: 'copil',
+          menuType: 'normal',
+          allergies: '',
+        });
       }
     }
 
@@ -153,7 +221,7 @@ export class App implements OnInit, OnDestroy {
     this.isSubmitting.set(true);
     this.submissionError.set('');
     try {
-      await submitToGoogleForm({
+      await this.submitRsvp({
         attendance: this.attendance() || 'yes',
         mainName: this.mainName(),
         partnerName: this.partnerName(),
@@ -164,13 +232,19 @@ export class App implements OnInit, OnDestroy {
         this.triggerConfetti();
       }
       this.currentStep.set(4);
-    } catch (err: any) {
-      this.submissionError.set(
-        err.message || 'A apărut o eroare la trimitere. Vă rugăm reîncercați.',
-      );
+    } catch {
+      this.submissionError.set('rsvp.error');
     } finally {
       this.isSubmitting.set(false);
     }
+  }
+
+  // In showcase mode visitors only try the flow: nothing reaches the wedding's Google Form.
+  private submitRsvp(payload: RSVPPayload): Promise<void> {
+    if (this.showcase.enabled) {
+      return new Promise((resolve) => setTimeout(resolve, 600));
+    }
+    return submitToGoogleForm(payload);
   }
 
   // Utility

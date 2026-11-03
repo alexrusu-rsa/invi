@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Partecipazione di nozze | Bianca & Alex",
+    "description": "Siamo felici di invitarvi al nostro matrimonio!"
+  },
+  "hero": {
+    "invitedLine1": "Siete invitati",
+    "invitedLine2": "con gioia",
+    "overlay": "a celebrare l’unione piena d’amore di",
+    "and": "e",
+    "month": "Settembre"
+  },
+  "countdown": {
+    "before": {
+      "line1": "Al nostro",
+      "word": "«sì»",
+      "line2": "mancano"
+    },
+    "after": {
+      "line1": "Dal nostro",
+      "word": "«sì»",
+      "line2": "sono passati"
+    },
+    "days": "Giorni",
+    "hours": "Ore",
+    "minutes": "Min",
+    "seconds": "Sec"
+  },
+  "time": {
+    "ceremony": "13:00",
+    "party": "15:00",
+    "cake": "22:00"
+  },
+  "card": {
+    "at": "Alle {{time}}",
+    "viewMap": "Vedi sulla mappa"
+  },
+  "ceremony": {
+    "title": "Cerimonia religiosa",
+    "subtitle": "Un momento per l’anima",
+    "venue": "Monastero della Santissima Trinità, Feleacu",
+    "desc": "Una pausa per la preghiera e la pace interiore"
+  },
+  "party": {
+    "title": "La grande festa",
+    "subtitle": "Il momento della festa",
+    "venue": "The Barn, villaggio di Gheorgheni, Cluj",
+    "desc": "Ci spostiamo in un’atmosfera calda, dove la gioia prende vita tra musica, sapori e balli"
+  },
+  "program": {
+    "title": "Programma",
+    "ceremony": {
+      "desc": "Uniamo i nostri destini davanti a Dio."
+    },
+    "celebration": {
+      "label": "Il momento della festa",
+      "desc": "Diamo il via a una giornata da favola."
+    },
+    "dance": {
+      "label": "Balli e allegria",
+      "desc": "Tutti in pista per creare ricordi indimenticabili!"
+    },
+    "cake": {
+      "label": "Il taglio della torta",
+      "desc": "Addolciamo la serata con un dessert speciale."
+    }
+  },
+  "closing": {
+    "line1": "La nostra storia è più bella quando la condividiamo con voi",
+    "line2": "Non vediamo l’ora di scrivere insieme il capitolo più bello finora",
+    "signoff": "Con amore e gioia,",
+    "heartAlt": "Cuore"
+  },
+  "rsvp": {
+    "please": "vi preghiamo di",
+    "confirm": "confermare",
+    "by": "entro il 1° settembre",
+    "nameLabel": "Nome e cognome",
+    "namePlaceholder": "Scrivi qui il tuo nome...",
+    "nameRequired": "Inserisci nome e cognome",
+    "yes": "Sì, ci sarò",
+    "no": "Non potrò esserci",
+    "sending": "Invio in corso...",
+    "error": "Si è verificato un errore durante l’invio. Riprova.",
+    "companionQuestion": "Verrai accompagnato?",
+    "withCompanion": "Sì, vengo in compagnia",
+    "alone": "No, vengo da solo",
+    "partnerLabel": "Nome del partner",
+    "partnerPlaceholder": "Nome dell’accompagnatore...",
+    "childCount": "Numero di bambini",
+    "next": "Avanti",
+    "dietQuestion": "Allergie o preferenze alimentari?",
+    "dietSub": "Facci sapere se hai esigenze particolari per il menu.",
+    "viewNote": "Vedi nota",
+    "addNote": "+ Aggiungi nota",
+    "saving": "Salvataggio...",
+    "finish": "Conferma"
+  },
+  "guest": {
+    "principal": "ospite principale",
+    "partener": "partner",
+    "copil": "bambino",
+    "childName": "Bambino {{n}}"
+  },
+  "success": {
+    "calendarText": "Aggiungi il nostro giorno speciale al tuo calendario per festeggiare con noi",
+    "addToCalendar": "Aggiungi al calendario",
+    "thanks": "Grazie!"
+  },
+  "decline": {
+    "title": "Ci dispiace...",
+    "line1": "che tu non possa essere con noi.",
+    "line2": "Grazie per la risposta!"
+  },
+  "modal": {
+    "optionsFor": "Opzioni per {{name}}",
+    "menuType": "Scegli il menu:",
+    "allergies": "Allergie o note:",
+    "allergiesPlaceholder": "Es.: senza lattosio, allergia alla frutta secca...",
+    "cancel": "Annulla",
+    "save": "Salva"
+  },
+  "menu": {
+    "normal": "Standard",
+    "vegetarian": "Vegetariano",
+    "vegan": "Vegano"
+  },
+  "demo": {
+    "badge": "Demo dal vivo",
+    "builtBy": "Invito digitale creato da {{author}}",
+    "cta": "Richiedi il tuo",
+    "floatingCta": "Ne vuoi uno così?",
+    "rsvpNote": "Modalità demo: la tua risposta non viene inviata da nessuna parte. Provalo pure!",
+    "afterRsvp": "È esattamente ciò che vivrebbero i tuoi ospiti.",
+    "afterRsvpCta": "Ne voglio uno così"
+  },
+  "lead": {
+    "kicker": "Dietro l’invito",
+    "title": "L’ho creato per il mio matrimonio. Posso crearne uno anche per te.",
+    "intro": "L’invito qui sopra era reale: gli ospiti hanno confermato la presenza, scelto il menu e salvato la data nel calendario, tutto dal telefono.",
+    "feature1": "Conferma passo dopo passo, con partner e bambini",
+    "feature2": "Scelta del menu e allergie per ogni ospite",
+    "feature3": "Le risposte arrivano direttamente in Google Sheets",
+    "feature4": "Si mostra automaticamente nella lingua di ogni ospite (16 lingue)",
+    "feature5": "Conto alla rovescia, mappe e invito nel calendario",
+    "services": "Nessun matrimonio in vista? In {{company}} sviluppiamo web app e prodotti software con la stessa cura per i dettagli.",
+    "formTitle": "Parliamone",
+    "name": "Nome",
+    "email": "Email",
+    "interestLabel": "Mi interessa",
+    "interest": {
+      "invite": "Un invito digitale per il mio evento",
+      "webapp": "Un sito o una web app",
+      "other": "Altro"
+    },
+    "eventDate": "Data dell’evento (facoltativa)",
+    "message": "Messaggio (facoltativo)",
+    "messagePlaceholder": "Raccontami in breve cosa hai in mente...",
+    "submit": "Invia",
+    "sending": "Invio in corso...",
+    "success": "Grazie! Ti risponderò al più presto.",
+    "mailOpened": "Dovrebbe aprirsi la tua app di posta con il messaggio pronto. Premi Invia e ti risponderò al più presto.",
+    "invalid": "Inserisci il tuo nome e un indirizzo email valido.",
+    "error": "Non è stato possibile inviare il messaggio. Scrivimi direttamente via email.",
+    "privacy": "Uso i tuoi dati solo per risponderti.",
+    "orReach": "oppure trovami su",
+    "mailSubject": "Richiesta dall’invito demo"
+  },
+  "footer": {
+    "builtBy": "Progettato e sviluppato da {{author}} · {{company}}"
+  }
+}

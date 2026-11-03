@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "Faire-part de mariage | Bianca & Alex",
+    "description": "Nous sommes ravis de vous inviter à notre mariage !"
+  },
+  "hero": {
+    "invitedLine1": "C’est avec joie",
+    "invitedLine2": "que nous vous invitons",
+    "overlay": "à célébrer l’union pleine d’amour de",
+    "and": "et",
+    "month": "Septembre"
+  },
+  "countdown": {
+    "before": {
+      "line1": "Avant notre",
+      "word": "« oui »",
+      "line2": "il reste"
+    },
+    "after": {
+      "line1": "Depuis notre",
+      "word": "« oui »",
+      "line2": "déjà"
+    },
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Min",
+    "seconds": "Sec"
+  },
+  "time": {
+    "ceremony": "13h00",
+    "party": "15h00",
+    "cake": "22h00"
+  },
+  "card": {
+    "at": "À {{time}}",
+    "viewMap": "Voir sur la carte"
+  },
+  "ceremony": {
+    "title": "Cérémonie religieuse",
+    "subtitle": "Un moment pour l’âme",
+    "venue": "Monastère de la Sainte-Trinité, Feleacu",
+    "desc": "Une pause pour la prière et la paix intérieure"
+  },
+  "party": {
+    "title": "La grande fête",
+    "subtitle": "Place à la fête",
+    "venue": "The Barn, village de Gheorgheni, Cluj",
+    "desc": "Nous rejoignons un cadre chaleureux où la joie prend vie en musique, en saveurs et en danse"
+  },
+  "program": {
+    "title": "Programme",
+    "ceremony": {
+      "desc": "Nous unissons nos destins devant Dieu."
+    },
+    "celebration": {
+      "label": "Place à la fête",
+      "desc": "Le coup d’envoi d’une journée de conte de fées."
+    },
+    "dance": {
+      "label": "Danse et bonne humeur",
+      "desc": "Direction la piste de danse pour créer des souvenirs inoubliables !"
+    },
+    "cake": {
+      "label": "Le gâteau",
+      "desc": "Nous terminons la soirée sur une note sucrée."
+    }
+  },
+  "closing": {
+    "line1": "Notre histoire est plus belle lorsque nous la partageons avec vous",
+    "line2": "Nous avons hâte d’écrire avec vous le plus beau chapitre de notre vie",
+    "signoff": "Avec amour et joie,",
+    "heartAlt": "Cœur"
+  },
+  "rsvp": {
+    "please": "merci de",
+    "confirm": "confirmer",
+    "by": "avant le 1er septembre",
+    "nameLabel": "Nom et prénom",
+    "namePlaceholder": "Écrivez votre nom ici...",
+    "nameRequired": "Veuillez indiquer votre nom et prénom",
+    "yes": "Oui, je serai là",
+    "no": "Je ne pourrai pas venir",
+    "sending": "Envoi en cours...",
+    "error": "Une erreur est survenue lors de l’envoi. Veuillez réessayer.",
+    "companionQuestion": "Serez-vous accompagné(e) ?",
+    "withCompanion": "Oui, je viens accompagné(e)",
+    "alone": "Non, je viens seul(e)",
+    "partnerLabel": "Nom de votre partenaire",
+    "partnerPlaceholder": "Nom de la personne qui vous accompagne...",
+    "childCount": "Nombre d’enfants",
+    "next": "Continuer",
+    "dietQuestion": "Allergies ou préférences alimentaires ?",
+    "dietSub": "Merci de nous signaler toute demande particulière pour le menu.",
+    "viewNote": "Voir la note",
+    "addNote": "+ Ajouter une note",
+    "saving": "Enregistrement...",
+    "finish": "Terminer"
+  },
+  "guest": {
+    "principal": "invité principal",
+    "partener": "partenaire",
+    "copil": "enfant",
+    "childName": "Enfant {{n}}"
+  },
+  "success": {
+    "calendarText": "Ajoutez notre grand jour à votre agenda pour le célébrer avec nous",
+    "addToCalendar": "Ajouter à l’agenda",
+    "thanks": "Merci !"
+  },
+  "decline": {
+    "title": "Quel dommage...",
+    "line1": "que vous ne puissiez pas être des nôtres.",
+    "line2": "Merci pour votre réponse !"
+  },
+  "modal": {
+    "optionsFor": "Options pour {{name}}",
+    "menuType": "Choisissez un menu :",
+    "allergies": "Allergies ou remarques :",
+    "allergiesPlaceholder": "Ex. : sans lactose, allergie aux noix...",
+    "cancel": "Annuler",
+    "save": "Enregistrer"
+  },
+  "menu": {
+    "normal": "Standard",
+    "vegetarian": "Végétarien",
+    "vegan": "Végétalien"
+  },
+  "demo": {
+    "badge": "Démo en direct",
+    "builtBy": "Invitation numérique créée par {{author}}",
+    "cta": "Obtenir la vôtre",
+    "floatingCta": "Envie d’une invitation comme celle-ci ?",
+    "rsvpNote": "Mode démo : votre réponse n’est envoyée nulle part. Essayez librement !",
+    "afterRsvp": "Voilà exactement ce que vivraient vos invités.",
+    "afterRsvpCta": "J’en veux une comme celle-ci"
+  },
+  "lead": {
+    "kicker": "Les coulisses de l’invitation",
+    "title": "Je l’ai créée pour mon propre mariage. Je peux créer la vôtre.",
+    "intro": "L’invitation ci-dessus était bien réelle : les invités ont confirmé leur présence, choisi leur menu et ajouté la date à leur agenda, le tout depuis leur téléphone.",
+    "feature1": "Confirmation pas à pas, avec partenaires et enfants",
+    "feature2": "Choix du menu et allergies pour chaque invité",
+    "feature3": "Les réponses arrivent directement dans Google Sheets",
+    "feature4": "S’affiche automatiquement dans la langue de chaque invité (16 langues)",
+    "feature5": "Compte à rebours, cartes et invitation pour l’agenda",
+    "services": "Pas de mariage en vue ? Chez {{company}}, nous créons des applications web et des produits logiciels avec le même souci du détail.",
+    "formTitle": "Parlons-en",
+    "name": "Nom",
+    "email": "E-mail",
+    "interestLabel": "Je suis intéressé(e) par",
+    "interest": {
+      "invite": "Une invitation numérique pour mon événement",
+      "webapp": "Un site ou une application web",
+      "other": "Autre chose"
+    },
+    "eventDate": "Date de l’événement (facultatif)",
+    "message": "Message (facultatif)",
+    "messagePlaceholder": "Dites-moi en quelques mots ce que vous avez en tête...",
+    "submit": "Envoyer",
+    "sending": "Envoi en cours...",
+    "success": "Merci ! Je vous réponds très vite.",
+    "mailOpened": "Votre messagerie devrait s’ouvrir avec le message prêt. Il ne reste qu’à l’envoyer, je vous réponds très vite.",
+    "invalid": "Veuillez indiquer votre nom et une adresse e-mail valide.",
+    "error": "Votre message n’a pas pu être envoyé. Écrivez-moi directement par e-mail.",
+    "privacy": "J’utilise vos coordonnées uniquement pour vous répondre.",
+    "orReach": "ou retrouvez-moi sur",
+    "mailSubject": "Demande depuis l’invitation de démonstration"
+  },
+  "footer": {
+    "builtBy": "Conçu et développé par {{author}} · {{company}}"
+  }
+}

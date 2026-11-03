@@ -88,7 +88,7 @@ export async function submitToGoogleForm(data: RSVPPayload): Promise<void> {
   }
 }
 
-async function sendRequest(url: string, body: URLSearchParams): Promise<void> {
+export async function sendRequest(url: string, body: URLSearchParams): Promise<void> {
   try {
     // Mode 'no-cors' allows submission despite Google Forms not responding with CORS headers.
     await fetch(url, {

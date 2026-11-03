@@ -1,122 +1,137 @@
+<app-showcase-banner *ngIf="showcase.enabled"></app-showcase-banner>
+<app-scroll-cues></app-scroll-cues>
+
 <main class="canva-theme">
   <!-- Top Announcement -->
   <div class="top-announcement">
-    <p>Sunteți invitați</p>
-    <p>cu bucurie</p>
+    <p appReveal="up">{{ 'hero.invitedLine1' | transloco }}</p>
+    <p appReveal="up" [revealDelay]="180">{{ 'hero.invitedLine2' | transloco }}</p>
   </div>
 
   <!-- Hero Image Wrapper -->
-  <div class="hero-image-wrapper">
-    <img src="/tenerifephoto.es204.JPG" alt="Bianca & Alex" class="hero-image-img">
+  <div class="hero-image-wrapper" appReveal="fade" [revealDelay]="250">
+    <img src="/tenerifephoto.es204.JPG" alt="Bianca & Alex" class="hero-image-img" width="1080" height="1620"
+      fetchpriority="high">
     <div class="fade-overlay-bottom"></div>
-    <div class="script-overlay">pentru a celebra uniunea plină de iubire alături de</div>
+    <div class="script-overlay" appReveal="write" [revealDelay]="900">{{ 'hero.overlay' | transloco }}</div>
   </div>
 
   <div class="names-section">
-    <h1 class="serif-name">BIANCA</h1>
+    <h1 class="serif-name" appReveal="letters" [revealDelay]="200" aria-label="BIANCA">
+      @for (letter of brideLetters; track $index) {<span class="letter" aria-hidden="true" [style.--i]="$index">{{ letter }}</span>}
+    </h1>
     <div class="name-row">
-      <span class="script-and">și</span>
-      <h1 class="serif-name">ALEX</h1>
+      <span class="script-and" appReveal="write" [revealDelay]="650">{{ 'hero.and' | transloco }}</span>
+      <h1 class="serif-name" appReveal="letters" [revealDelay]="850" aria-label="ALEX">
+        @for (letter of groomLetters; track $index) {<span class="letter" aria-hidden="true" [style.--i]="$index">{{ letter }}</span>}
+      </h1>
     </div>
   </div>
 
-  <div class="divider"></div>
+  <div class="divider" appReveal="grow"></div>
 
   <div class="date-section">
     <div class="date-hero">
-      <span class="big-date">20</span>
-      <span class="script-month">Septembrie</span>
+      <span class="big-date" appReveal="zoom">20</span>
+      <span class="script-month" appReveal="write" [revealDelay]="400">{{ 'hero.month' | transloco }}</span>
     </div>
   </div>
 
-  <div class="second-fade-wrapper">
-    <img src="/tenerifephoto.es211.JPG" alt="Bianca și Alex" class="second-image-img">
+  <div class="second-fade-wrapper" appReveal="fade">
+    <img src="/tenerifephoto.es211.JPG" alt="Bianca & Alex" class="second-image-img" width="1080" height="1620"
+      loading="lazy">
     <div class="fade-overlay-both"></div>
   </div>
 
   <!-- Countdown Timer Section -->
-  <div class="countdown-wrapper">
+  <div class="countdown-wrapper" appReveal="up" (revealed)="startCountdownIntro()">
     <div class="countdown-title">
-      <div class="title-line uppercase">Până când spunem <span class="script-word">„Da”</span></div>
-      <div class="title-line uppercase">mai sunt</div>
+      <div class="title-line uppercase" appReveal="end" [revealDelay]="150">
+        {{ (isPast() ? 'countdown.after.line1' : 'countdown.before.line1') | transloco }}
+        <span class="script-word">{{ (isPast() ? 'countdown.after.word' : 'countdown.before.word') | transloco }}</span>
+      </div>
+      <div class="title-line uppercase" appReveal="end" [revealDelay]="350">
+        {{ (isPast() ? 'countdown.after.line2' : 'countdown.before.line2') | transloco }}
+      </div>
     </div>
-    <div class="countdown-timer">
+    <!-- Each digit is keyed by its value, so a new one drops in whenever it changes. -->
+    <div class="countdown-timer" [class.counting]="countIntro() < 1">
       <div class="time-block">
-        <span class="number">{{days()}}</span>
-        <span class="label">Zile</span>
+        <span class="number">@for (value of [countdownView().days]; track value) {<span class="tick">{{ value }}</span>}</span>
+        <span class="label">{{ 'countdown.days' | transloco }}</span>
       </div>
       <div class="colon">:</div>
       <div class="time-block">
-        <span class="number">{{hours()}}</span>
-        <span class="label">Ore</span>
+        <span class="number">@for (value of [countdownView().hours]; track value) {<span class="tick">{{ value }}</span>}</span>
+        <span class="label">{{ 'countdown.hours' | transloco }}</span>
       </div>
       <div class="colon">:</div>
       <div class="time-block">
-        <span class="number">{{minutes()}}</span>
-        <span class="label">Min</span>
+        <span class="number">@for (value of [countdownView().minutes]; track value) {<span class="tick">{{ value }}</span>}</span>
+        <span class="label">{{ 'countdown.minutes' | transloco }}</span>
       </div>
       <div class="colon">:</div>
       <div class="time-block seconds-color">
-        <span class="number">{{seconds()}}</span>
-        <span class="label">Sec</span>
+        <span class="number">@for (value of [countdownView().seconds]; track value) {<span class="tick">{{ value }}</span>}</span>
+        <span class="label">{{ 'countdown.seconds' | transloco }}</span>
       </div>
     </div>
   </div>
 
   <div class="timeline">
     <div class="timeline-item">
-      <div class="timeline-title">Ceremonia Religioasă</div>
-      <div class="venue-image-wrapper">
-        <img src="/biserica.jpg" alt="Mănăstirea Sfânta Treime" class="venue-image"
-          onerror="this.src='https://placehold.co/600x400/EDEDED/888888?text=biserica.jpg'">
+      <div class="timeline-title" appReveal="write">{{ 'ceremony.title' | transloco }}</div>
+      <div class="venue-image-wrapper" appReveal="zoom" [revealDelay]="150">
+        <img src="/biserica.jpg" [alt]="'ceremony.venue' | transloco" class="venue-image" width="451" height="677"
+          loading="lazy" onerror="this.src='https://placehold.co/600x400/EDEDED/888888?text=biserica.jpg'">
       </div>
-      <div class="timeline-card">
-        <p class="elegant-subtitle">Momentul de suflet</p>
-        <p>Ora 13:00</p>
-        <p><strong>Mănăstirea „Sfânta Treime”, Feleacu</strong></p>
-        <p>Un popas pentru rugăciune și liniște sufletească</p>
+      <div class="timeline-card" appReveal="up" [revealDelay]="250">
+        <p class="elegant-subtitle">{{ 'ceremony.subtitle' | transloco }}</p>
+        <p>{{ 'card.at' | transloco: { time: ('time.ceremony' | transloco) } }}</p>
+        <p><strong>{{ 'ceremony.venue' | transloco }}</strong></p>
+        <p>{{ 'ceremony.desc' | transloco }}</p>
         <a href="https://maps.app.goo.gl/U81JfQSmNALt8k3J9" target="_blank" class="btn-directions">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
           </svg>
-          Vezi pe hartă
+          {{ 'card.viewMap' | transloco }}
         </a>
       </div>
     </div>
 
     <div class="timeline-item">
-      <div class="timeline-title">Marea Petrecere</div>
-      <div class="venue-image-wrapper">
-        <img src="/sala.jpg" alt="The Barn" class="venue-image">
+      <div class="timeline-title" appReveal="write">{{ 'party.title' | transloco }}</div>
+      <div class="venue-image-wrapper" appReveal="zoom" [revealDelay]="150">
+        <img src="/sala.jpg" alt="The Barn" class="venue-image" width="800" height="1014" loading="lazy">
       </div>
-      <div class="timeline-card">
-        <p class="elegant-subtitle">Momentul de sărbătoare</p>
-        <p>Ora 15:00</p>
-        <p><strong>The Barn, sat Gheorgheni, Cluj</strong></p>
-        <p>Ne mutăm în atmosfera caldă, unde bucuria prinde contur prin muzică, arome și dans</p>
+      <div class="timeline-card" appReveal="up" [revealDelay]="250">
+        <p class="elegant-subtitle">{{ 'party.subtitle' | transloco }}</p>
+        <p>{{ 'card.at' | transloco: { time: ('time.party' | transloco) } }}</p>
+        <p><strong>{{ 'party.venue' | transloco }}</strong></p>
+        <p>{{ 'party.desc' | transloco }}</p>
         <a href="https://www.google.com/maps/search/?api=1&query=The+Barn+Gheorgheni+Cluj" target="_blank"
           class="btn-directions">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
           </svg>
-          Vezi pe hartă
+          {{ 'card.viewMap' | transloco }}
         </a>
       </div>
     </div>
   </div>
 
   <div class="program-section">
-    <div class="program-title">Program</div>
-    <div class="stepper-container">
-      <div class="step-item">
+    <div class="program-title" appReveal="write">{{ 'program.title' | transloco }}</div>
+    <div class="stepper-container" appReveal="fade">
+      <div class="step-item" appReveal="end">
         <div class="step-content">
-          <img src="/ceremonia_religioasa.svg" alt="" class="step-art">
+          <img src="/ceremonia_religioasa.svg" alt="" class="step-art" loading="lazy">
           <div class="step-info">
-            <div class="step-time">13:00</div>
-            <div class="step-label">Ceremonia Religioasă</div>
-            <div class="step-desc">Ne unim destinele în fața lui Dumnezeu.</div>
+            <div class="step-time">{{ 'time.ceremony' | transloco }}</div>
+            <div class="step-label">{{ 'ceremony.title' | transloco }}</div>
+            <div class="step-desc">{{ 'program.ceremony.desc' | transloco }}</div>
             <div class="step-bullet">
               <svg viewBox="0 0 24 24">
                 <path
@@ -126,13 +141,13 @@
           </div>
         </div>
       </div>
-      <div class="step-item">
+      <div class="step-item" appReveal="end">
         <div class="step-content">
-          <img src="/moment_de_sarbatoare.svg" alt="" class="step-art">
+          <img src="/moment_de_sarbatoare.svg" alt="" class="step-art" loading="lazy">
           <div class="step-info">
-            <div class="step-time">15:00</div>
-            <div class="step-label">Momentul de Sărbătoare</div>
-            <div class="step-desc">Dăm startul unei zile de poveste.</div>
+            <div class="step-time">{{ 'time.party' | transloco }}</div>
+            <div class="step-label">{{ 'program.celebration.label' | transloco }}</div>
+            <div class="step-desc">{{ 'program.celebration.desc' | transloco }}</div>
             <div class="step-bullet">
               <svg viewBox="0 0 24 24">
                 <path
@@ -142,12 +157,12 @@
           </div>
         </div>
       </div>
-      <div class="step-item">
+      <div class="step-item" appReveal="end">
         <div class="step-content">
-          <img src="/dans_si_voie_buna.svg" alt="" class="step-art">
+          <img src="/dans_si_voie_buna.svg" alt="" class="step-art" loading="lazy">
           <div class="step-info">
-            <div class="step-label">Dans și Voie Bună</div>
-            <div class="step-desc">Trecem pe ringul de dans pentru a crea amintiri memorabile!</div>
+            <div class="step-label">{{ 'program.dance.label' | transloco }}</div>
+            <div class="step-desc">{{ 'program.dance.desc' | transloco }}</div>
             <div class="step-bullet">
               <svg viewBox="0 0 24 24">
                 <path
@@ -157,13 +172,13 @@
           </div>
         </div>
       </div>
-      <div class="step-item">
+      <div class="step-item" appReveal="end">
         <div class="step-content">
-          <img src="/momentul_tortului.svg" alt="" class="step-art">
+          <img src="/momentul_tortului.svg" alt="" class="step-art" loading="lazy">
           <div class="step-info">
-            <div class="step-time">22:00</div>
-            <div class="step-label">Momentul Tortului</div>
-            <div class="step-desc">Îndulcim seara cu un desert special.</div>
+            <div class="step-time">{{ 'time.cake' | transloco }}</div>
+            <div class="step-label">{{ 'program.cake.label' | transloco }}</div>
+            <div class="step-desc">{{ 'program.cake.desc' | transloco }}</div>
             <div class="step-bullet">
               <svg viewBox="0 0 24 24">
                 <path
@@ -177,31 +192,38 @@
   </div>
 
   <div class="waiting-section">
-    <h2 class="waiting-title">
-      Povestea noastră e mai frumoasă când o împărtășim cu voi <br>
-      Vă așteptăm să scriem împreună cel mai frumos capitol de până acum
+    <h2 class="waiting-title" appReveal="up">
+      {{ 'closing.line1' | transloco }} <br>
+      {{ 'closing.line2' | transloco }}
     </h2>
-    <p class="waiting-subtitle">Cu dragoste și bucurie,</p>
-    <p class="waiting-names">Bianca & Alex</p>
+    <p class="waiting-subtitle" appReveal="fade" [revealDelay]="250">{{ 'closing.signoff' | transloco }}</p>
+    <!-- The couple's signature writes itself. -->
+    <p class="waiting-names" appReveal="write" [revealDelay]="500">Bianca & Alex</p>
   </div>
 
-  <div class="heart-divider">
-    <img src="/inima.svg" alt="Inimă" class="heart-icon">
+  <div class="heart-divider" appReveal="zoom">
+    <img src="/inima.svg" [alt]="'closing.heartAlt' | transloco" class="heart-icon" loading="lazy">
+    @for (heart of floatingHearts; track $index) {
+      <span class="float-heart" aria-hidden="true" [style.--x]="heart.x" [style.--size]="heart.size"
+        [style.--drift]="heart.drift" [style.--spin]="heart.spin" [style.--delay]="heart.delay">♥</span>
+    }
   </div>
 
   <div class="rsvp-area">
+    <p *ngIf="showcase.enabled && currentStep() < 4" class="demo-note">{{ 'demo.rsvpNote' | transloco }}</p>
+
     <!-- STEP 1: Main Info -->
     <div *ngIf="currentStep() === 1" class="rsvp-step">
       <div class="rsvp-header">
-        <div class="rsvp-please">vă rugăm</div>
-        <div class="rsvp-main-lang">confirmați</div>
-        <div class="rsvp-by">până la 1 Septembrie</div>
+        <div class="rsvp-please" appReveal="write">{{ 'rsvp.please' | transloco }}</div>
+        <div class="rsvp-main-lang" appReveal="up" [revealDelay]="200">{{ 'rsvp.confirm' | transloco }}</div>
+        <div class="rsvp-by" appReveal="write" [revealDelay]="550">{{ 'rsvp.by' | transloco }}</div>
       </div>
       <div class="form-group">
-        <label>Nume și Prenume</label>
-        <input #nameInput type="text" placeholder="Scrie numele tău aici..." class="elegant-input"
+        <label>{{ 'rsvp.nameLabel' | transloco }}</label>
+        <input #nameInput type="text" [placeholder]="'rsvp.namePlaceholder' | transloco" class="elegant-input"
           (input)="step1Error.set('')">
-        <div *ngIf="step1Error()" class="error-msg fade-in">{{step1Error()}}</div>
+        <div *ngIf="step1Error()" class="error-msg fade-in">{{ step1Error() | transloco }}</div>
       </div>
       <div class="rsvp-actions">
         <button [disabled]="isSubmitting()" class="btn-confirm-yes"
@@ -210,7 +232,7 @@
             <path
               d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
           </svg>
-          Da, particip
+          {{ 'rsvp.yes' | transloco }}
         </button>
         <button [disabled]="isSubmitting()" class="btn-confirm-no"
           (click)="handleMainAttendance('no', nameInput.value)">
@@ -219,60 +241,60 @@
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
-          {{ isSubmitting() ? 'Se trimite...' : 'Nu pot ajunge' }}
+          {{ (isSubmitting() ? 'rsvp.sending' : 'rsvp.no') | transloco }}
         </button>
       </div>
       <div *ngIf="submissionError()" class="error-msg fade-in" style="margin-top: 1rem; text-align: center;">
-        {{submissionError()}}</div>
+        {{ submissionError() | transloco }}</div>
     </div>
 
     <!-- STEP 2: Companions -->
     <div *ngIf="currentStep() === 2" class="rsvp-step">
-      <h3 class="step-headline">Vei fi însoțit?</h3>
+      <h3 class="step-headline">{{ 'rsvp.companionQuestion' | transloco }}</h3>
       <div class="rsvp-actions">
-        <button [class.active]="isAccompanied() === 'yes'" class="btn-option" (click)="setAccompanied('yes')">Da, vin
-          însoțit</button>
-        <button [class.active]="isAccompanied() === 'no'" class="btn-option" (click)="setAccompanied('no')">Nu, vin
-          singur</button>
+        <button [class.active]="isAccompanied() === 'yes'" class="btn-option" (click)="setAccompanied('yes')">
+          {{ 'rsvp.withCompanion' | transloco }}</button>
+        <button [class.active]="isAccompanied() === 'no'" class="btn-option" (click)="setAccompanied('no')">
+          {{ 'rsvp.alone' | transloco }}</button>
       </div>
 
       <div *ngIf="isAccompanied() === 'yes'" class="companion-setup fade-in">
         <div class="form-group">
-          <label>Nume Partener/Parteneră</label>
+          <label>{{ 'rsvp.partnerLabel' | transloco }}</label>
           <input type="text" [value]="partnerName()" (input)="updatePartnerName($any($event.target).value)"
-            placeholder="Numele însoțitorului..." class="elegant-input">
+            [placeholder]="'rsvp.partnerPlaceholder' | transloco" class="elegant-input">
         </div>
         <div class="form-group">
-          <label>Număr Copii</label>
+          <label>{{ 'rsvp.childCount' | transloco }}</label>
           <input type="number" [value]="childCount()" (input)="updateChildCount($any($event.target).value)" min="0"
             class="elegant-input">
         </div>
-        <button class="btn-primary" (click)="goToStep3()">Mai departe</button>
+        <button class="btn-primary" (click)="goToStep3()">{{ 'rsvp.next' | transloco }}</button>
       </div>
     </div>
 
     <!-- STEP 3: Allergies -->
     <div *ngIf="currentStep() === 3" class="rsvp-step">
-      <h3 class="step-headline">Alergii sau preferințe alimentare?</h3>
-      <p class="step-sub">Te rugăm să ne anunți dacă există cerințe speciale pentru meniu.</p>
+      <h3 class="step-headline">{{ 'rsvp.dietQuestion' | transloco }}</h3>
+      <p class="step-sub">{{ 'rsvp.dietSub' | transloco }}</p>
 
       <div class="guest-diet-list">
-        <div *ngFor="let guest of guests(); let i = index" class="guest-diet-item">
+        <div *ngFor="let guest of guests(); let i = index" class="guest-diet-item" [style.--i]="i">
           <div class="guest-info-row">
             <span class="guest-name">{{guest.name}}</span>
-            <span class="guest-type">({{guest.type}})</span>
+            <span class="guest-type">({{ ('guest.' + guest.type) | transloco }})</span>
           </div>
           <button [disabled]="isSubmitting()" class="btn-allergy-trigger" (click)="openAllergyPopup(i)">
-            {{ guest.allergies ? 'Vezi mențiune' : '+ Adaugă mențiune' }}
+            {{ (guest.allergies ? 'rsvp.viewNote' : 'rsvp.addNote') | transloco }}
           </button>
         </div>
       </div>
 
       <button [disabled]="isSubmitting()" class="btn-primary" (click)="finalConfirm()">
-        {{ isSubmitting() ? 'Se salvează...' : 'Finalizează' }}
+        {{ (isSubmitting() ? 'rsvp.saving' : 'rsvp.finish') | transloco }}
       </button>
       <div *ngIf="submissionError()" class="error-msg fade-in" style="margin-top: 1rem; text-align: center;">
-        {{submissionError()}}</div>
+        {{ submissionError() | transloco }}</div>
     </div>
 
     <!-- STEP 4: Success/Summary -->
@@ -286,12 +308,9 @@
           </div>
           <div class="std-date-hero">
             <span class="std-big-date">20</span>
-            <span class="std-script-month">Septembrie</span>
+            <span class="std-script-month" appReveal="write" [revealDelay]="500">{{ 'hero.month' | transloco }}</span>
           </div>
-          <div class="std-text">
-            Adaugă ziua noastră specială în calendarul tău
-            pentru a sărbători alături de noi
-          </div>
+          <div class="std-text">{{ 'success.calendarText' | transloco }}</div>
           <a href="/nunta.ics" class="btn-calendar">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
@@ -305,53 +324,66 @@
               <rect x="7" y="16" width="2" height="2" fill="currentColor"></rect>
               <rect x="11" y="16" width="2" height="2" fill="currentColor"></rect>
             </svg>
-            Adaugă în Calendar
+            {{ 'success.addToCalendar' | transloco }}
           </a>
-          <div class="multumiri">Vă mulțumim!</div>
+          <div class="multumiri" appReveal="write" [revealDelay]="300">{{ 'success.thanks' | transloco }}</div>
         </div>
       </div>
       <div *ngIf="attendance() === 'no'" class="confirmation-decline">
-        <h2>Ne pare rău...</h2>
-        <p>că nu puteți fi alături de noi.</p>
-        <p>Vă mulțumim pentru răspuns!</p>
+        <h2>{{ 'decline.title' | transloco }}</h2>
+        <p>{{ 'decline.line1' | transloco }}</p>
+        <p>{{ 'decline.line2' | transloco }}</p>
+      </div>
+
+      <div *ngIf="showcase.enabled" class="demo-after-rsvp">
+        <p>{{ 'demo.afterRsvp' | transloco }}</p>
+        <a class="btn-directions" [href]="'#' + leadId" (click)="scrollToLead($event)">
+          {{ 'demo.afterRsvpCta' | transloco }}
+        </a>
       </div>
     </div>
 
     <!-- Allergy Modal -->
     <div *ngIf="activeAllergyGuestIndex() !== null" class="modal-overlay" (click)="closeAllergyPopup()">
       <div class="modal-content" (click)="$event.stopPropagation()">
-        <h3>Opțiuni pentru {{guests()[activeAllergyGuestIndex()!].name}}</h3>
+        <h3>{{ 'modal.optionsFor' | transloco: { name: guests()[activeAllergyGuestIndex()!].name } }}</h3>
 
         <div class="menu-selector">
-          <label class="section-label">Alege tipul de meniu:</label>
+          <label class="section-label">{{ 'modal.menuType' | transloco }}</label>
           <div class="menu-switch">
             <button type="button" [class.active]="guests()[activeAllergyGuestIndex()!].menuType === 'normal'"
               (click)="updateGuestDetails(activeAllergyGuestIndex()!, 'normal', allergyText.value)">
-              Normal
+              {{ 'menu.normal' | transloco }}
             </button>
             <button type="button" [class.active]="guests()[activeAllergyGuestIndex()!].menuType === 'vegetarian'"
               (click)="updateGuestDetails(activeAllergyGuestIndex()!, 'vegetarian', allergyText.value)">
-              Vegetarian
+              {{ 'menu.vegetarian' | transloco }}
             </button>
             <button type="button" [class.active]="guests()[activeAllergyGuestIndex()!].menuType === 'vegan'"
               (click)="updateGuestDetails(activeAllergyGuestIndex()!, 'vegan', allergyText.value)">
-              Vegan
+              {{ 'menu.vegan' | transloco }}
             </button>
           </div>
         </div>
 
         <div class="allergy-setup">
-          <label class="section-label">Alergii sau mențiuni:</label>
+          <label class="section-label">{{ 'modal.allergies' | transloco }}</label>
           <textarea #allergyText [value]="guests()[activeAllergyGuestIndex()!].allergies"
-            placeholder="Ex: Fără lactoză, vegetarian, alergie la nuci..." class="elegant-textarea"></textarea>
+            [placeholder]="'modal.allergiesPlaceholder' | transloco" class="elegant-textarea"></textarea>
         </div>
 
         <div class="modal-actions">
-          <button class="btn-cancel" (click)="closeAllergyPopup()">Anulează</button>
+          <button class="btn-cancel" (click)="closeAllergyPopup()">{{ 'modal.cancel' | transloco }}</button>
           <button class="btn-save"
-            (click)="updateGuestDetails(activeAllergyGuestIndex()!, guests()[activeAllergyGuestIndex()!].menuType, allergyText.value); closeAllergyPopup()">Salvează</button>
+            (click)="updateGuestDetails(activeAllergyGuestIndex()!, guests()[activeAllergyGuestIndex()!].menuType, allergyText.value); closeAllergyPopup()">{{
+            'modal.save' | transloco }}</button>
         </div>
       </div>
     </div>
   </div>
+
+  <app-lead-section *ngIf="showcase.enabled"></app-lead-section>
 </main>
+
+<app-floating-cta *ngIf="showcase.enabled"
+  [hideOver]="['.hero-image-wrapper', '.rsvp-area', '#' + leadId]"></app-floating-cta>
