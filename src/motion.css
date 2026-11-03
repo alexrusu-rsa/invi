@@ -176,38 +176,45 @@
 
 /* ---------- Program ---------- */
 
-/* The timeline draws itself as the guest scrolls through it. */
-.stepper-container {
-  view-timeline: --stepper block;
-}
-
+/* The timeline draws itself one segment at a time: when a step scrolls into view, it draws
+   the line down to the next step, so the line always keeps up with the reader and ends on
+   the last step. The segments replace the container's single static line. */
 .stepper-container::after {
+  display: none;
+}
+
+.step-item::before {
+  content: '';
+  position: absolute;
+  inset-inline-end: 11px;
+  top: 10px;
+  /* Down to the next step's heart: through this step's 3rem bottom margin. */
+  bottom: calc(-3rem - 10px);
+  width: 2px;
+  background-color: var(--color-primary);
   transform-origin: top;
+  transition: transform 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s;
+}
+
+.step-item:last-child::before {
+  bottom: 0;
+}
+
+.step-item:not(.is-revealed)::before {
   transform: scaleY(0);
-  transition: transform 2.4s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-.stepper-container.is-revealed::after {
-  transform: scaleY(1);
+/* The step's text slides in from the timeline side; the heart and line stay put. */
+.step-item :is(.step-time, .step-label, .step-desc) {
+  transition: transform 1.1s var(--ease-out-soft);
 }
 
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .stepper-container::after,
-    .stepper-container.is-revealed::after {
-      transition: none;
-      transform: none;
-      animation: draw-line linear both;
-      animation-timeline: --stepper;
-      animation-range: entry 30% cover 65%;
-    }
-  }
+.step-item:not(.is-revealed) :is(.step-time, .step-label, .step-desc) {
+  transform: translateX(32px);
 }
 
-@keyframes draw-line {
-  from {
-    transform: scaleY(0);
-  }
+[dir='rtl'] .step-item:not(.is-revealed) :is(.step-time, .step-label, .step-desc) {
+  transform: translateX(-32px);
 }
 
 /* Each heart on the timeline pops when its step arrives. */
