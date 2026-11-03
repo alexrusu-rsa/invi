@@ -60,8 +60,19 @@
   animation: pop 0.8s var(--ease-spring) calc(var(--reveal-delay, 0ms) + 250ms) both;
 }
 
+/* Same breathing ring as the RSVP button (keyframes in src/motion.css). */
 .lead-submit {
-  animation: breathe 2.8s ease-in-out infinite;
+  position: relative;
+}
+
+.lead-submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 4px rgba(224, 107, 95, 0.35);
+  animation: breathe 2.8s ease-out infinite;
+  pointer-events: none;
 }
 
 .services {

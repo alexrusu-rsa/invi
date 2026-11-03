@@ -1,3 +1,4 @@
+// Also listed in the translation preload script in src/index.html: keep both in sync.
 export const AVAILABLE_LANGS = [
   'ro', 'en', 'de', 'fr', 'it', 'es', 'pt', 'nl', 'da', 'sv', 'pl', 'cs', 'sk', 'uk', 'ru', 'ar',
 ] as const;

@@ -2,8 +2,9 @@
  * Google Analytics 4, shared with rsasoft.ro so a visitor's journey across both sites shows up
  * in one property (GA4 puts its cookie on the parent domain, .rsasoft.ro).
  *
- * Consent Mode: everything starts denied, exactly like rsasoft.ro. Until the visitor accepts in
- * the consent banner, Google sets no cookies and only receives anonymous, cookie-free pings.
+ * Nothing from Google loads until the visitor accepts in the consent banner: no cookies, no
+ * pings, and no 180 KB gtag.js slowing down the first visit. For returning visitors who already
+ * accepted, gtag.js loads once the page has finished loading, so it never competes with the photos.
  * The choice is stored in a cookie on .rsasoft.ro so rsasoft.ro could share it later.
  */
 export const GA_MEASUREMENT_ID = 'G-ZY2RCK6GLL';
@@ -27,29 +28,12 @@ function isLiveSite(): boolean {
   return host === 'rsasoft.ro' || host.endsWith('.rsasoft.ro');
 }
 
-/** Loads gtag.js with Consent Mode defaults. Runs once at startup. */
+/** Runs once at startup: starts GA only for visitors who accepted on an earlier visit. */
 export function initAnalytics() {
-  if (!isLiveSite()) return;
-
-  window.dataLayer = window.dataLayer ?? [];
-  window.gtag = function () {
-    // gtag.js expects the `arguments` object itself, not an array.
-    window.dataLayer!.push(arguments);
-  };
-
-  window.gtag('consent', 'default', {
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    analytics_storage: readConsent() === 'accepted' ? 'granted' : 'denied',
-  });
-  window.gtag('js', new Date());
-  window.gtag('config', GA_MEASUREMENT_ID);
-
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.appendChild(script);
+  if (!isLiveSite() || readConsent() !== 'accepted') return;
+  startGtag();
+  if (document.readyState === 'complete') loadGtagScript();
+  else window.addEventListener('load', () => setTimeout(loadGtagScript, 0), { once: true });
 }
 
 export function readConsent(): ConsentChoice | null {
@@ -57,23 +41,52 @@ export function readConsent(): ConsentChoice | null {
   return (match?.[1] as ConsentChoice) ?? null;
 }
 
-/** Remembers the visitor's choice and applies it immediately. We only ask for analytics, never ads. */
+/** Remembers the visitor's choice; accepting starts GA right away. We only ask for analytics, never ads. */
 export function saveConsent(choice: ConsentChoice) {
   const domain = isLiveSite() ? '; Domain=rsasoft.ro' : '';
   const secure = location.protocol === 'https:' ? '; Secure' : '';
   document.cookie =
     `${CONSENT_COOKIE}=${choice}; Max-Age=${CONSENT_MAX_AGE}; Path=/; SameSite=Lax${domain}${secure}`;
 
-  window.gtag?.('consent', 'update', {
-    analytics_storage: choice === 'accepted' ? 'granted' : 'denied',
-  });
+  if (choice === 'accepted' && isLiveSite()) {
+    startGtag();
+    setUserProperty('invite_language', document.documentElement.lang);
+    loadGtagScript();
+  }
 }
 
-/** Sends a GA4 event; a no-op on local development. */
+/** Sends a GA4 event; a no-op until the visitor accepts, and on local development. */
 export function track(event: string, params: Record<string, string | number> = {}) {
   window.gtag?.('event', event, params);
 }
 
 export function setUserProperty(name: string, value: string) {
   window.gtag?.('set', 'user_properties', { [name]: value });
+}
+
+/** Defines the gtag queue; calls made before gtag.js arrives are replayed when it loads. */
+function startGtag() {
+  if (window.gtag) return;
+  window.dataLayer = window.dataLayer ?? [];
+  window.gtag = function () {
+    // gtag.js expects the `arguments` object itself, not an array.
+    window.dataLayer!.push(arguments);
+  };
+  window.gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'granted',
+  });
+  window.gtag('js', new Date());
+  window.gtag('config', GA_MEASUREMENT_ID);
+}
+
+function loadGtagScript() {
+  if (document.querySelector('script[data-gtag]')) return;
+  const script = document.createElement('script');
+  script.async = true;
+  script.dataset['gtag'] = '';
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  document.head.appendChild(script);
 }

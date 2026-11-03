@@ -1,5 +1,4 @@
 import { Component, DestroyRef, ElementRef, afterNextRender, inject, signal } from '@angular/core';
-import confetti from 'canvas-confetti';
 import { track } from '../analytics/analytics';
 
 /**
@@ -151,9 +150,10 @@ export class ScrollCues {
       };
       const onScroll = () => (frame ||= requestAnimationFrame(update));
 
+      // No measurement at startup: the page opens at the top (progress 0), and reading the
+      // layout this early would force an extra reflow while the page is still loading.
       window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('resize', onScroll, { passive: true });
-      update();
       destroyRef.onDestroy(() => {
         window.removeEventListener('scroll', onScroll);
         window.removeEventListener('resize', onScroll);
@@ -163,7 +163,9 @@ export class ScrollCues {
   }
 
   /** "You made it to the end": a soft, short burst in the invitation's colours. */
-  private celebrate() {
+  private async celebrate() {
+    // Loaded on demand: most of the page never needs it.
+    const { default: confetti } = await import('canvas-confetti');
     confetti({
       particleCount: 70,
       spread: 75,

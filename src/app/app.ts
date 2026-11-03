@@ -1,7 +1,6 @@
 import { Component, signal, computed, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
-import confetti from 'canvas-confetti';
 import { track } from './analytics/analytics';
 import { ConsentBanner } from './analytics/consent-banner';
 import { RSVPPayload, submitToGoogleForm } from './google-form';
@@ -262,7 +261,9 @@ export class App implements OnInit, OnDestroy {
     this.childCount.set(val);
   }
 
-  triggerConfetti() {
+  async triggerConfetti() {
+    // Loaded on demand, only when a guest confirms.
+    const { default: confetti } = await import('canvas-confetti');
     const duration = 5 * 1000;
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };

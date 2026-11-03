@@ -122,15 +122,15 @@
 
 /* ---------- Hero ---------- */
 
-/* The photo settles in, like a camera finding focus. */
-.hero-image-wrapper.is-revealed .hero-image-img {
+/* The photo settles in, like a camera finding focus. Transform only, and no fade: the photo is the
+   largest element on screen, so it must be visible from the first frame for a fast LCP. */
+.hero-image-img {
   animation: hero-settle 2.8s var(--ease-out-soft) both;
 }
 
 @keyframes hero-settle {
   from {
     transform: scale(1.1);
-    filter: saturate(0.5) brightness(1.08);
   }
 }
 
@@ -349,9 +349,16 @@
   }
 }
 
-/* The main RSVP button breathes softly to draw the eye, and its heart beats on hover. */
-.canva-theme .rsvp-actions .btn-confirm-yes {
-  animation: breathe 2.8s ease-in-out infinite;
+/* The main RSVP button breathes softly to draw the eye: a ring that grows and fades. Transform and
+   opacity only, so it runs on the GPU instead of repainting the page every frame. */
+.canva-theme .rsvp-actions .btn-confirm-yes::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 4px rgba(224, 107, 95, 0.35);
+  animation: breathe 2.8s ease-out infinite;
+  pointer-events: none;
 }
 
 .canva-theme .rsvp-actions .btn-confirm-yes:hover svg {
@@ -359,34 +366,38 @@
 }
 
 @keyframes breathe {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(224, 107, 95, 0.35);
+  0% {
+    opacity: 0.9;
+    transform: scale(1);
   }
 
-  50% {
-    box-shadow: 0 0 0 12px rgba(224, 107, 95, 0);
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.05, 1.3);
   }
 }
 
-/* A light sweep across primary buttons on hover, and a press-down on tap. */
+/* A light sweep across primary buttons on hover, and a press-down on tap. The sweep moves its
+   background instead of itself, so the buttons need no overflow clipping (the ring stays visible). */
 .canva-theme :is(.btn-confirm-yes, .btn-primary, .btn-calendar, .btn-save) {
   position: relative;
-  overflow: hidden;
 }
 
 .canva-theme :is(.btn-confirm-yes, .btn-primary, .btn-calendar, .btn-save)::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.28) 50%, transparent 65%);
-  transform: translateX(-100%);
-  transition: transform 0.9s var(--ease-out-soft);
+  border-radius: inherit;
+  background: linear-gradient(110deg, transparent 40%, rgba(255, 255, 255, 0.28) 50%, transparent 60%) no-repeat;
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.9s var(--ease-out-soft);
   pointer-events: none;
 }
 
 .canva-theme :is(.btn-confirm-yes, .btn-primary, .btn-calendar, .btn-save):hover::after {
-  transform: translateX(100%);
+  background-position: 0 0;
 }
 
 .canva-theme .rsvp-area :is(button, a):active,

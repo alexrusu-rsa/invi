@@ -10,9 +10,11 @@
   </div>
 
   <!-- Hero Image Wrapper -->
-  <div class="hero-image-wrapper" appReveal="fade" [revealDelay]="250">
-    <img src="/tenerifephoto.es204.JPG" alt="Bianca & Alex" class="hero-image-img" width="1080" height="1620"
-      fetchpriority="high">
+  <!-- Visible from the first paint (no fade-in): it is the page's largest element, and it is preloaded in index.html. -->
+  <div class="hero-image-wrapper">
+    <img src="/hero-1080.webp" srcset="/hero-480.webp 480w, /hero-720.webp 720w, /hero-1080.webp 1080w"
+      sizes="(max-width: 500px) calc(100vw - 48px), 452px" alt="Bianca & Alex" class="hero-image-img" width="1080"
+      height="1620" fetchpriority="high">
     <div class="fade-overlay-bottom"></div>
     <div class="script-overlay" appReveal="write" [revealDelay]="900">{{ 'hero.overlay' | transloco }}</div>
   </div>
@@ -39,8 +41,9 @@
   </div>
 
   <div class="second-fade-wrapper" appReveal="fade">
-    <img src="/tenerifephoto.es211.JPG" alt="Bianca & Alex" class="second-image-img" width="1080" height="1620"
-      loading="lazy">
+    <img src="/hands-1080.webp" srcset="/hands-480.webp 480w, /hands-720.webp 720w, /hands-1080.webp 1080w"
+      sizes="(max-width: 500px) calc(100vw - 48px), 452px" alt="Bianca & Alex" class="second-image-img" width="1080"
+      height="1620" loading="lazy">
     <div class="fade-overlay-both"></div>
   </div>
 
@@ -83,8 +86,8 @@
     <div class="timeline-item">
       <div class="timeline-title" appReveal="write">{{ 'ceremony.title' | transloco }}</div>
       <div class="venue-image-wrapper" appReveal="zoom" [revealDelay]="150">
-        <img src="/biserica.jpg" [alt]="'ceremony.venue' | transloco" class="venue-image" width="451" height="677"
-          loading="lazy" onerror="this.src='https://placehold.co/600x400/EDEDED/888888?text=biserica.jpg'">
+        <img src="/biserica.webp" [alt]="'ceremony.venue' | transloco" class="venue-image" width="451" height="677"
+          loading="lazy">
       </div>
       <div class="timeline-card" appReveal="up" [revealDelay]="250">
         <p class="elegant-subtitle">{{ 'ceremony.subtitle' | transloco }}</p>
@@ -104,7 +107,9 @@
     <div class="timeline-item">
       <div class="timeline-title" appReveal="write">{{ 'party.title' | transloco }}</div>
       <div class="venue-image-wrapper" appReveal="zoom" [revealDelay]="150">
-        <img src="/sala.jpg" alt="The Barn" class="venue-image" width="800" height="1014" loading="lazy">
+        <img src="/sala-800.webp" srcset="/sala-480.webp 480w, /sala-800.webp 800w"
+          sizes="(max-width: 500px) calc(100vw - 80px), 420px" alt="The Barn" class="venue-image" width="800"
+          height="1014" loading="lazy">
       </div>
       <div class="timeline-card" appReveal="up" [revealDelay]="250">
         <p class="elegant-subtitle">{{ 'party.subtitle' | transloco }}</p>
@@ -128,7 +133,7 @@
     <div class="stepper-container" appReveal="fade">
       <div class="step-item" appReveal="fade">
         <div class="step-content">
-          <img src="/ceremonia_religioasa.svg" alt="" class="step-art" loading="lazy">
+          <img src="/ceremonia_religioasa.svg" alt="" class="step-art" width="80" height="80" loading="lazy">
           <div class="step-info">
             <div class="step-time">{{ 'time.ceremony' | transloco }}</div>
             <div class="step-label">{{ 'ceremony.title' | transloco }}</div>
@@ -144,7 +149,7 @@
       </div>
       <div class="step-item" appReveal="fade">
         <div class="step-content">
-          <img src="/moment_de_sarbatoare.svg" alt="" class="step-art" loading="lazy">
+          <img src="/moment_de_sarbatoare.svg" alt="" class="step-art" width="80" height="80" loading="lazy">
           <div class="step-info">
             <div class="step-time">{{ 'time.party' | transloco }}</div>
             <div class="step-label">{{ 'program.celebration.label' | transloco }}</div>
@@ -160,7 +165,7 @@
       </div>
       <div class="step-item" appReveal="fade">
         <div class="step-content">
-          <img src="/dans_si_voie_buna.svg" alt="" class="step-art" loading="lazy">
+          <img src="/dans_si_voie_buna.svg" alt="" class="step-art" width="80" height="80" loading="lazy">
           <div class="step-info">
             <div class="step-label">{{ 'program.dance.label' | transloco }}</div>
             <div class="step-desc">{{ 'program.dance.desc' | transloco }}</div>
@@ -175,7 +180,7 @@
       </div>
       <div class="step-item" appReveal="fade">
         <div class="step-content">
-          <img src="/momentul_tortului.svg" alt="" class="step-art" loading="lazy">
+          <img src="/momentul_tortului.svg" alt="" class="step-art" width="80" height="80" loading="lazy">
           <div class="step-info">
             <div class="step-time">{{ 'time.cake' | transloco }}</div>
             <div class="step-label">{{ 'program.cake.label' | transloco }}</div>
@@ -203,7 +208,7 @@
   </div>
 
   <div class="heart-divider" appReveal="zoom">
-    <img src="/inima.svg" [alt]="'closing.heartAlt' | transloco" class="heart-icon" loading="lazy">
+    <img src="/inima.svg" [alt]="'closing.heartAlt' | transloco" class="heart-icon" width="1290" height="578" loading="lazy">
     @for (heart of floatingHearts; track $index) {
       <span class="float-heart" aria-hidden="true" [style.--x]="heart.x" [style.--size]="heart.size"
         [style.--drift]="heart.drift" [style.--spin]="heart.spin" [style.--delay]="heart.delay">♥</span>

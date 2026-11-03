@@ -28,6 +28,34 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+  <!-- The hero photo is the largest element on screen: start downloading it right away instead of
+       waiting for the app to render it. Must match the srcset/sizes of the <img> in app.html. -->
+  <link rel="preload" as="image" href="/hero-1080.webp"
+    imagesrcset="/hero-480.webp 480w, /hero-720.webp 720w, /hero-1080.webp 1080w"
+    imagesizes="(max-width: 500px) calc(100vw - 48px), 452px" fetchpriority="high">
+
+  <!-- Fetch the visitor's translations in parallel with the app bundle instead of after it.
+       Same detection as src/app/i18n/languages.ts: keep the language list in sync when adding one. -->
+  <script>
+    (function () {
+      var langs = ['ro', 'en', 'de', 'fr', 'it', 'es', 'pt', 'nl', 'da', 'sv', 'pl', 'cs', 'sk', 'uk', 'ru', 'ar'];
+      var prefs = [new URLSearchParams(location.search).get('lang')]
+        .concat(navigator.languages || [], navigator.language);
+      var lang = 'en';
+      for (var i = 0; i < prefs.length; i++) {
+        var base = String(prefs[i] || '').trim().toLowerCase().split(/[-_]/)[0];
+        if (base === 'mo') base = 'ro';
+        if (langs.indexOf(base) > -1) { lang = base; break; }
+      }
+      var link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'fetch';
+      link.crossOrigin = 'anonymous';
+      link.href = '/i18n/' + lang + '.json';
+      document.head.appendChild(link);
+    })();
+  </script>
+
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
